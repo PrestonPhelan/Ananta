@@ -38,7 +38,6 @@
 
 
 ## Team Select Page
-
 **TeamSelect**
   - TeamListContainer
    - TeamList
@@ -49,8 +48,11 @@
 
 
 ## Project View Page
+**TeamPageContainer**
+- ProjectSidebarContainer
+- ProjectView
+
 **ProjectView**
- - ProjectSidebarContainer
  - TaskListContainer
 
 **ProjectSidebarContainer**
@@ -106,12 +108,12 @@
  | "/"  | "Splash" |
  | "/sign-up"| "UserCreateForm" |
  | "/log-in" | "AuthFormContainer" |
- | "/users/:user_id/teams/:id" | "ProjectView" |
- | "/users/:id/tasks" | "ProjectView" |
+ | "/users/:id" | "UserViewContainer" |
+ | "/users/:id/tasks" | "TaskListContainer" |
  | "/users/:id/edit"  | "EditUserFormContainer" |
  | "/users/:id/teams" | "TeamListContainer" |
- | "/teams/:team_id/users/:id" | "UserViewContainer" |
+ | "/teams/:id" | "TeamPageContainer" |
  | "/teams/new" | "TeamFormContainer" |
  | "/teams/:team_id/projects/new" | "ProjectFormContainer" |
- | "/teams/:team_id/projects/:id" | "Project View" |
- | "/teams/:team_id/projects/:project_id/tasks/:id" | "TaskDetailContainer" |
+ | "/projects/:id" | "ProjectView" |
+ | "/tasks/:id" | "TaskDetailContainer" |

@@ -1,3 +1,5 @@
+```js
+
 {
   session: {
     currentUser: "Employee1",
