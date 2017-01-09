@@ -24,7 +24,7 @@ inspired by Asana, designed to help teams work together.  By 02:00 GMT on Januar
 
 * Wireframes
     * [Web](https://app.quickfocus.com/snapup/preview/7219)
-    * [Local](/wireframes)
+    * Local  (TO BE ADDED)
     * **NB:** Web will always be up to date, so prefer that link
 
 * [React Components](component-hierarchy.md)
