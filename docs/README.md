@@ -4,7 +4,7 @@
 
 Heroku currently unavailable.
 
-[Trello][https://trello.com/b/Jnbix7YB/full-stack]
+[Trello](https://trello.com/b/Jnbix7YB/full-stack)
 
 ## Minimum Viable Product
 
@@ -21,18 +21,18 @@ inspired by Asana, designed to help teams work together.  By 02:00 GMT on Januar
 
 ## Design Docs
 
-* [Wireframes]
-    * [Web][Wireframes at https://app.quickfocus.com/snapup/preview/7219]
-    * [Local][/wireframes]
+* Wireframes
+    * [Web](Wireframes at https://app.quickfocus.com/snapup/preview/7219)
+    * [Local](/wireframes)
     * **NB:** Web will always be up to date, so prefer that link
 
-* [React Components][component-hierarchy.md]
+* [React Components](component-hierarchy.md)
 
-* [Sample State][sample-state.md]
+* [Sample State](sample-state.md)
 
-* [DB Schema][schema.md]
+* [DB Schema](schema.md)
 
-* [API Endpoints][api-endpoints.md]
+* [API Endpoints](api-endpoints.md)
 
 ## Implementation Timeline
 
@@ -74,4 +74,3 @@ workspaces.
 - [ ] Task Attachments
 - [ ] Convert Projects to Tasks
 - [ ] Create Follow-Up Tasks
-- [ ] Member Summary View
