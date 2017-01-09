@@ -11,18 +11,19 @@ Heroku currently unavailable.
 Ananta is a project management and task tracking web application
 inspired by Asana, designed to help teams work together.  By 02:00 GMT on January 21, this application will have the following functionality, bug-free.  All features will have smooth user experience and professional stylings.
 
-- [ ] New account creation & login, including a Demo Login.
-- [ ] A professional production README.
 - [ ] Hosting on Heroku
+- [ ] Authentication
+      - New account creation & login, including a demo login.
 - [ ] Projects
 - [ ] Tasks
 - [ ] Teams/Workspaces
 - [ ] User Profiles
+- [ ] A professional production README.
 
 ## Design Docs
 
 * Wireframes
-    * [Web](Wireframes at https://app.quickfocus.com/snapup/preview/7219)
+    * [Web](https://app.quickfocus.com/snapup/preview/7219)
     * [Local](/wireframes)
     * **NB:** Web will always be up to date, so prefer that link
 
