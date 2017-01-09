@@ -2,7 +2,10 @@
 
 {
   session: {
-    currentUser: "Employee1",
+    currentUser: {
+      username: "Employee1",
+      image_url: "whatever.png"
+    }
     errors: ["Invalid credentials"]
   },
 
@@ -33,7 +36,7 @@
     }
   }
 
-  projectDetail: {
+  project: {
     id: 1,
     name: "First project",
     tasks: {

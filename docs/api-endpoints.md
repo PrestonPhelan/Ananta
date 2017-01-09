@@ -14,7 +14,6 @@
 - `PATCH /api/users/:id`
 - `GET /api/users/:user_id/teams`
 - `GET /api/users/:user_id/tasks`
-- `GET /api/users/:user_id/teams/:team_id/tasks`
 
 ### Session
 - `POST /api/session`
@@ -30,6 +29,7 @@
 - `GET /api/teams/:team_id/projects`
 - `GET /api/teams/:team_id/tasks`
   -For unassigned tasks
+  -For tasks filtered by user assigned to them
 
 ### Projects
 - `POST /api/projects`
