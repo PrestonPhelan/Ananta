@@ -3,6 +3,7 @@
 {
   session: {
     currentUser: {
+      id: 1,
       username: "Employee1",
       image_url: "whatever.png"
     }
