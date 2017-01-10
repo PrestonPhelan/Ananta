@@ -20,7 +20,10 @@
 
 **Splash**
  - SplashHeader
+  - SplashLogo
+  - SplashButtons
  - SplashContent
+  - SplashGif
   - SplashForm
 
 ## Layout
