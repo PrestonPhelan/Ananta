@@ -2,11 +2,16 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(sign_up_params)
 
+    debugger
     if @user.save
       login(@user)
-      render root_url
+      render json: ["Successful sign up"]
     else
-      render json: @users.errors.full_messages, status: 422
+      if @user
+        render json: @user.errors.full_messages, status: 422
+      else
+        render json: ["No instance variable user"], status: 422
+      end
     end
   end
 

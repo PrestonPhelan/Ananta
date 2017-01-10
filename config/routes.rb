@@ -4,5 +4,5 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
   end
 
-  root "static_pages#root"
+  root to: "static_pages#root"
 end
