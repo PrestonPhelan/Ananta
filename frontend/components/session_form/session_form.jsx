@@ -55,22 +55,24 @@ class SessionForm extends React.Component {
   render () {
     const usernameLabel = this.props.formType === "signup" ? "Username" : "Username or Email";
     const emailInput = this.props.formType === "signup" ? (
+      <div>
       <label>Email
         <input
           type="text"
           value={this.state.email}
           onChange={this.update('email')} />
-      </label>
+      </label><br /></div>
     ) : <div></div>;
 
     const passwordConfirm = this.props.formType === "signup" ? (
+      <div>
       <label>Confirm Password
         <input
           type="password"
           value={this.state.confirm_password}
           onChange={this.update('confirm_password')}
         />
-      </label>
+      </label><br /></div>
     ) : <div></div>;
 
     const text = this.props.formType === "signup" ? "Sign Up" : "Log In";
@@ -78,14 +80,14 @@ class SessionForm extends React.Component {
     return (
       <div>
         <h3>{text}</h3>
-        <form onSubmit={this.handleSubmit(this.props.formType)}>
+        <form className="session-form" onSubmit={this.handleSubmit(this.props.formType)}>
           {this.renderErrors()}
           <label>{usernameLabel}
             <input
               type="text"
               value={this.state.username}
               onChange={this.update('username')} />
-          </label>
+          </label><br />
           {emailInput}
           <label>Password
             <input
@@ -93,10 +95,10 @@ class SessionForm extends React.Component {
               value={this.state.password}
               onChange={this.update('password')}
             />
-          </label>
+          </label><br />
           {passwordConfirm}
 
-          <input type="submit" value={text} />
+          <input className='session-button' type="submit" value={text} />
         </form>
       </div>
     );

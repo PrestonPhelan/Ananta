@@ -2,8 +2,8 @@ import React from 'react';
 
 const SplashLogo = () => {
   return (
-    <div>
-      <h4>{"I'm the splash logo!"}</h4>
+    <div className='splash-logo'>
+      <h3>{"A  Ananta"}</h3>
     </div>
   );
 };

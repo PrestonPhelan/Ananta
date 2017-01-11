@@ -5,8 +5,7 @@ import SplashButtonContainer from './splash_button_container';
 
 const SplashHeader = () => {
   return (
-    <div>
-      <h3>{"I'm the splash header!"}</h3>
+    <div className='splash-header'>
       <SplashLogo />
       <SplashButtonContainer />
     </div>

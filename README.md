@@ -51,7 +51,7 @@ for navigation between and adding projects.
 **Objective:** Task list with easy movability, task detail view,
 task properties, task filtering & sorting.
 
-## Phase 4: Teams/Workspaces (1 day)
+## Phase 4: Teams/Workspaces (2 days)
 
 **Objective:** Create workspaces, add/remove members, navigation between
 workspaces.

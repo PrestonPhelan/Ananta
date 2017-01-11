@@ -51,24 +51,23 @@ class SplashButtons extends React.Component {
 
   render() {
     return (
-      <div>
-        <h4>{"I'm the splash buttons!"}</h4>
-        <button onClick={this.demoClick}>DEMO</button>
-        <button onClick={this.signUpClick}>SIGN UP</button>
-        <button onClick={this.logInClick}>LOG IN</button>
+      <div className='splash-buttons'>
+        <button className='session-button' onClick={this.demoClick}>demo</button>
+        <button className='session-button' onClick={this.signUpClick}>sign up</button>
+        <button className='session-button' onClick={this.logInClick}>log in</button>
 
-        <Modal ref="signUpModal">
-          <button onClick={this.hideSignUp}>X</button>
+        <Modal className='session-modal' ref="signUpModal">
+          <button className='close-modal' onClick={this.hideSignUp}>X</button>
           <SessionFormContainer formType="signup" />
           <h5>{"Have an account?"}</h5>
-          <button onClick={this.switchModals('signup')}>Log In</button>
+          <button className='session-button' onClick={this.switchModals('signup')}>Log In</button>
         </Modal>
 
-        <Modal ref="logInModal">
-          <button onClick={this.hideLogIn}>X</button>
+        <Modal className='session-modal' ref="logInModal">
+          <button className='close-modal' onClick={this.hideLogIn}>X</button>
           <SessionFormContainer formType="login" />
           <h5>{"New to Ananta?"}</h5>
-          <button onClick={this.switchModals('login')}>Sign Up</button>
+          <button className='session-button' onClick={this.switchModals('login')}>Sign Up</button>
         </Modal>
       </div>
     );
