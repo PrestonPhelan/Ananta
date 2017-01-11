@@ -58,6 +58,7 @@ class SessionForm extends React.Component {
       <div>
       <label>Email
         <input
+          className='session-input'
           type="text"
           value={this.state.email}
           onChange={this.update('email')} />
@@ -68,6 +69,7 @@ class SessionForm extends React.Component {
       <div>
       <label>Confirm Password
         <input
+          className='session-input'
           type="password"
           value={this.state.confirm_password}
           onChange={this.update('confirm_password')}
@@ -79,29 +81,27 @@ class SessionForm extends React.Component {
 
     return (
       <div>
-        <h3>{text}</h3>
-        <button
-          className='session-button demo-button'
-          onClick={() => console.log("This will log in guest account!")}>
-          DEMO
-        </button>
-        <form className="session-form" onSubmit={this.handleSubmit(this.props.formType)}>
+        <form onSubmit={this.handleSubmit(this.props.formType)}>
           {this.renderErrors()}
-          <label>{usernameLabel}
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.update('username')} />
-          </label><br />
-          {emailInput}
-          <label>Password
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-            />
-          </label><br />
-          {passwordConfirm}
+          <div className="session-form">
+            <label>{usernameLabel}
+              <input
+                className='session-input'
+                type="text"
+                value={this.state.username}
+                onChange={this.update('username')} />
+            </label><br />
+            {emailInput}
+            <label>Password
+              <input
+                className='session-input'
+                type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+              />
+            </label><br />
+            {passwordConfirm}
+          </div>
 
           <input className='session-button' type="submit" value={text} />
         </form>

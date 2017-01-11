@@ -5,8 +5,7 @@ import SplashForm from './splash_form';
 
 const SplashContent = () => {
   return (
-    <div>
-      <h3>{"I'm the splash content!"}</h3>
+    <div className='splash-content'>
       <SplashGif />
       <SplashForm />
     </div>

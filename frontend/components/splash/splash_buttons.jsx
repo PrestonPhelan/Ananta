@@ -71,16 +71,18 @@ class SplashButtons extends React.Component {
           LOG IN
         </button>
 
-        <Modal className='session-modal' ref="signUpModal">
+        <Modal className='session-modal-box' ref="signUpModal">
           <SessionModal
+            className='session-modal'
             formType="signup"
             switchModals={this.switchModals}
             hide={this.hideSignUp}
             />
         </Modal>
 
-        <Modal className='session-modal' ref="logInModal">
+        <Modal className='session-modal-box' ref="logInModal">
           <SessionModal
+            className='session-modal'
             formType="login"
             switchModals={this.switchModals}
             hide={this.hideLogIn}
