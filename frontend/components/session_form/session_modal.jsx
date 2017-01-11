@@ -10,7 +10,7 @@ class SessionModal extends React.Component {
 
     return (
       <div className='session-modal'>
-        <h1 className='form-title'>{buttonText}</h1>
+        <h1 className='form-title'>{headText}</h1>
         <button
           className='session-button demo-button'
           onClick={() => console.log("This will log in guest account!")}>
