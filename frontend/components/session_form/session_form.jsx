@@ -1,10 +1,10 @@
 import React from 'react';
 import merge from 'lodash/merge';
+import { hashHistory } from 'react-router'
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger;
     this.state = {
         username: "",
         email: "",
@@ -75,6 +75,14 @@ class SessionForm extends React.Component {
 
     const text = this.props.formType === "signup" ? "Sign Up" : "Log In";
 
+    const navText = this.props.formType === "signup" ? "Have an account?" : "New to Ananta?";
+
+    const navButton = this.props.formType === "signup" ? (
+      <button onClick={() => hashHistory.push('/login')}>Log In</button>
+    ) : (
+      <button onClick={() => hashHistory.push('/signup')}>Sign Up</button>
+    );
+
     return (
       <div>
         <h3>{text}</h3>
@@ -98,6 +106,9 @@ class SessionForm extends React.Component {
 
           <input type="submit" value={text} />
         </form>
+
+        {navText}
+        {navButton}
       </div>
     );
   }
