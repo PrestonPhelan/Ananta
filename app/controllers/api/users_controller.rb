@@ -8,11 +8,7 @@ class Api::UsersController < ApplicationController
         login(@user)
         render json: ["Successful sign up"]
       else
-        if @user
-          render json: @user.errors.full_messages, status: 422
-        else
-          render json: ["No instance variable user"], status: 422
-        end
+        render json: @user.errors.full_messages, status: 422
       end
     else
       render json: ["Passwords don't match"], status: 422

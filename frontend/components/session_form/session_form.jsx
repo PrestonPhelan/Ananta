@@ -4,6 +4,7 @@ import merge from 'lodash/merge';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+    debugger;
     this.state = {
         username: "",
         email: "",
@@ -12,6 +13,19 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, idx) => (
+          <li key={idx}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   update(field) {
@@ -62,25 +76,29 @@ class SessionForm extends React.Component {
     const text = this.props.formType === "signup" ? "Sign Up" : "Log In";
 
     return (
-      <form onSubmit={this.handleSubmit(this.props.formType)}>
-        <label>{usernameLabel}
-          <input
-            type="text"
-            value={this.state.username}
-            onChange={this.update('username')} />
-        </label>
-        {emailInput}
-        <label>Password
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-          />
-        </label>
-        {passwordConfirm}
+      <div>
+        <h3>{text}</h3>
+        <form onSubmit={this.handleSubmit(this.props.formType)}>
+          {this.renderErrors()}
+          <label>{usernameLabel}
+            <input
+              type="text"
+              value={this.state.username}
+              onChange={this.update('username')} />
+          </label>
+          {emailInput}
+          <label>Password
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+            />
+          </label>
+          {passwordConfirm}
 
-        <input type="submit" value={text} />
-      </form>
+          <input type="submit" value={text} />
+        </form>
+      </div>
     );
   }
 }
