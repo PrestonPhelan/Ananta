@@ -2,7 +2,7 @@
 
 ## Links
 
-Heroku currently unavailable.
+[Heroku](ananta-app.herokuapp.com)
 
 [Trello](https://trello.com/b/Jnbix7YB/full-stack)
 

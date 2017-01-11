@@ -80,6 +80,7 @@ class SessionForm extends React.Component {
     return (
       <div>
         <h3>{text}</h3>
+        <button className='session-button'  onClick={() => console.log("This will log in guest account!")}>demo</button>
         <form className="session-form" onSubmit={this.handleSubmit(this.props.formType)}>
           {this.renderErrors()}
           <label>{usernameLabel}
