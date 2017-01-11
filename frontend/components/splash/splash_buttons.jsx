@@ -54,21 +54,21 @@ class SplashButtons extends React.Component {
     return (
       <div className='splash-buttons'>
         <button
-          className='session-button'
+          className='session-button demo-button'
           onClick={this.demoClick}>
-          demo
+          DEMO
         </button>
 
         <button
           className='session-button'
           onClick={this.signUpClick}>
-          sign up
+          SIGN UP
         </button>
 
         <button
           className='session-button'
           onClick={this.logInClick}>
-          log in
+          LOG IN
         </button>
 
         <Modal className='session-modal' ref="signUpModal">

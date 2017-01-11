@@ -5,7 +5,7 @@ import SessionFormContainer from './session_form_container';
 class SessionModal extends React.Component {
   render() {
     const switchText = this.props.formType === 'signup' ? "Have an account?" : "New to Ananta?";
-    const buttonText = this.props.formType === 'signup' ? "log in" : "sign up";
+    const buttonText = this.props.formType === 'signup' ? "LOG IN" : "SIGN UP";
 
     return (
       <div>
