@@ -32,6 +32,7 @@ class SessionForm extends React.Component {
         delete user.confirm_password;
       }
 
+      //TODO Give this a proper callback
       this.props.action(user)
         .then(() => console.log("Successful Form Submission!"));
     };

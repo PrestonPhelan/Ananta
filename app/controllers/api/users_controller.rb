@@ -1,22 +1,28 @@
 class Api::UsersController < ApplicationController
   def create
-    @user = User.new(sign_up_params)
+    if params[:user][:password] == params[:user][:confirm_password]
+      @user = User.new(sign_up_params)
 
-    if @user.save
-      login(@user)
-      render json: ["Successful sign up"]
-    else
-      if @user
-        render json: @user.errors.full_messages, status: 422
+
+      if @user.save
+        login(@user)
+        render json: ["Successful sign up"]
       else
-        render json: ["No instance variable user"], status: 422
+        if @user
+          render json: @user.errors.full_messages, status: 422
+        else
+          render json: ["No instance variable user"], status: 422
+        end
       end
+    else
+      render json: ["Passwords don't match"], status: 422
     end
   end
 
   private
 
   def sign_up_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user)
+      .permit(:username, :email, :password)
   end
 end
