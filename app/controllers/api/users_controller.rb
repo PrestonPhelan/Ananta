@@ -2,7 +2,6 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(sign_up_params)
 
-    debugger
     if @user.save
       login(@user)
       render json: ["Successful sign up"]

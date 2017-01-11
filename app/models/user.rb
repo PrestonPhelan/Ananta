@@ -9,8 +9,11 @@ class User < ApplicationRecord
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
+    debugger
     if !user
+      debugger
       user = User.find_by_email(username)
+      debugger
     end
     return nil unless user && user.is_password?(password)
     user
