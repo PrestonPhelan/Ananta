@@ -1,3 +1,61 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "constants";
+
+ .splash-header {
+   position: fixed;
+   background: $negative;
+   top: 0;
+   width: 100%;
+   align-items: center;
+   justify-content: space-between;;
+   display: flex;
+ }
+
+ .splash-logo {
+   display: box;
+   width: 100px;
+   height: 30px;
+   background-image: url(/assets/splash-logo.png);
+   margin: 10px;
+   background-size: contain;
+   background-repeat: no-repeat;
+ }
+ .splash-buttons {
+ }
+
+ button, .session-button {
+   font-size: 13px;
+   font-family: "Abel";
+   font-weight: 500;
+   margin: 10px 20px 10px 0;
+   padding: 5px 10px 5px 10px;
+   border-radius: 15px;
+   background: white;
+   color: $medshade;
+   border: 2px solid $medshade;
+ }
+
+ button:hover, .session-button:hover {
+   background: $darkshade;
+   color: white;
+   border-color: white;
+ }
+
+ button:active, .session-button:active {
+   background: $lightshade;
+ }
+
+ .session-modal {
+   text-align: center;
+ }
+
+ .close-modal {
+   float: right;
+ }
+
+ .session-form {
+   text-align: left;
+ }

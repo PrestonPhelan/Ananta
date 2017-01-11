@@ -15,63 +15,9 @@
  */
 
 html {
- background: url('http://www.arorallc.com/i/2017/01/mountain-landscape-wallpapers-android.jpg') no-repeat center center fixed;
+ background: url('http://coda-craven.org/wp-content/uploads/2016/10/ocean-wide-coda-craven.jpg') no-repeat center center fixed;
  -webkit-background-size: cover;
  -moz-background-size: cover;
  -o-background-size: cover;
  background-size: cover;
-}
-
-.splash-header {
-  position: fixed;
-  background: white;
-  top: 0;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;;
-  display: flex;
-}
-
-.splash-logo {
-  background: orange;
-}
-
-.splash-buttons {
-  background: lightpink;
-}
-
-button, .session-button {
-  font-size: 13px;
-  font-family: "Brandon Grotesque", "brandon-grotesque" sans-serif;
-  font-weight: 500;
-  margin: 10px;
-  padding: 5px 10px 5px 10px;
-  border-radius: 15px;
-  background: white;
-  color: blue;
-  border: 2px solid blue;
-}
-
-button:hover, .session-button:hover {
-  background: blue;
-  color: white;
-  border: 2px solid white;
-}
-
-button:active, .session-button:active {
-  background: green;
-  color: white;
-  border: 2px solid white;
-}
-
-.session-modal {
-  text-align: center;
-}
-
-.close-modal {
-  float: right;
-}
-
-.session-form {
-  text-align: left;
 }
