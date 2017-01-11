@@ -1,13 +1,16 @@
 import React from 'react';
-
 import { hashHistory } from 'react-router';
+import Modal from 'boron/ScaleModal';
+
+import SessionFormContainer from '../session_form/session_form_container';
 
 class SplashButtons extends React.Component {
   constructor(props) {
     super(props);
-    // this.demoLogIn = this.demoLogIn.bind(this);
-    // this.signUp = this.signUp.bind(this);
-    // this.logIn = this.logIn.bind(this);
+    this.signUpClick = this.signUpClick.bind(this);
+    this.logInClick = this.logInClick.bind(this);
+    this.hideSignUp = this.hideSignUp.bind(this);
+    this.hideLogIn = this.hideLogIn.bind(this);
   }
 
   demoClick(e) {
@@ -15,15 +18,36 @@ class SplashButtons extends React.Component {
     console.log("This will log in a guest!");
   }
 
-  signUpClick(e) {
-    e.preventDefault();
-    hashHistory.push('/signup');
+  signUpClick() {
+    this.refs.signUpModal.show();
   }
 
-  logInClick(e) {
-    e.preventDefault();
-    hashHistory.push('/login');
+  logInClick() {
+    this.refs.logInModal.show();
   }
+
+  hideSignUp() {
+    this.refs.signUpModal.hide();
+  }
+
+  hideLogIn() {
+    this.refs.logInModal.hide();
+  }
+
+  switchModals(type) {
+    if (type === 'signup') {
+      return () => {
+        this.hideSignUp();
+        this.logInClick();
+      };
+    } else {
+      return () => {
+        this.hideLogIn();
+        this.signUpClick();
+      };
+    }
+  }
+
 
   render() {
     return (
@@ -32,6 +56,20 @@ class SplashButtons extends React.Component {
         <button onClick={this.demoClick}>DEMO</button>
         <button onClick={this.signUpClick}>SIGN UP</button>
         <button onClick={this.logInClick}>LOG IN</button>
+
+        <Modal ref="signUpModal">
+          <button onClick={this.hideSignUp}>X</button>
+          <SessionFormContainer formType="signup" />
+          <h5>{"Have an account?"}</h5>
+          <button onClick={this.switchModals('signup')}>Log In</button>
+        </Modal>
+
+        <Modal ref="logInModal">
+          <button onClick={this.hideLogIn}>X</button>
+          <SessionFormContainer formType="login" />
+          <h5>{"New to Ananta?"}</h5>
+          <button onClick={this.switchModals('login')}>Sign Up</button>
+        </Modal>
       </div>
     );
   }

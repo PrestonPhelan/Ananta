@@ -7,11 +7,11 @@ import SessionForm from './session_form';
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
   errors: state.session.errors,
-  formType: ownProps.params.type
+  formType: ownProps.formType
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const action = ownProps.params.type === "login" ? login : signup;
+  const action = ownProps.formType === "login" ? login : signup;
   return ({
     action: user => dispatch(action(user))
   });

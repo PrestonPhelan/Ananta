@@ -10,8 +10,16 @@ import { logout } from './util/session_api_util';
 window.logout = logout;
 //END
 
+let store;
+
+if (window.currentUser) {
+  const preloadedState = { session: { currentUser: window.currentUser } };
+  store = configureStore(preloadedState);
+} else {
+  store = configureStore();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  const store = configureStore();
   ReactDOM.render(<Root store={store}/>, root);
 });
