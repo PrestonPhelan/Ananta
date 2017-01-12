@@ -2,11 +2,9 @@ class Api::UsersController < ApplicationController
   def create
     if params[:user][:password] == params[:user][:confirm_password]
       @user = User.new(sign_up_params)
-
-
       if @user.save
         login(@user)
-        render json: ["Successful sign up"]
+        render :show
       else
         render json: @user.errors.full_messages, status: 422
       end

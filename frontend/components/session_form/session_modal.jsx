@@ -10,7 +10,7 @@ class SessionModal extends React.Component {
     return (
       <div className='session-modal'>
         <button className='close-modal' onClick={this.props.hide}>X</button>
-        <SessionModalButtonContainer switchModals={this.props.switchModals}/>
+        <SessionModalButtonContainer switchModals={this.props.switchModals} formType={this.props.formType}/>
         <h1 className='form-title'>{headText}</h1>
         <SessionFormContainer formType={this.props.formType} />
       </div>
