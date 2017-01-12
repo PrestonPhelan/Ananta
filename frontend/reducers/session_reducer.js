@@ -6,7 +6,9 @@ import {
 } from '../actions/session_actions';
 
 const _nullUser = {
-  currentUser: "",
+  currentUser: {
+    username: ""
+  },
   errors: []
 };
 
@@ -15,8 +17,7 @@ export default (state = _nullUser, action) => {
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      newState.currentUser = action.currentUser;
-      newState.errors = [];
+      newState = merge({}, _nullUser, {currentUser: action.currentUser});
       return newState;
     case RECEIVE_ERRORS:
       newState.errors = action.errors;

@@ -3,7 +3,7 @@ import React from 'react';
 const App = ({ children, currentUser }) => {
   let displayName;
 
-  if (currentUser) {
+  if (currentUser.username !== "") {
     displayName = currentUser.username;
   } else {
     displayName = "No one";
