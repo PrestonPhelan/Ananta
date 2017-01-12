@@ -18,7 +18,7 @@ class UserControl extends Component {
   render() {
     let icon;
 
-    if (window.currentUser & window.currentUser.image_url) {
+    if (window.currentUser && window.currentUser.image_url) {
       icon = (<div>Image Available</div>);
     } else {
       icon = (

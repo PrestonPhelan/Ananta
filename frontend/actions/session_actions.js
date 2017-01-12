@@ -28,8 +28,11 @@ export const login = user => dispatch => (
 
 export const logout = () => dispatch => (
   SessionApiUtil.logout()
-    .then( res => dispatch(receiveCurrentUser(null)))
-    .then( () => hashHistory.push('/'))
+    .then( res => {
+      console.log(res);
+      dispatch(receiveCurrentUser(null));
+      hashHistory.push('/');
+    })
 );
 
 export const signup = user => dispatch => (
