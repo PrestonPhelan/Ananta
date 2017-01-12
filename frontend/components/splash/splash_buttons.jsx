@@ -4,6 +4,7 @@ import Modal from 'boron/ScaleModal';
 
 import SessionModal from '../session_form/session_modal';
 
+
 class SplashButtons extends React.Component {
   constructor(props) {
     super(props);
@@ -12,11 +13,6 @@ class SplashButtons extends React.Component {
     this.hideSignUp = this.hideSignUp.bind(this);
     this.hideLogIn = this.hideLogIn.bind(this);
     this.switchModals = this.switchModals.bind(this);
-  }
-
-  demoClick(e) {
-    e.preventDefault();
-    console.log("This will log in a guest!");
   }
 
   signUpClick() {
@@ -55,7 +51,7 @@ class SplashButtons extends React.Component {
       <div className='splash-buttons'>
         <button
           className='session-button demo-button'
-          onClick={this.demoClick}>
+          onClick={this.props.demoLogin}>
           DEMO
         </button>
 

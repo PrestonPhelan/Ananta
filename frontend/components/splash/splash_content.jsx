@@ -1,13 +1,13 @@
 import React from 'react';
 
 import SplashGif from './splash_gif';
-import SplashForm from './splash_form';
+import SplashFormContainer from './splash_form_container';
 
 const SplashContent = () => {
   return (
     <div className='splash-content'>
       <SplashGif />
-      <SplashForm />
+      <SplashFormContainer />
     </div>
   );
 };

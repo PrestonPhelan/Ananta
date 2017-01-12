@@ -13,6 +13,11 @@ export const receiveErrors = errors => ({
   errors
 });
 
+export const demoLogin = () => dispatch => dispatch(login({
+        username: "Guest",
+        password: "password"
+    }));
+
 export const login = user => dispatch => (
   SessionApiUtil.login(user)
     .then(
