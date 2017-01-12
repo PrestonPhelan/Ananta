@@ -12,7 +12,7 @@ class UserDropdown extends Component {
       );
     } else {
       return (
-        <div id='user-dropdown'>
+        <div id='user-dropdown' className='dropdown'>
 
         </div>
       );
