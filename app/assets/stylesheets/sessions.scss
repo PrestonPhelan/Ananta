@@ -36,6 +36,8 @@
    font-size: 13px;
    font-family: sans-serif;
    font-weight: 500;
+   width: 100px;
+   text-align: center;
    padding: 10px 20px 10px 20px;
    border-radius: 5px;
    background: white;
@@ -87,6 +89,8 @@
    position: absolute;
    right: 10px;
    top: 10px;
+   width: auto;
+   padding: 5px 10px 5px 10px;
  }
 
  .session-form {
@@ -124,10 +128,11 @@
    border: 2px solid white;
    color: white;
    border-radius: 3px;
-   font-size: 20px;
-   padding: 20px 40px 20px 40px;
+   font-size: 15px;
+   padding: 15px 30px 15px 30px;
    transition-duration: 0.5s;
    margin: 0 0 40px 0;
+   width: auto;
  }
 
  .splash-content-button:hover {
