@@ -1,13 +1,12 @@
 @import "constants";
 
-$headerHeight: 70px;
 $headerPadding: 25px;
 
 .header {
   padding: 10px $headerPadding 10px $headerPadding;
   background-color: white;
   width: 100%;
-  height: $headerHeight;
+  height: 70px;
   font-size: 40px;
   align-items: center;
   display: flex;
@@ -38,19 +37,22 @@ $headerPadding: 25px;
 
 .dropdown {
   position: absolute;
-}
-
-#team-dropdown {
-  width: 200px;
-  height: 200px;
-  background-color: transparent;
-  border: 5px solid red;
+  background-color: white;
+  border: 1px solid $medshade;
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 20px;
 }
 
 #user-dropdown {
-  width: 200px;
-  height: 200px;
-  background-color: transparent;
-  border: 5px solid green;
   right: $headerPadding;
+}
+
+
+.option {
+  margin-top: 20px;
+}
+
+.option:hover {
+  color: red;
 }

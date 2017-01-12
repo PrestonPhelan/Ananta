@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import UserOptionsContainer from './user_options_container';
+
 class UserDropdown extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +15,7 @@ class UserDropdown extends Component {
     } else {
       return (
         <div id='user-dropdown' className='dropdown'>
-
+          <UserOptionsContainer />
         </div>
       );
     }
