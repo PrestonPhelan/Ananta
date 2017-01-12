@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import TeamListContainer from './team_list_container';
+
 class TeamDropdown extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +15,7 @@ class TeamDropdown extends Component {
     } else {
       return (
         <div id='team-dropdown' className='dropdown'>
-
+          <TeamListContainer />
         </div>
       );
     }
