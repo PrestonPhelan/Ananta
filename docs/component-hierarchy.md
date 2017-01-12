@@ -117,6 +117,6 @@
  | "/users/:id/teams" | "TeamListContainer" |
  | "/teams/:id" | "TeamPageContainer" |
  | "/teams/new" | "TeamFormContainer" |
- | "/teams/:team_id/projects/new" | "ProjectFormContainer" |
+ | "/projects/new" | "ProjectFormContainer" |
  | "/projects/:id" | "ProjectView" |
  | "/tasks/:id" | "TaskDetailContainer" |

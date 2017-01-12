@@ -3,6 +3,15 @@
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Convergence|Montserrat|Tauri" rel="stylesheet">
+    <script src="https://use.fontawesome.com/0091a422fe.js"></script>
+    <script type="text/javascript">
+      <% if logged_in? %>
+        window.currentUser = <%= render(
+          "api/users/user.json.jbuilder",
+          user: current_user
+        ).html_safe %>
+      <% end %>
+    </script>
     <title></title>
   </head>
   <body>
@@ -10,5 +19,11 @@
       <h3>Hello, World!</h3>
       <h4>Message from static_pages/root.html</h4>
     </div>
+
+    <% if current_user %>
+    <h5><%= current_user.username %> is logged in.</h5>
+    <% else %>
+    <h5>No one logged in.</h5>
+    <% end %>
   </body>
 </html>
