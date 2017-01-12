@@ -8,6 +8,17 @@ class SplashForm extends React.Component {
     super(props);
   }
 
+  redirectLoggedIn() {
+    //TODO Add real redirect
+    if (window.currentUser) {
+      //Redirect code
+      console.log("Will redirect");
+    } else {
+      //Do nothing
+      console.log("Won't redirect");
+    }
+  }
+
   render() {
     return (
       <div>

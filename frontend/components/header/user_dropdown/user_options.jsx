@@ -12,7 +12,12 @@ class UserOptions extends Component {
           <li>{this.props.user.toUpperCase()}</li>
           <li className='option'>Task Summary</li>
           <li className='option'>Edit Profile</li>
-          <li className='option'>Logout</li>
+          <li
+            id='user-options-logout'
+            className='option'
+            onClick={this.props.logout}>
+          Logout
+          </li>
         </ul>
       </div>
     );

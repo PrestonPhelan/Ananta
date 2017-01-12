@@ -7,6 +7,7 @@ class TeamList extends Component {
     super(props);
   }
 
+  //TODO Remove test render Teams
   render() {
     let teams;
     if (this.props.teams) {

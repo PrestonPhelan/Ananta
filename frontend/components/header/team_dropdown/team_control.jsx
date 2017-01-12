@@ -16,12 +16,22 @@ class TeamControl extends Component {
   }
 
   render () {
+    let icon;
+
+    if (this.props.organization && this.props.organization.image_url) {
+      icon = (<div>Image Available</div>);
+    } else {
+      icon = (
+        <i
+          className="fa fa-users"
+          aria-hidden="true"
+          onClick={this.toggleDropdown}></i>
+      );
+    }
+
     return (
-    <div id='team-control'>
-      <i
-        className="fa fa-users"
-        aria-hidden="true"
-        onClick={this.toggleDropdown}></i>
+    <div id='team-control' tabIndex={0} onBlur={this.toggleDropdown}>
+      {icon}
       <TeamDropdownContainer hidden={this.state.hidden} />
     </div>
     );

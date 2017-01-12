@@ -55,4 +55,9 @@ $headerPadding: 25px;
 
 .option:hover {
   color: red;
+  cursor: pointer;
+}
+
+#user-options-logout:hover {
+  color: $darkshade
 }

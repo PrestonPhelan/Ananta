@@ -20,6 +20,7 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 name            | string    | not null
+image_url       | string    |
 owner_id        | integer   | not null, foreign key (references users), indexed
 
 

@@ -16,12 +16,22 @@ class UserControl extends Component {
   }
 
   render() {
+    let icon;
+
+    if (window.currentUser & window.currentUser.image_url) {
+      icon = (<div>Image Available</div>);
+    } else {
+      icon = (
+        <i
+          className="fa fa-user-circle"
+          aria-hidden="true"
+          onClick={this.toggleDropdown}></i>
+      );
+    }
+
     return (
-     <div id='user-control'>
-       <i
-         className="fa fa-user-circle"
-         aria-hidden="true"
-         onClick={this.toggleDropdown}></i>
+     <div id='user-control' tabIndex={0} onBlur={this.toggleDropdown}>
+       {icon}
        <UserDropdownContainer hidden={this.state.hidden} />
      </div>
    );
