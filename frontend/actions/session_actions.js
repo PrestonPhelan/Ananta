@@ -17,7 +17,7 @@ export const receiveErrors = errors => ({
 export const demoLogin = () => dispatch => dispatch(login({
         username: "Guest",
         password: "password"
-    })).then(() => hashHistory.push('/test'));
+    })).then(() => hashHistory.push('/app '));
 
 export const login = user => dispatch => (
   SessionApiUtil.login(user)

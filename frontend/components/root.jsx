@@ -4,10 +4,8 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import AppContainer from './app_container';
 import Splash from './splash/splash';
-import Header from './header/header';
-
-//TODO Remove test route
-
+import Layout from './layout/layout';
+import TeamSelect from './team_select/team_select';
 
 const Root = ({ store }) => {
 
@@ -22,7 +20,7 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser.username !== "") {
-      replace('/test');
+      replace('/app');
     }
   };
 
@@ -30,8 +28,11 @@ const Root = ({ store }) => {
    <Provider store={ store }>
       <Router history={ hashHistory }>
         <Route path="/" component={ AppContainer }>
-          <IndexRoute component={ Splash } onEnter={_redirectIfLoggedIn}/>
-          <Route path="/test" component={ Header } onEnter={_ensureLoggedIn} />
+          <IndexRoute component={ Splash } onEnter={_redirectIfLoggedIn} />
+          <Route path="/app" component={ Layout } onEnter={_ensureLoggedIn}>
+            <Route path="/teams" component={ TeamSelect } />
+          </Route>
+
         </Route>
 
       </Router>

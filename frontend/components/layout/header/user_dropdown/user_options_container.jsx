@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import UserOptions from './user_options';
-import { logout } from '../../../actions/session_actions';
+import { logout } from '../../../../actions/session_actions';
 
 
 
