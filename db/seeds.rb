@@ -20,8 +20,8 @@ organizations = Organization.create([
   ])
 
 teams = Team.create([
-  {name: 'Crew To Monkey Island', owner_id: 1},
-  {name: 'Team Awesome', owner_id: 2}
+  {name: 'Crew To Monkey Island', owner_id: 1, organization_id: 1},
+  {name: 'Team Awesome', owner_id: 2, organization_id: 1}
   ])
 
 memberships = Membership.create([
