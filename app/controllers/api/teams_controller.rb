@@ -7,7 +7,7 @@ class Api::TeamsController < ApplicationController
   def create
     @team = Team.new(team_params)
     if @team.save
-      render json: @team
+      render :show
     else
       render json: @team.errors.full_messages, status: 422
     end

@@ -4,13 +4,9 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import { logout } from './util/session_api_util';
-
-//TODO Keep while working on splash page, delete after
-window.logout = logout;
+//TODO Remove after testing
+import { fetchTeams } from './actions/team_actions';
 //END
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -20,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
+  window.store = store;
+  window.fetchTeams = fetchTeams;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
 });
