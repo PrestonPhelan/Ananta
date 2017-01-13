@@ -1,5 +1,11 @@
 import React from 'react';
 
+import OrganizationTitleContainer from './organization_title_container';
+import TeamIndexContainer from './team_index_container';
+
 export default () => (
-  <div></div>
+  <div>
+    <OrganizationTitleContainer />
+    <TeamIndexContainer />
+  </div>
 );

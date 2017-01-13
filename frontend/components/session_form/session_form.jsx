@@ -47,8 +47,7 @@ class SessionForm extends React.Component {
       }
 
       //TODO Give this a proper callback
-      this.props.action(user)
-        .then(() => hashHistory.push('/app'));
+      this.props.action(user);
     };
   }
 

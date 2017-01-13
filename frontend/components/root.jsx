@@ -30,7 +30,7 @@ const Root = ({ store }) => {
         <Route path="/" component={ AppContainer }>
           <IndexRoute component={ Splash } onEnter={_redirectIfLoggedIn} />
           <Route path="/app" component={ Layout } onEnter={_ensureLoggedIn}>
-            <Route path="/teams" component={ TeamSelect } />
+            <Route path="teams" component={ TeamSelect } />
           </Route>
 
         </Route>
