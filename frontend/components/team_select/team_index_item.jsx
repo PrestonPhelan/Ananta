@@ -1,5 +1,10 @@
 import React from 'react';
 
-export default () => (
-  <div>{"I'm a team!"}</div>
+import MemberListContainer from './member_list_container';
+
+export default props => (
+  <div>
+    {props.team.name}
+    <MemberListContainer />
+  </div>
 );
