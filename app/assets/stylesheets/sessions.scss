@@ -32,7 +32,7 @@
    margin: 10px;
  }
 
- button, .session-button {
+ button, .session-button, .submit-button {
    font-size: 13px;
    font-weight: 500;
    width: 100px;
@@ -44,13 +44,13 @@
    border: 1px solid $medshade;
  }
 
- button:hover, .session-button:hover {
+ button:hover, .session-button:hover, .submit-button:hover {
    background: $darkshade;
    color: white;
    border-color: white;
  }
 
- button:active, .session-button:active {
+ button:active, .session-button:active, .submit-button:hover {
    background: $lightshade;
  }
 
@@ -96,7 +96,7 @@
    text-align: left;
  }
 
- .session-input {
+ .form-input {
    border: 1px solid $lightshade;
    height: 30px;
    font-size: 20px;

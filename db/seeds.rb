@@ -12,20 +12,20 @@ Membership.delete_all
 Organization.delete_all
 
 users = User.create([
-  {username: 'GuybrushThreepwood', email: 'guybrush@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200'},
-  {username: 'Guest', email: 'guest@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200'}])
+  { username: 'GuybrushThreepwood', email: 'guybrush@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200' },
+  { username: 'Guest', email: 'guest@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200' }])
 
 organizations = Organization.create([
-  {name: 'Monkey Island', owner_id: 1}
+  { name: 'Monkey Island', owner_id: 1 }
   ])
 
 teams = Team.create([
-  {name: 'Crew To Monkey Island', owner_id: 1, organization_id: 1},
-  {name: 'Team Awesome', owner_id: 2, organization_id: 1}
+  { name: 'Crew To Monkey Island', owner_id: 1, organization_id: 1 },
+  { name: 'Team Awesome', owner_id: 2, organization_id: 1 }
   ])
 
 memberships = Membership.create([
-  {team_id: 1, user_id: 1},
-  {team_id: 1, user_id: 2},
-  {team_id: 2, user_id: 2}
+  { team_id: 1, user_id: 1 },
+  { team_id: 1, user_id: 2 },
+  { team_id: 2, user_id: 2 }
   ])

@@ -40,4 +40,5 @@ export const signup = user => dispatch => (
     .then(
       res => dispatch(receiveCurrentUser(res)),
       err => dispatch(receiveErrors(err.responseJSON)))
+    .then(() => hashHistory.push('/app/teams'))
 );

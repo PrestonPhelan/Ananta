@@ -46,7 +46,6 @@ class SessionForm extends React.Component {
         delete user.confirm_password;
       }
 
-      //TODO Give this a proper callback
       this.props.action(user);
     };
   }
@@ -57,7 +56,7 @@ class SessionForm extends React.Component {
       <div>
       <label>Email
         <input
-          className='session-input'
+          className='form-input'
           type="text"
           value={this.state.email}
           onChange={this.update('email')} />
@@ -68,7 +67,7 @@ class SessionForm extends React.Component {
       <div>
       <label>Confirm Password
         <input
-          className='session-input'
+          className='form-input'
           type="password"
           value={this.state.confirm_password}
           onChange={this.update('confirm_password')}
@@ -87,7 +86,7 @@ class SessionForm extends React.Component {
           <div className="session-form">
             <label>{usernameLabel}
               <input
-                className='session-input'
+                className='form-input'
                 type="text"
                 value={this.state.username}
                 onChange={this.update('username')} />
@@ -95,7 +94,7 @@ class SessionForm extends React.Component {
             {emailInput}
             <label>Password
               <input
-                className='session-input'
+                className='form-input'
                 type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
@@ -104,7 +103,7 @@ class SessionForm extends React.Component {
             {passwordConfirm}
           </div>
 
-          <input className='session-button' type="submit" value={text} />
+          <input className='submit-button' type="submit" value={text} />
         </form>
       </div>
     );
