@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resources :organizations, only: [:create]
     resources :employees, only: [:create]
-    resources :teams, only: [:create]
+    resources :teams, only: [:index, :create]
     resources :memberships, only: [:create]
   end
 

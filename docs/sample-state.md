@@ -14,6 +14,10 @@
     1: {
       id: 34,
       name: "Team Awesome"
+      owner: {
+        id: 33
+        image_url: "img.png"
+      }
       members: {
         267: {
           id: 267,
