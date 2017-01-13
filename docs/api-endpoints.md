@@ -42,3 +42,6 @@
 
 ### Memberships
 - `POST /api/memberships`
+
+### Employees
+- `POST /api/employees`

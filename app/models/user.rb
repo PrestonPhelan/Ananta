@@ -8,6 +8,25 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :organizations_owned,
+    foreign_key: :owner_id,
+    class_name: :Organization
+
+  has_many :organization_memberships,
+    class_name: :Employee
+
+  has_many :organizations,
+    through: :organization_memberships,
+    source: :organization
+
+  has_many :teams_owned,
+    foreign_key: :owner_id,
+    class_name: :Team
+
+  has_many :memberships
+
+  has_many :teams, through: :memberships
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     if !user

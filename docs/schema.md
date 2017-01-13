@@ -37,7 +37,7 @@ column name     | data type | details
 id              | integer   | not null, primary key
 name            | string    | not null
 owner_id        | integer   | not null, foreign key (references users), indexed
-organization_id | integer   | not null, foreign key (references organizations), indexed
+organization_id | integer   | foreign key (references organizations), indexed
 
 
 ## memberships

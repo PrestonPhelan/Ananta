@@ -10,8 +10,26 @@
     errors: ["Invalid credentials"]
   },
 
+  teams: {
+    1: {
+      id: 34,
+      name: "Team Awesome"
+      members: {
+        267: {
+          id: 267,
+          image_url: "img.png"
+        }
+
+        23: {
+          id: 23,
+          image_url: "img.png"
+        }
+      }
+    }
+  }
+
   team: {
-    name: "Team Awesome"
+    name: "Team Awesome",
     owner: {
       id: 1,
       image_url: "img.png"
