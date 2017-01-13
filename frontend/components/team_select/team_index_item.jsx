@@ -5,6 +5,6 @@ import MemberListContainer from './member_list_container';
 export default props => (
   <div>
     {props.team.name}
-    <MemberListContainer />
+    <MemberListContainer members={props.team.members} />
   </div>
 );

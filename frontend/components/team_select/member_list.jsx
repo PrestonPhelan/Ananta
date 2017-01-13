@@ -8,10 +8,19 @@ class MemberList extends Component {
   }
 
   render() {
+    const memberListItems =
+      (this.props.members).map(
+        member => (
+          <div>{member.id}
+          <MemberListItem memberImage={member.image_url} />
+          </div>
+        )
+      );
+
     return (
       <div>
         {"Members go here!"}
-        <MemberListItem />
+        {memberListItems}
       </div>
     );
   }

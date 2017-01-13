@@ -13,7 +13,6 @@ class TeamIndex extends Component {
   }
 
   render() {
-    console.log(this.props.teams);
     const mappedTeams = Object.values(this.props.teams).map(team => (
       <TeamIndexItem key={team.id} team={team} />
     ));
