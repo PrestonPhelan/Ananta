@@ -4,7 +4,7 @@
 
 @import "constants";
 
-$indexItemHeight: 60px;
+$indexItemHeight: 125px;
 $indexItemWidth: 200px;
 
 .large-container {
@@ -27,6 +27,8 @@ $indexItemWidth: 200px;
 
 .team-index {
   margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .team-index-item {
@@ -35,28 +37,48 @@ $indexItemWidth: 200px;
   background-color: $medshade;
   border: 1px solid $lightshade;
   border-radius: 4px;
+  margin: 20px;
+  padding: 10px;
+  color: $negative;
 }
 
-.new-team-item {
-  height: $indexItemHeight;
-  width: $indexItemWidth;
+#new-team-item {
   background-color: transparent;
   border: 5px dashed $medshade;
-  border-radius: 4px;
+  color: $medshade;
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px 15px 10px;
 }
 
 .team-index-item:hover {
   background-color: $darkshade;
+  cursor: pointer;
 }
 
 .team-index-item:active {
   background-color: $lightshade;
 }
 
-.new-team-item:hover {
+#new-team-item:hover {
   border-color: $darkshade;
+  background-color: $negative;
 }
 
-.new-team-item:active {
+#new-team-item:active {
   border-color: $lightshade;
+  background-color: $lightshade;
+}
+
+#create-team-plus {
+  font-size: 40px;
+  height: 40px;
+}
+
+#create-team-text {
+  margin-bottom: 10px;
 }

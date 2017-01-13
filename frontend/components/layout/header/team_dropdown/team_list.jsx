@@ -27,7 +27,7 @@ class TeamList extends Component {
     return (
       <div>
         <ul className='dropdown-list'>
-          <li>SELECT TEAM</li>
+          <li className='list-label'>SELECT TEAM</li>
           {teams}
           <li className='option'>Create New Team</li>
         </ul>

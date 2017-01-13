@@ -9,7 +9,7 @@ class UserOptions extends Component {
     return (
       <div>
         <ul className='user-options'>
-          <li>{this.props.user.toUpperCase()}</li>
+          <li className='list-label'>{this.props.user.toUpperCase()}</li>
           <li className='option'>Task Summary</li>
           <li className='option'>Edit Profile</li>
           <li
