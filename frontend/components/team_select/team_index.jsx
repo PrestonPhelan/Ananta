@@ -7,6 +7,10 @@ class TeamIndex extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchTeams();
+  }
+
   render() {
     console.log(this.props.teams);
     const mappedTeams = Object.values(this.props.teams).map(team => (
