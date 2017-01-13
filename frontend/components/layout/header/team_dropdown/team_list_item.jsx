@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
 
-export default () => (
-  <div></div>
+export default props => (
+  <li className='option'>{props.team.name}</li>
 );

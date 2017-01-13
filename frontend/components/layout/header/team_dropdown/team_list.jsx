@@ -11,7 +11,7 @@ class TeamList extends Component {
   render() {
     let teams;
     if (this.props.teams) {
-      teams = this.props.teams.map(team => (
+      teams = Object.values(this.props.teams).map(team => (
         <TeamListItem team={team} />
       ));
     } else {
