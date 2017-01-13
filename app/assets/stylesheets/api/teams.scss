@@ -1,3 +1,62 @@
 // Place all the styles related to the Api::Teams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "constants";
+
+$indexItemHeight: 60px;
+$indexItemWidth: 200px;
+
+.large-container {
+  width: 95%;
+  height: auto;
+  background-color: white;
+  border: 2px solid $medshade;
+  border-radius: 4px;
+  margin: 20px;
+}
+
+.team-select-org-header {
+  padding: 20px;
+  margin-left: 10px;
+  width: 95%;
+  font-size: 30px;
+  color: $medshade;
+  border-bottom: 1px solid $lightshade
+}
+
+.team-index {
+  margin: 20px;
+}
+
+.team-index-item {
+  height: $indexItemHeight;
+  width: $indexItemWidth;
+  background-color: $medshade;
+  border: 1px solid $lightshade;
+  border-radius: 4px;
+}
+
+.new-team-item {
+  height: $indexItemHeight;
+  width: $indexItemWidth;
+  background-color: transparent;
+  border: 5px dashed $medshade;
+  border-radius: 4px;
+}
+
+.team-index-item:hover {
+  background-color: $darkshade;
+}
+
+.team-index-item:active {
+  background-color: $lightshade;
+}
+
+.new-team-item:hover {
+  border-color: $darkshade;
+}
+
+.new-team-item:active {
+  border-color: $lightshade;
+}

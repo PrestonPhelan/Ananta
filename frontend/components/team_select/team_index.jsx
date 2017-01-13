@@ -18,8 +18,7 @@ class TeamIndex extends Component {
     ));
 
     return (
-      <ul>
-        <h3>{"This is the Team Index"}</h3>
+      <ul className='team-index'>
         {mappedTeams}
         <NewTeam />
       </ul>
