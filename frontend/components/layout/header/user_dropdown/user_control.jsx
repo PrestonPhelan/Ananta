@@ -23,8 +23,11 @@ class UserControl extends Component {
   render() {
     let icon;
 
-    if (window.currentUser && window.currentUser.image_url) {
-      icon = (<div>Image Available</div>);
+    if (this.props.currentUser.image_url) {
+      icon = (
+        <div className="custom-image">
+          <img className='user-image' src={this.props.currentUser.image_url} onClick={this.toggleDropdown}/>
+        </div>);
     } else {
       icon = (
         <i

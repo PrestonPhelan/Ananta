@@ -20,7 +20,7 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser.username !== "") {
-      replace('/app');
+      replace('/app/teams');
     }
   };
 

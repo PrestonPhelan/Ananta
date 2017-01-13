@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 users = User.create([
-  {username: 'KingPreston', email: 'preston@ananta.com', password: 'password'},
-  {username: 'Guest', email: 'guest@ananta.com', password: 'password'}])
+  {username: 'KingPreston', email: 'preston@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200'},
+  {username: 'Guest', email: 'guest@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200'}])

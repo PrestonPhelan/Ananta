@@ -17,6 +17,6 @@ class Api::UsersController < ApplicationController
 
   def sign_up_params
     params.require(:user)
-      .permit(:username, :email, :password)
+      .permit(:username, :email, :password, :image_url)
   end
 end
