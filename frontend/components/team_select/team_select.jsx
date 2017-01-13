@@ -8,6 +8,5 @@ export default () => (
   <div>
     <OrganizationTitleContainer />
     <TeamIndexContainer />
-    <NewTeam />
   </div>
 );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import TeamIndexItem from './team_index_item';
+import NewTeam from './new_team';
 
 class TeamIndex extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class TeamIndex extends Component {
       <ul>
         <h3>{"This is the Team Index"}</h3>
         {mappedTeams}
+        <NewTeam />
       </ul>
     );
   }
