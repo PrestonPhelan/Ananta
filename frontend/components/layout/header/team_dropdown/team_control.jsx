@@ -8,6 +8,11 @@ class TeamControl extends Component {
     this.state = { hidden: true };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.clearDropdown = this.clearDropdown.bind(this);
+  }
+
+  clearDropdown() {
+    this.setState( { hidden: true } );
   }
 
   toggleDropdown() {
@@ -30,7 +35,7 @@ class TeamControl extends Component {
     }
 
     return (
-    <div id='team-control' tabIndex={0} onBlur={this.toggleDropdown}>
+    <div id='team-control' tabIndex={0} onBlur={this.clearDropdown}>
       {icon}
       <TeamDropdownContainer hidden={this.state.hidden} />
     </div>

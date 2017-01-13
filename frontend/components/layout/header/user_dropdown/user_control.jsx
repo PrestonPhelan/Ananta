@@ -8,11 +8,16 @@ class UserControl extends Component {
     this.state = { hidden: true };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.clearDropdown = this.clearDropdown.bind(this);
   }
 
   toggleDropdown() {
     const currentValue = this.state.hidden;
     this.setState( { hidden: !currentValue } );
+  }
+
+  clearDropdown() {
+    this.setState( { hidden: true } );
   }
 
   render() {
@@ -30,7 +35,7 @@ class UserControl extends Component {
     }
 
     return (
-     <div id='user-control' tabIndex={0} onBlur={this.toggleDropdown}>
+     <div id='user-control' tabIndex={0} onBlur={this.clearDropdown}>
        {icon}
        <UserDropdownContainer hidden={this.state.hidden} />
      </div>
