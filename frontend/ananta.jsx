@@ -5,7 +5,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 //TODO Remove after testing
-import { fetchTeams } from './actions/team_actions';
+// import { fetchUsers } from './actions/user_actions';
+import { fetchUsers } from './util/user_api_util';
 //END
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.store = store;
-  window.fetchTeams = fetchTeams;
+  window.fetchUsers = fetchUsers;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
 });
