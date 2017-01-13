@@ -33,6 +33,11 @@ $headerPadding: 25px;
 
 #team-control, #user-control {
   position: static;
+
+}
+
+#team-control:focus, #user-control:focus {
+  outline: 0
 }
 
 .dropdown {

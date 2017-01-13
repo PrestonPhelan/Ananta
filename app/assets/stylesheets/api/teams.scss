@@ -16,13 +16,18 @@ $indexItemWidth: 200px;
   margin: 20px;
 }
 
-.team-select-org-header {
+.team-select-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $lightshade;
   padding: 20px;
-  margin-left: 10px;
-  width: 95%;
+  margin: 10px;
+}
+
+.team-select-org-header {
+
   font-size: 30px;
   color: $medshade;
-  border-bottom: 1px solid $lightshade
 }
 
 .team-index {
@@ -81,4 +86,16 @@ $indexItemWidth: 200px;
 
 #create-team-text {
   margin-bottom: 10px;
+}
+
+.small-user-img {
+  height: 40px;
+  width: 40px;
+  border: 1px solid $medshade;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.member-list {
+  display: flex;
 }

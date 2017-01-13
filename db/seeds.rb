@@ -6,6 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.delete_all
+Team.delete_all
+Membership.delete_all
+
 users = User.create([
-  {username: 'KingPreston', email: 'preston@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200'},
+  {username: 'GuybrushThreepwood', email: 'guybrush@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200'},
   {username: 'Guest', email: 'guest@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200'}])
+
+teams = Team.create([
+  {name: 'Crew To Monkey Island', owner_id: 1},
+  {name: 'Team Awesome', owner_id: 2}
+  ])
+
+memberships = Membership.create([
+  {team_id: 1, user_id: 1},
+  {team_id: 1, user_id: 2},
+  {team_id: 2, user_id: 2}
+  ])

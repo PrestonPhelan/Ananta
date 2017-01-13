@@ -11,15 +11,12 @@ class MemberList extends Component {
     const memberListItems =
       (this.props.members).map(
         member => (
-          <div>{member.id}
           <MemberListItem memberImage={member.image_url} />
-          </div>
         )
       );
 
     return (
-      <div>
-        {"Members go here!"}
+      <div className='member-list'>
         {memberListItems}
       </div>
     );

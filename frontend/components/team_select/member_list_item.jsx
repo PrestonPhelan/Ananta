@@ -2,15 +2,14 @@ import React from 'react';
 
 export default props => {
   let image;
-  if (props.image_url) {
-    image = props.image_url;
+  if (props.memberImage) {
+    image = <img className='small-user-img' src={props.memberImage} />;
   } else {
     image = "Default image";
   }
 
   return (
     <div>
-      {"I'm a member list item!"}
       {image}
     </div>
   );
