@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default props => {
+export default ({ member }) => {
   let image;
-  if (props.memberImage) {
-    image = <img className='small-user-img' src={props.memberImage} />;
+  if (member.image_url) {
+    image = <img className='small-user-img' src={member.image_url} />;
   } else {
     image = <i className={`fa fa-user-circle`} aria-hidden="true" />;
   }

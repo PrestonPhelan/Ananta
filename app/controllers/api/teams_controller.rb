@@ -6,7 +6,7 @@ class Api::TeamsController < ApplicationController
 
   def show
     @team = Team.includes(:members, :projects).find_by_id(params[:id])
-    render :detail
+    render :show
   end
 
   def create

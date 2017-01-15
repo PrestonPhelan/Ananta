@@ -9,3 +9,5 @@ const TeamDetailReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export default TeamDetailReducer;
