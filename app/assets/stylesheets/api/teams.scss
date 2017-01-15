@@ -117,15 +117,11 @@ $indexItemWidth: 200px;
   border: 1px solid $lightshade
 }
 
-.team-select-user-image:hover {
-  border: 2px solid $medshade
+.team-select-icon:active {
+  color: $darkshade;
 }
 
-.team-select-icon:hover {
-  color: $medshade;
-}
-
-.team-select-default-image {
+.member-select-item {
   font-size: 50px;
 }
 

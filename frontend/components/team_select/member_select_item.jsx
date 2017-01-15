@@ -21,7 +21,6 @@ class MemberSelectItem extends Component {
 
     if (this.props.user.image_url) {
       icon = (
-        <div className="team-select-custom-image">
           <img
             className={`
               team-select-icon
@@ -32,25 +31,36 @@ class MemberSelectItem extends Component {
             `}
             src={this.props.user.image_url}
             key={this.props.user.id}/>
-        </div>);
+        );
     } else {
       icon = (
-        <div className="team-select-default-image">
-          <i
-            className={`fa fa-user-circle team-select-icon
-              ${this.state.selected ? 'default-image-selected': ''}`}
-            key={this.props.user.id}
-            aria-hidden="true"
-          />
-        </div>
+          <div className='member-select-item'>
+            <i
+              className={`fa fa-user-circle team-select-icon
+                ${this.state.selected ? 'default-image-selected': ''}`}
+              key={this.props.user.id}
+              aria-hidden="true"
+            />
+          </div>
       );
+    }
+
+    let displayName;
+    let reg = /^.[a-z]*/;
+    if (this.props.user.username.length > 10) {
+      displayName = this.props.user.username.match(reg);
+      if (displayName.length > 10) {
+        displayName = displayName.slice(0, 7) + "...";
+      }
+    } else {
+      displayName = this.props.user.username;
     }
 
     return (
       <div onClick={this.toggleSelect(this.props.user.id)}>
-        {icon} <br />
+        <span className='member-select-icon'>{icon}</span>
         <span className='member-select-username'>
-          {this.props.user.username}
+          {displayName}
         </span>
       </div>
     );

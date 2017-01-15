@@ -75,6 +75,7 @@ class NewTeamForm extends Component {
             className='form-input'
             value={this.state.name}
             onChange={this.update} />
+          <div> {"Add Members"}</div>
           <span className='member-select-grid'>
             {userIcons}
           </span>
