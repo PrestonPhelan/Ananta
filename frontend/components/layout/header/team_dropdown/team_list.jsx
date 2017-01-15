@@ -12,7 +12,7 @@ class TeamList extends Component {
     let teams;
     if (this.props.teams) {
       teams = Object.values(this.props.teams).map(team => (
-        <TeamListItem team={team} />
+        <TeamListItem team={team} key={team.id} />
       ));
     } else {
       teams = (

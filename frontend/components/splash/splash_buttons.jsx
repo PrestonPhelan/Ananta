@@ -30,7 +30,7 @@ class SplashButtons extends React.Component {
 
   hideLogIn() {
     this.refs.logInModal.hide();
-    this.pprops.resetErrors();
+    this.props.resetErrors();
   }
 
   switchModals(type) {
@@ -69,7 +69,10 @@ class SplashButtons extends React.Component {
           LOG IN
         </button>
 
-        <Modal className='session-modal-box' ref="signUpModal">
+        <Modal
+          className='session-modal-box'
+          ref="signUpModal"
+          onHide={this.props.resetErrors}>
           <SessionModal
             className='session-modal'
             formType="signup"
@@ -78,7 +81,10 @@ class SplashButtons extends React.Component {
             />
         </Modal>
 
-        <Modal className='session-modal-box' ref="logInModal">
+        <Modal
+          className='session-modal-box'
+          ref="logInModal"
+          onHide={this.props.resetErrors}>
           <SessionModal
             className='session-modal'
             formType="login"
