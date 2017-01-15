@@ -3,6 +3,7 @@ class Api::UsersController < ApplicationController
     @users = User.all
     render :index
   end
+  
   def create
     if params[:user][:password] == params[:user][:confirm_password]
       @user = User.new(sign_up_params)

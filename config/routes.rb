@@ -4,8 +4,11 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create]
     resources :organizations, only: [:create]
     resources :employees, only: [:create]
-    resources :teams, only: [:index, :create]
+    resources :teams, only: [:index, :create] do
+      resources :projects, only: [:index]
+    end
     resources :memberships, only: [:create]
+    resources :projects, only: [:create]
   end
 
   root to: "static_pages#root"
