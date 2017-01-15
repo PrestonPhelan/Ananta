@@ -15,17 +15,25 @@ users = User.create([
   { username: 'GuybrushThreepwood', email: 'guybrush@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200' },
   { username: 'Guest', email: 'guest@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200' }])
 
+guybrush = User.find_by_username('GuybrushThreepwood')
+guest = User.find_by_username('Guest')
+
 organizations = Organization.create([
-  { name: 'Monkey Island', owner_id: 1 }
+  { name: 'Monkey Island', owner_id: guybrush.id }
   ])
+
+org = Organization.find_by_name('Monkey Island')
 
 teams = Team.create([
-  { name: 'Crew To Monkey Island', owner_id: 1, organization_id: 1 },
-  { name: 'Team Awesome', owner_id: 2, organization_id: 1 }
+  { name: 'Crew To Monkey Island', owner_id: guybrush.id, organization_id: org.id },
+  { name: 'Team Awesome', owner_id: guest.id, organization_id: org.id }
   ])
 
+crew = Team.find_by_name('Crew To Monkey Island')
+awesome = Team.find_by_name('Team Awesome')
+
 memberships = Membership.create([
-  { team_id: 1, user_id: 1 },
-  { team_id: 1, user_id: 2 },
-  { team_id: 2, user_id: 2 }
+  { team_id: crew.id, user_id: guybrush.id },
+  { team_id: crew.id, user_id: guest.id },
+  { team_id: awesome.id, user_id: guest.id }
   ])
