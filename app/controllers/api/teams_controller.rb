@@ -4,6 +4,11 @@ class Api::TeamsController < ApplicationController
     render :index
   end
 
+  def show
+    @team = Team.includes(:members, :projects).find_by_id(params[:id])
+    render :detail
+  end
+
   def create
     team = Team.new(team_params)
     # owner = current_user
@@ -13,7 +18,7 @@ class Api::TeamsController < ApplicationController
         Membership.create(user_id: member, team_id: team.id)
       end
       @team = Team.includes(:members, :owner).find_by_id(team.id)
-      render :show
+      render :create
     else
       render json: team.errors.full_messages, status: 422
     end

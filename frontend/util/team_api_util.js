@@ -5,6 +5,13 @@ export const fetchTeams = () => {
   });
 };
 
+export const fetchTeam = id => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/teams/${id}`
+  });
+};
+
 export const createTeam = team => {
   return $.ajax({
     method: 'POST',

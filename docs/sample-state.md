@@ -46,7 +46,7 @@
     }
   }
 
-  team: {
+  teamDetail: {
     name: "Team Awesome",
     owner: {
       id: 1,
@@ -63,12 +63,10 @@
       1: {
         id: 1,
         name: "First project",
-        color: RED
       },
       2: {
         id: 2,
         name: "Second project",
-        color: BLUE
       }
     }
   }

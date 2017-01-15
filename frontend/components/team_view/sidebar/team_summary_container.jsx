@@ -4,6 +4,7 @@ import TeamSummary from './team_summary';
 
 const mapStateToProps = state => ({
 
+
 });
 
 const mapDispatchToProps = dispatch => ({
