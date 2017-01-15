@@ -2,6 +2,10 @@
 
 $headerPadding: 25px;
 
+*:focus {
+  outline: 0;
+}
+
 .header {
   padding: 10px $headerPadding 10px $headerPadding;
   background-color: white;
@@ -23,7 +27,7 @@ $headerPadding: 25px;
   background-repeat: no-repeat;
 }
 
-.fa:hover {
+.header .fa:hover {
   color: $darkshade;
 }
 

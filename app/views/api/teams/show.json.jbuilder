@@ -1,10 +1,9 @@
-
 json.id @team.id
 json.name @team.name
 
-json.owner @team.owner do
-  json.id owner.id
-  json.image_url owner.image_url
+json.owner do
+  json.id @team.owner.id
+  json.image_url @team.owner.image_url
 end
 
 json.members @team.members do |member|

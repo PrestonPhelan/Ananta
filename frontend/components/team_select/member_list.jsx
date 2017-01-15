@@ -8,10 +8,11 @@ class MemberList extends Component {
   }
 
   render() {
+    console.log(this.props);
     const memberListItems =
       (this.props.members).map(
         member => (
-          <MemberListItem memberImage={member.image_url} />
+          <MemberListItem memberImage={member.image_url} key={member.id}/>
         )
       );
 

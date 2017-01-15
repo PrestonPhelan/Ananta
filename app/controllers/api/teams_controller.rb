@@ -5,8 +5,14 @@ class Api::TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.new(team_params)
-    if @team.save
+    team = Team.new(team_params)
+    @members = params[:team][:membersToAdd]
+    # owner = current_user
+    if team.save
+      @members.each do |member|
+        Membership.create(user_id: member, team_id: team.id)
+      end
+      @team = Team.includes(:members, :owner).find_by_id(team.id)
       render :show
     else
       render json: @team.errors.full_messages, status: 422

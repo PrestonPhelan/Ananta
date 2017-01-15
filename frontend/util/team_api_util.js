@@ -9,6 +9,14 @@ export const createTeam = team => {
   return $.ajax({
     method: 'POST',
     url: `api/teams`,
-    data: team
+    data: { team }
+  });
+};
+
+export const addMember = (member_id, team_id) => {
+  return $.ajax({
+    method: 'POST',
+    url: `api/memberships`,
+    data: { team_id: team_id, user_id: member_id }
   });
 };

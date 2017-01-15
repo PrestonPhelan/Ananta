@@ -99,3 +99,44 @@ $indexItemWidth: 200px;
 .member-list {
   display: flex;
 }
+
+.member-select-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.team-select-icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  color: $negative;
+}
+
+.team-select-user-image {
+  border: 1px solid $lightshade
+}
+
+.team-select-user-image:hover {
+  border: 2px solid $medshade
+}
+
+.team-select-icon:hover {
+  color: $medshade;
+}
+
+.team-select-default-image {
+  font-size: 50px;
+}
+
+.member-select-username {
+  font-size: 15px;
+}
+
+.default-image-selected {
+  color: $darkshade;
+}
+
+.user-image-selected {
+  border: 3px solid $darkshade;
+}

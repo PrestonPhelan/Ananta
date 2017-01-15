@@ -10,6 +10,20 @@
     errors: ["Invalid credentials"]
   },
 
+  users: {
+    2: {
+      id: 2,
+      username: "HowdyDewdy",
+      image_url: "img.png"
+    },
+
+    3: {
+      id: 3,
+      username: "CowboyCarl"
+      image_url: "img.png"
+    }
+  }
+
   teams: {
     1: {
       id: 34,

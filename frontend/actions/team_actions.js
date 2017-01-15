@@ -1,4 +1,5 @@
 import * as TeamApiUtil from '../util/team_api_util';
+import merge from 'lodash/merge';
 
 export const RECEIVE_TEAMS = 'RECEIVE_TEAMS';
 export const RECEIVE_TEAM = 'RECEIVE_TEAM';
@@ -16,4 +17,9 @@ export const receiveTeam = team => ({
 export const fetchTeams = () => dispatch => (
   TeamApiUtil.fetchTeams()
     .then( teams => dispatch(receiveTeams(teams)))
+);
+
+export const createTeam = team => dispatch => (
+  TeamApiUtil.createTeam(team)
+    .then( savedTeam => dispatch(receiveTeam(savedTeam)))
 );
