@@ -1,3 +1,45 @@
 // Place all the styles related to the Api::Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "constants";
+
+.team-view {
+  display: flex;
+}
+
+.col-4-5 {
+  width: 80%;
+
+}
+
+#empty-team-splash {
+  padding: 40px 40px 0 40px;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+};
+
+#empty-team-splash-header {
+  margin: 20px;
+}
+
+#empty-team-splash-button {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 15px 30px 15px 30px;
+  transition-duration: 0.5s;
+  margin: 0 0 40px 0;
+  width: auto;
+}
+
+#empty-team-splash-button:hover {
+  color: $medshade;
+  background: white;
+}
+
+#empty-team-splash-button:active {
+  background: $darkshade;
+}

@@ -16,12 +16,12 @@ class TeamView extends Component {
     let mainComponent;
     if (this.props.team.name) {
       if (Object.keys(this.props.team.projects).length > 0) {
-        mainComponent = <div>{"Task List Will Show Here"}</div>;
+        mainComponent = <div className='col-4-5'>{"Task List Will Show Here"}</div>;
         } else {
           mainComponent = <EmptyTeamSplash />;
         }
       return (
-        <div>
+        <div className='team-view'>
           <Sidebar />
           {mainComponent}
         </div>
