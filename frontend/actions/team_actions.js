@@ -1,6 +1,8 @@
 import * as TeamApiUtil from '../util/team_api_util';
 import merge from 'lodash/merge';
 
+import { receiveErrors } from './session_actions';
+
 export const RECEIVE_TEAMS = 'RECEIVE_TEAMS';
 export const RECEIVE_TEAM = 'RECEIVE_TEAM';
 
@@ -21,5 +23,11 @@ export const fetchTeams = () => dispatch => (
 
 export const createTeam = team => dispatch => (
   TeamApiUtil.createTeam(team)
-    .then( savedTeam => dispatch(receiveTeam(savedTeam)))
+    .then(
+      savedTeam => {
+        dispatch(receiveTeam(savedTeam));
+        dispatch(receiveErrors([]));
+      },
+      err => dispatch(receiveErrors(err.responseJSON))
+    )
 );

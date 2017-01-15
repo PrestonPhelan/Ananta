@@ -12,6 +12,7 @@ class NewTeamForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.toggleSelect = this.toggleSelect.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
@@ -45,12 +46,24 @@ class NewTeamForm extends Component {
       this.state.membersToAdd,
       { [this.props.currentUser.id]: this.props.currentUser});
     returnState.membersToAdd = returnMembers;
-    this.props.createTeam(returnState);
-    this.props.hideModal();
+    this.props.createTeam(returnState)
+      .then(() => this.props.hideModal());
   }
 
   update(e) {
     this.setState( { name: e.target.value } );
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, idx) => (
+          <li key={idx}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -68,8 +81,11 @@ class NewTeamForm extends Component {
 
     return (
       <div className='new-team-form-box'>
-        <div> {"Create Team"}</div>
+        <div id="create-team-header"> {"Create Team"}</div>
         <form onSubmit={this.handleSubmit}>
+          <div id="session-errors">
+            {this.renderErrors()}
+          </div>
           <input
             type="text"
             className='form-input'

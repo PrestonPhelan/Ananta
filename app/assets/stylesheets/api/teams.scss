@@ -121,8 +121,13 @@ $indexItemWidth: 200px;
   color: $darkshade;
 }
 
-.member-select-item {
+.default-select-item {
   font-size: 50px;
+  padding: 0 2.24px 0 2.24px;
+}
+
+.default-select-item, .custom-select-item {
+  margin: 0 10px 0 10px;
 }
 
 .member-select-username {
@@ -144,4 +149,17 @@ $indexItemWidth: 200px;
 
 .member-select-username {
   font-size: 10px;
+}
+
+.custom-select-item {
+  padding: 4.5px 0 4.5px 0;
+}
+
+.member-select-grid {
+  margin: 10px 0 20px 0;
+}
+
+#create-team-header {
+  font-size: 20px;
+  margin: 0 0 10px 0;
 }

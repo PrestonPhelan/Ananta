@@ -21,6 +21,7 @@ class MemberSelectItem extends Component {
 
     if (this.props.user.image_url) {
       icon = (
+        <div className='custom-select-item'>
           <img
             className={`
               team-select-icon
@@ -30,11 +31,12 @@ class MemberSelectItem extends Component {
               }
             `}
             src={this.props.user.image_url}
-            key={this.props.user.id}/>
+            key={this.props.user.id}/> <br/>
+        </div>
         );
     } else {
       icon = (
-          <div className='member-select-item'>
+          <div className='default-select-item'>
             <i
               className={`fa fa-user-circle team-select-icon
                 ${this.state.selected ? 'default-image-selected': ''}`}

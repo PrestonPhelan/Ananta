@@ -8,7 +8,6 @@ class MemberList extends Component {
   }
 
   render() {
-    console.log(this.props);
     const memberListItems =
       (this.props.members).map(
         member => (

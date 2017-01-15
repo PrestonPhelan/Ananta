@@ -25,23 +25,23 @@ class SplashButtons extends React.Component {
 
   hideSignUp() {
     this.refs.signUpModal.hide();
+    this.props.resetErrors();
   }
 
   hideLogIn() {
     this.refs.logInModal.hide();
+    this.pprops.resetErrors();
   }
 
   switchModals(type) {
     if (type === 'signup') {
       return () => {
         this.hideSignUp();
-        this.props.resetErrors();
         this.logInClick();
       };
     } else {
       return () => {
         this.hideLogIn();
-        this.props.resetErrors();
         this.signUpClick();
       };
     }

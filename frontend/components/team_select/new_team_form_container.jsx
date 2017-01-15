@@ -7,6 +7,7 @@ import { createTeam } from '../../actions/team_actions';
 const mapStateToProps = (state, ownProps) => ({
   users: state.users,
   currentUser: state.session.currentUser,
+  errors: state.session.errors,
   hideModal: ownProps.hideModal
 });
 

@@ -20,7 +20,7 @@ class TeamIndex extends Component {
     return (
       <ul className='team-index'>
         {mappedTeams}
-        <NewTeam />
+        <NewTeam resetErrors={this.props.resetErrors}/>
       </ul>
     );
   }

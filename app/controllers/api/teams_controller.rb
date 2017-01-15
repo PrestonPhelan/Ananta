@@ -6,16 +6,18 @@ class Api::TeamsController < ApplicationController
 
   def create
     team = Team.new(team_params)
-    @members = params[:team][:membersToAdd]
     # owner = current_user
     if team.save
+      puts "It thinks we saved!"
+      @members = params[:team][:membersToAdd]
       @members.each do |member|
         Membership.create(user_id: member, team_id: team.id)
       end
       @team = Team.includes(:members, :owner).find_by_id(team.id)
       render :show
     else
-      render json: @team.errors.full_messages, status: 422
+      puts "It knows we didn't save"
+      render json: team.errors.full_messages, status: 422
     end
   end
 

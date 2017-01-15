@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Modal from 'boron/ScaleModal';
 
 import NewTeamFormContainer from './new_team_form_container';
+import { receiveErrors } from '../../actions/session_actions';
 
 class NewTeam extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class NewTeam extends Component {
 
   hide() {
     this.refs.createTeamModal.hide();
+    this.props.resetErrors();
   }
 
   render() {
