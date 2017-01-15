@@ -30,7 +30,7 @@ class NewTeam extends Component {
 
         <Modal className='create-team-modal-box' ref="createTeamModal">
           <button className='close-modal' onClick={this.hide}>X</button>
-          <NewTeamFormContainer />
+          <NewTeamFormContainer className='create-team-modal' hideModal={this.hide}/>
         </Modal>
       </div>
 

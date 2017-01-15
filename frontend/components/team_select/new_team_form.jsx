@@ -46,6 +46,7 @@ class NewTeamForm extends Component {
       { [this.props.currentUser.id]: this.props.currentUser});
     returnState.membersToAdd = returnMembers;
     this.props.createTeam(returnState);
+    this.props.hideModal();
   }
 
   update(e) {
@@ -66,9 +67,8 @@ class NewTeamForm extends Component {
     );
 
     return (
-      <div>
+      <div className='new-team-form-box'>
         <div> {"Create Team"}</div>
-        <div> {"Selected"} {Object.keys(this.state.membersToAdd)}</div>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"

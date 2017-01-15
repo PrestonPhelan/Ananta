@@ -4,9 +4,10 @@ import NewTeamForm from './new_team_form';
 import { fetchUsers } from '../../actions/user_actions';
 import { createTeam } from '../../actions/team_actions';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
   users: state.users,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  hideModal: ownProps.hideModal
 });
 
 const mapDispatchToProps = dispatch => ({
