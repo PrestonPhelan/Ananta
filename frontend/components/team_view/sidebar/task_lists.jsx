@@ -2,6 +2,9 @@ import React from 'react';
 
 export default () => {
   return (
-    <div></div>
+    <ul>
+      <li>{"My Assigned Tasks"}</li>
+      <li>{"Unassigned Tasks"}</li>
+    </ul>
   );
 };
