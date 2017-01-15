@@ -6,6 +6,7 @@ import AppContainer from './app_container';
 import Splash from './splash/splash';
 import Layout from './layout/layout';
 import TeamSelect from './team_select/team_select';
+import TeamView from './team_view/team_view';
 
 const Root = ({ store }) => {
 
@@ -31,7 +32,11 @@ const Root = ({ store }) => {
           <IndexRoute component={ Splash } onEnter={_redirectIfLoggedIn} />
           <Route path="/app" component={ Layout } onEnter={_ensureLoggedIn}>
             <IndexRoute component={ TeamSelect } />
-            <Route path="teams" component={ TeamSelect } />
+            <Route path="teams" component={ TeamSelect }>
+              <Route
+                path=":teamId/projects"
+                component={ TeamView } />              
+            </Route>
           </Route>
 
         </Route>

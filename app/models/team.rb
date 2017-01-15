@@ -8,6 +8,7 @@ class Team < ApplicationRecord
   belongs_to :organization
 
   has_many :memberships
-
   has_many :members, through: :memberships, source: :user
+
+  has_many :projects
 end

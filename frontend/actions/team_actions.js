@@ -1,5 +1,4 @@
 import * as TeamApiUtil from '../util/team_api_util';
-import merge from 'lodash/merge';
 
 import { receiveErrors } from './session_actions';
 
