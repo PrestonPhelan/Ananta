@@ -6,7 +6,7 @@ import ProjectListContainer from './project_list_container';
 
 export default () => {
   return (
-    <div>
+    <div id='sidebar' className='col-1-5'>
       <TeamSummaryContainer />
       <TaskLists />
       <ProjectListContainer />

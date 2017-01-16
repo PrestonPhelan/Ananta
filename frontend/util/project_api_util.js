@@ -1,14 +1,14 @@
 export const fetchProjects = teamId => (
   $.ajax({
     method: 'GET',
-    path: `api/teams/${teamId}/projects`
+    url: `api/teams/${teamId}/projects`
   })
 );
 
-export const createProject = project => (
-  $.ajax({
+export const createProject = project => {
+  return $.ajax({
     method: 'POST',
-    path: 'api/projects',
-    data: project
-  })
-);
+    url: `api/projects`,
+    data: { project }
+  });
+};

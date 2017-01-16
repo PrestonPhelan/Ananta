@@ -7,9 +7,9 @@ export default ({ members }) => {
     member => <TeamSummaryMemberListItem member={member} key={member.id} />
   );
   return (
-    <span>
+    <span id='team-summary-members'>
       {memberListItems}
-      {"+"}
+      <i className="fa fa-user-plus" aria-hidden="true"></i>
     </span>
   );
 };

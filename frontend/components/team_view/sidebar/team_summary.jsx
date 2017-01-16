@@ -9,10 +9,10 @@ class TeamSummary extends Component {
 
   render() {
     return (
-      <span>
+      <div id='team-summary'>
         <h2>{this.props.name}</h2>
         <TeamSummaryMemberList members={this.props.members} />
-      </span>
+      </div>
     );
   }
 }

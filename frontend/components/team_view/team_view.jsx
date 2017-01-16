@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Sidebar from './sidebar/sidebar';
-import EmptyTeamSplash from './empty_team_splash';
+import EmptyTeamContainer from './empty_team_container';
 
 class TeamView extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class TeamView extends Component {
       if (Object.keys(this.props.team.projects).length > 0) {
         mainComponent = <div className='col-4-5'>{"Task List Will Show Here"}</div>;
         } else {
-          mainComponent = <EmptyTeamSplash />;
+          mainComponent = <div className='col-4-5'><EmptyTeamContainer /></div>;
         }
       return (
         <div className='team-view'>

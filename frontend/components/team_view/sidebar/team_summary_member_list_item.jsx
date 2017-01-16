@@ -9,7 +9,7 @@ export default ({ member }) => {
   }
 
   return (
-    <div>
+    <div className='ts-member-list-item'>
       {image}
     </div>
   );

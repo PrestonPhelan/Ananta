@@ -12,6 +12,17 @@
 
 }
 
+.col-1-5 {
+  width: 20%;
+}
+
+#sidebar {
+  background: $medshade;
+  color: white;
+  margin: 10px;
+  border-radius: 4px;
+}
+
 #empty-team-splash {
   padding: 40px 40px 0 40px;
   font-size: 30px;
@@ -42,4 +53,68 @@
 
 #empty-team-splash-button:active {
   background: $darkshade;
+}
+
+#team-summary {
+  width: 100%;
+  padding: 10px 20px 10px 20px;
+}
+
+#team-summary-members {
+  display: flex;
+  align-items: center;
+  font-size: 35px;
+}
+
+.sidebar-list {
+  text-align: center;
+  border-top: 2px solid white;
+}
+
+.ts-member-list-item {
+  margin-right: 10px;
+}
+
+.sidebar-list-item {
+  margin-bottom: 10px;
+}
+
+.sidebar-list-item:first-of-type {
+  margin-top: 10px;
+}
+
+.sidebar-list-item:hover {
+  background-color: $lightshade;
+  cursor: pointer;
+}
+
+.sidebar-sublist {
+  border-top: 1px solid white;
+}
+
+#sidebar-project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#sidebar-project-add:hover {
+  color: $lightshade;
+  cursor: pointer;
+}
+
+.new-project-form {
+  text-align: center;
+  color: $medshade;
+  padding: 20px;
+}
+
+.new-project-form * {
+  margin: 10px 0 10px 0;
+}
+
+.new-project-form h3 {
+  font-size: 20px;
 }
