@@ -5,6 +5,7 @@ import { receiveErrors } from './session_actions';
 export const RECEIVE_TEAMS = 'RECEIVE_TEAMS';
 export const RECEIVE_TEAM = 'RECEIVE_TEAM';
 export const ACTIVATE_TEAM = 'ACTIVATE_TEAM';
+export const RECEIVE_MEMBER = 'RECEIVE_MEMBER';
 
 export const receiveTeams = teams => ({
   type: RECEIVE_TEAMS,
@@ -19,6 +20,11 @@ export const receiveTeam = team => ({
 export const activateTeam = team => ({
   type: ACTIVATE_TEAM,
   team
+});
+
+export const receiveMember = member => ({
+  type: RECEIVE_MEMBER,
+  member
 });
 
 export const fetchTeams = () => dispatch => (
@@ -41,3 +47,10 @@ export const createTeam = team => dispatch => (
       err => dispatch(receiveErrors(err.responseJSON))
     )
 );
+
+export const addMembers = (members, teamId) => dispatch => {
+  Object.values(members).forEach( member => {
+    TeamApiUtil.addMember(member, member.id, teamId)
+      .then( newMember => dispatch(receiveMember(newMember)));
+  });
+};

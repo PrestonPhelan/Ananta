@@ -32,6 +32,8 @@ class AddMembersModal extends Component {
   handleSubmit(e) {
     e.preventDefault();
     Object.freeze(this.state);
+    this.props.addMembers(this.state.membersToAdd, this.props.team.id);
+    this.props.hideModal();
   }
 
   render () {

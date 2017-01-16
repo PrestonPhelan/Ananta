@@ -20,10 +20,10 @@ export const createTeam = team => {
   });
 };
 
-export const addMember = (member_id, team_id) => {
+export const addMember = (member, memberId, teamId) => {
   return $.ajax({
     method: 'POST',
     url: `api/memberships`,
-    data: { team_id: team_id, user_id: member_id }
+    data: { membership: { team_id: teamId, user_id: memberId, member }}
   });
 };

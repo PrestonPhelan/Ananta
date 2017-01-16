@@ -1,7 +1,7 @@
 import merge from 'lodash/merge';
 import union from 'lodash/merge';
 
-import { ACTIVATE_TEAM } from '../actions/team_actions';
+import { ACTIVATE_TEAM, RECEIVE_MEMBER } from '../actions/team_actions';
 import { RECEIVE_PROJECT } from '../actions/project_actions';
 
 const TeamDetailReducer = (state = {}, action) => {
@@ -13,6 +13,11 @@ const TeamDetailReducer = (state = {}, action) => {
       let currentProjects = state.projects;
       let newProjects = currentProjects.concat([action.project]);
       let newState = merge({}, state, { projects: newProjects });
+      return newState;
+    case RECEIVE_MEMBER:
+      let currentMembers = state.members;
+      let newMembers = currentMembers.concat([action.member]);
+      newState = merge({}, state, { members: newMembers });
       return newState;
     default:
       return state;

@@ -37,7 +37,7 @@ class TeamSummaryMemberList extends Component {
 
         <Modal ref="addMemberModal">
           <button className='close-modal' onClick={this.hide}>X</button>
-          <AddMembersModalContainer />
+          <AddMembersModalContainer hideModal={this.hide}/>
         </Modal>
       </div>
     );
