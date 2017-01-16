@@ -7,7 +7,10 @@ class TeamList extends Component {
     super(props);
   }
 
-  //TODO Remove test render Teams
+  componentDidMount() {
+    this.props.fetchTeams();
+  }
+
   render() {
     let teams;
     if (this.props.teams) {
@@ -17,9 +20,6 @@ class TeamList extends Component {
     } else {
       teams = (
       <div>
-        <li className='option'>Team 1</li>
-        <li className='option'>Team 2</li>
-        <li className='option'>Team 3</li>
       </div>
       );
     }

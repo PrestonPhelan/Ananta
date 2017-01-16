@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import TeamList from './team_list';
+import { fetchTeams } from '../../../../actions/team_actions';
 
 
 const mapStateToProps = state => ({
@@ -8,7 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  fetchTeams: () => dispatch(fetchTeams())
 });
 
 export default connect(
