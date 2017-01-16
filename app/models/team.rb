@@ -15,6 +15,6 @@ class Team < ApplicationRecord
   has_many :projects
 
   def ensure_organization
-    self.organization_id ||= 1
+    self.organization_id = Organization.first.id
   end
 end
