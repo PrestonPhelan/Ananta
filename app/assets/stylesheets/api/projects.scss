@@ -119,3 +119,12 @@
 .new-project-form h3 {
   font-size: 20px;
 }
+
+#ts-add-member:hover {
+  color: $lightshade;
+  cursor: pointer;
+}
+
+#ts-add-member:active {
+  color: $darkshade;
+}

@@ -9,7 +9,7 @@ export default ({ members }) => {
   return (
     <span id='team-summary-members'>
       {memberListItems}
-      <i className="fa fa-user-plus" aria-hidden="true"></i>
+      <i id='ts-add-member' className="fa fa-user-plus" aria-hidden="true"></i>
     </span>
   );
 };

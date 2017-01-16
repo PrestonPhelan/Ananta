@@ -6,10 +6,19 @@ import EmptyTeamContainer from './empty_team_container';
 class TeamView extends Component {
   constructor(props) {
     super(props);
+    this.state = { currentTeam: "" };
   }
 
   componentDidMount() {
-    this.props.fetchTeam();
+    this.props.fetchTeam(this.props.params.teamId);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(this.props.params.teamId);
+    console.log(nextProps.params.teamId);
+    if (this.props.params.teamId !== nextProps.params.teamId) {
+      this.props.fetchTeam(nextProps.params.teamId);
+    }
   }
 
   render() {
