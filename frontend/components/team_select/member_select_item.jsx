@@ -57,9 +57,9 @@ class MemberSelectItem extends Component {
     } else {
       displayName = this.props.user.username;
     }
-
+    
     return (
-      <div onClick={this.toggleSelect(this.props.user.id)}>
+      <div className='member-select-item' onClick={this.toggleSelect(this.props.user.id)}>
         <span className='member-select-icon'>{icon}</span>
         <span className='member-select-username'>
           {displayName}
