@@ -12,11 +12,11 @@ class TeamList extends Component {
   }
 
   createTeamClick() {
-    this.refs.createTeamModal.show();
+    this.props.modal.show();
   }
 
   hide() {
-    this.refs.createTeamModal.hide();
+    this.props.modal.hide();
     this.props.resetErrors();
   }
 
@@ -35,21 +35,14 @@ class TeamList extends Component {
     }
 
     return (
-      <div>
-        <ul className='dropdown-list'>
-          <li className='list-label'>SELECT TEAM</li>
-          {teams}
-          <li
-            id='team-dropdown-new-team'
-            className='option'
-            onClick={this.createTeamClick}>CREATE NEW TEAM</li>
-        </ul>
-
-        <Modal className='create-team-modal-box' ref="createTeamModal">
-          <button className='close-modal' onClick={this.hide}>X</button>
-          <NewTeamFormContainer className='create-team-modal' hideModal={this.hide}/>
-        </Modal>
-      </div>
+      <ul className='dropdown-list'>
+        <li className='list-label'>SELECT TEAM</li>
+        {teams}
+        <li
+          id='team-dropdown-new-team'
+          className='option'
+          onClick={this.createTeamClick}>CREATE NEW TEAM</li>
+      </ul>
     );
   }
 }

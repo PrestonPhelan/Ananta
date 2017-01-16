@@ -87,6 +87,7 @@ class NewTeamForm extends Component {
             {this.renderErrors()}
           </div>
           <input
+            autoFocus
             type="text"
             className='form-input'
             value={this.state.name}

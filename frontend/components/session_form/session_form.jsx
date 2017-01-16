@@ -86,6 +86,7 @@ class SessionForm extends React.Component {
           <div className="session-form">
             <label>{usernameLabel}
               <input
+                autoFocus
                 className='form-input'
                 type="text"
                 value={this.state.username}

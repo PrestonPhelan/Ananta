@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import Modal from 'boron/ScaleModal';
 
 import TeamDropdownContainer from './team_dropdown_container';
+import NewTeamFormContainer from '../../../team_select/new_team_form_container';
 
 class TeamControl extends Component {
   constructor(props) {
@@ -37,8 +39,13 @@ class TeamControl extends Component {
     return (
     <div id='team-control' tabIndex={0} onBlur={this.clearDropdown}>
       {icon}
-      <TeamDropdownContainer hidden={this.state.hidden} />
+      <TeamDropdownContainer hidden={this.state.hidden} modal={this.refs.createTeamModal} />
+      <Modal className='create-team-modal-box' ref="createTeamModal">
+        <button className='close-modal' onClick={this.hide}>X</button>
+        <NewTeamFormContainer className='create-team-modal' hideModal={this.hide}/>
+      </Modal>
     </div>
+
     );
   }
 }

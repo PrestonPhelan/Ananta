@@ -5,7 +5,7 @@ class CreateProjectModal extends Component {
   constructor(props) {
     super(props);
     this.state = { name: "" };
-    
+
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
@@ -40,6 +40,7 @@ class CreateProjectModal extends Component {
         <h3>{"CREATE PROJECT"}</h3>
         {this.renderErrors()}
         <input
+          autoFocus
           className='form-input'
           type="text"
           value={this.state.name}

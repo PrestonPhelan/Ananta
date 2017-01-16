@@ -5,8 +5,9 @@ import { fetchTeams } from '../../../../actions/team_actions';
 import { receiveErrors } from '../../../../actions/session_actions';
 
 
-const mapStateToProps = state => ({
-  teams: state.teams
+const mapStateToProps = (state, ownProps) => ({
+  teams: state.teams,
+  modal: ownProps.modal
 });
 
 const mapDispatchToProps = dispatch => ({
