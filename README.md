@@ -2,7 +2,7 @@
 
 ## Links
 
-[Heroku](ananta-app.herokuapp.com)
+[Heroku](http://ananta-app.herokuapp.com/)
 
 [Trello](https://trello.com/b/Jnbix7YB/full-stack)
 
