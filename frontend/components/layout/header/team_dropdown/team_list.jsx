@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Modal from 'boron/ScaleModal';
 
 import TeamListItem from './team_list_item';
-import NewTeamFormContainer from '../../../team_select/new_team_form_container';
+
 
 class TeamList extends Component {
   constructor(props) {

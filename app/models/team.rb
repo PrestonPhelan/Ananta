@@ -2,6 +2,8 @@ class Team < ApplicationRecord
   validates :name, :owner_id, presence: true
   validates :name, uniqueness: { scope: :organization_id }
 
+  before_validation :ensure_organization
+
   belongs_to :owner,
     class_name: :User
 
@@ -11,4 +13,8 @@ class Team < ApplicationRecord
   has_many :members, through: :memberships, source: :user
 
   has_many :projects
+
+  def ensure_organization
+    self.organization_id ||= 1
+  end
 end
