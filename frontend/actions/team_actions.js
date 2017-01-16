@@ -43,6 +43,7 @@ export const createTeam = team => dispatch => (
       savedTeam => {
         dispatch(receiveTeam(savedTeam));
         dispatch(receiveErrors([]));
+        return savedTeam.id;
       },
       err => dispatch(receiveErrors(err.responseJSON))
     )

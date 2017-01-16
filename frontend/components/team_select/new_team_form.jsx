@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import merge from 'lodash/merge';
+import { hashHistory } from 'react-router';
 
 import * as TeamApiUtil from '../../util/team_api_util';
 import MemberSelectItem from './member_select_item';
@@ -47,7 +48,7 @@ class NewTeamForm extends Component {
       { [this.props.currentUser.id]: this.props.currentUser});
     returnState.membersToAdd = returnMembers;
     this.props.createTeam(returnState)
-      .then(() => this.props.hideModal());
+      .then(id => hashHistory.push(`app/team/${id}`));
   }
 
   update(e) {
