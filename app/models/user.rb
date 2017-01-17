@@ -27,6 +27,14 @@ class User < ApplicationRecord
 
   has_many :teams, through: :memberships
 
+  has_many :created_tasks,
+    foreign_key: :creator_id,
+    class_name: :Task
+
+  has_many :assigned_tasks,
+    foreign_key: :asignee_id,
+    class_name: :Task
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     if !user

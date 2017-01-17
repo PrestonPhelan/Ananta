@@ -4,7 +4,7 @@ import { receiveErrors } from './session_actions';
 
 export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
-export const PROJECT_NAME = 'PROJECT_NAME';
+export const ACTIVATE_PROJECT = 'ACTIVATE_PROJECT';
 
 export const receiveProjects = projects => ({
   type: RECEIVE_PROJECTS,
@@ -16,14 +16,19 @@ export const receiveProject = project => ({
   project
 });
 
-export const activateProject = name => ({
-  type: PROJECT_NAME,
-  name
+export const activateProject = project => ({
+  type: ACTIVATE_PROJECT,
+  project
 });
 
 export const fetchProjects = teamId => dispatch => (
   ProjectApiUtil.fetchProjects(teamId)
     .then ( projects => dispatch(receiveProjects(projects)))
+);
+
+export const fetchProject = id => dispatch => (
+  ProjectApiUtil.fetchProject(id)
+    .then ( project => dispatch(activateProject(project)))
 );
 
 export const createProject = project => dispatch => (

@@ -8,7 +8,10 @@ Rails.application.routes.draw do
       resources :projects, only: [:index]
     end
     resources :memberships, only: [:create]
-    resources :projects, only: [:create]
+    resources :projects, only: [:show, :create] do
+      resources :tasks, only: [:index]
+    end
+    resources :tasks, only: [:create]
   end
 
   root to: "static_pages#root"

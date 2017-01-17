@@ -9,6 +9,7 @@ class ProjectList extends Component {
 
     this.createProjectClick = this.createProjectClick.bind(this);
     this.hide = this.hide.bind(this);
+    this.projectClick = this.projectClick.bind(this);
   }
 
   createProjectClick() {
@@ -20,11 +21,18 @@ class ProjectList extends Component {
     this.props.resetErrors();
   }
 
+  projectClick(id) {
+    return e => {
+      this.props.fetchProject(id);
+    };
+  }
+
   render() {
     const projectNames = Object.values(this.props.projects).map( project => (
       <li
         className='sidebar-list-item'
-        key={project.id}>
+        key={project.id}
+        onClick={this.projectClick(project.id)}>
         {project.name}
       </li>
     ));

@@ -4,6 +4,11 @@ class Api::ProjectsController < ApplicationController
     render :index
   end
 
+  def show
+    @project = Project.includes(:tasks).find_by_id(params[:id])
+    render :show
+  end
+
   def create
     @project = Project.new(project_params)
     if @project.save

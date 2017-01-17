@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117024116) do
+ActiveRecord::Schema.define(version: 20170117173452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170117024116) do
     t.integer  "parent_task_id"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.integer  "project_id"
     t.index ["assignee_id"], name: "index_tasks_on_assignee_id", using: :btree
     t.index ["completed_by_id"], name: "index_tasks_on_completed_by_id", using: :btree
     t.index ["creator_id"], name: "index_tasks_on_creator_id", using: :btree

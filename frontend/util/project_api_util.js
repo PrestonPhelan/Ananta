@@ -5,6 +5,13 @@ export const fetchProjects = teamId => (
   })
 );
 
+export const fetchProject = projectId => (
+  $.ajax({
+    method: 'GET',
+    url: `api/projects/${projectId}`
+  })
+);
+
 export const createProject = project => {
   return $.ajax({
     method: 'POST',

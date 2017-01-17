@@ -71,7 +71,7 @@
     }
   }
 
-  project: {
+  projectDetail: {
     id: 1,
     name: "First project",
     tasks: {
