@@ -7,7 +7,9 @@ class ProjectView extends Component {
 
   render() {
     return (
-      <div>{this.props.project.name}</div>
+      <div className='project-view'>
+        <h3>{this.props.project.name}</h3>
+      </div>
     );
   }
 }
