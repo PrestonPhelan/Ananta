@@ -10,6 +10,8 @@ User.delete_all
 Team.delete_all
 Membership.delete_all
 Organization.delete_all
+Project.delete_all
+Task.delete_all
 
 users = User.create([
   { username: 'GuybrushThreepwood', email: 'guybrush@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200' },
