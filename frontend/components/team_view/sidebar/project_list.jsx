@@ -30,7 +30,10 @@ class ProjectList extends Component {
   render() {
     const projectNames = Object.values(this.props.projects).map( project => (
       <li
-        className='sidebar-list-item'
+        className={
+          'sidebar-list-item ' +
+          (this.props.activeProject.id === project.id ? 'active' : '')
+        }
         key={project.id}
         onClick={this.projectClick(project.id)}>
         {project.name}

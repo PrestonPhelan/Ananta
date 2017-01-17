@@ -5,7 +5,8 @@ import { receiveErrors } from '../../../actions/session_actions';
 import { fetchProject } from '../../../actions/project_actions';
 
 const mapStateToProps = state  => ({
-  projects: state.teamDetail.projects
+  projects: state.teamDetail.projects,
+  activeProject: state.projectDetail
 });
 
 const mapDispatchToProps = dispatch => ({
