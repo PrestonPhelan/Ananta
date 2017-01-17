@@ -211,6 +211,7 @@
 
 #checkmark:hover {
   color: $lightshade;
+  cursor: pointer;
 }
 
 #task-name {
@@ -221,7 +222,7 @@
 }
 
 #due-date {
-  flex-basis: auto;
+
 }
 
 #completed-check {
