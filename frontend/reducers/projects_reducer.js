@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_PROJECTS, RECEIVE_PROJECT } from '../actions/project_actions';
+import { RECEIVE_PROJECTS, RECEIVE_PROJECT, PROJECT_NAME } from '../actions/project_actions';
 
 const ProjectsReducer = (state = {}, action) => {
   Object.freeze(state);

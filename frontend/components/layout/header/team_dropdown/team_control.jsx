@@ -11,10 +11,15 @@ class TeamControl extends Component {
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.clearDropdown = this.clearDropdown.bind(this);
+    this.hide = this.hide.bind(this);
   }
 
   clearDropdown() {
     this.setState( { hidden: true } );
+  }
+
+  hide() {
+    this.refs.createTeamModal.hide();
   }
 
   toggleDropdown() {

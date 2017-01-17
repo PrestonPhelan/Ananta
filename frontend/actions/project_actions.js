@@ -4,6 +4,7 @@ import { receiveErrors } from './session_actions';
 
 export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
+export const PROJECT_NAME = 'PROJECT_NAME';
 
 export const receiveProjects = projects => ({
   type: RECEIVE_PROJECTS,
@@ -13,6 +14,11 @@ export const receiveProjects = projects => ({
 export const receiveProject = project => ({
   type: RECEIVE_PROJECT,
   project
+});
+
+export const activateProject = name => ({
+  type: PROJECT_NAME,
+  name
 });
 
 export const fetchProjects = teamId => dispatch => (

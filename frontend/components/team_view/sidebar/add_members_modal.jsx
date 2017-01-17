@@ -50,12 +50,21 @@ class AddMembersModal extends Component {
           onClick={this.toggleSelect}/>);
     });
 
+    let gridSpace;
+
+    if (userIcons.length === 0) {
+      gridSpace = <div id='no-member-message'>No members to add</div>;
+    } else {
+      gridSpace = userIcons;
+    }
+
+
     return (
       <div>
         <form id='member-add-form' onSubmit={this.handleSubmit}>
           <div id='member-add-header'> {"Add Members"}</div>
           <span className='member-select-grid'>
-            {userIcons}
+            {gridSpace}
           </span>
           <input type="submit" className='submit-button' value={"Add"} />
         </form>
