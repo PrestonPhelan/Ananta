@@ -1,11 +1,11 @@
-json.id @team.id
-json.name @team.name
+json.id @project.id
+json.name @project.name
 
-json.tasks @team.tasks do |project|
-  json.id project.id
-  json.name project.name
-  json.due project.due
-  json.header project.header
-  json.completed project.completed
-  json.order project.order
+json.tasks @project.tasks do |task|
+  json.id task.id
+  json.name task.name
+  json.due task.due
+  json.header task.header
+  json.completed task.completed
+  json.order task.order
 end
