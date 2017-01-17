@@ -7,5 +7,4 @@ json.tasks @project.tasks do |task|
   json.due task.due
   json.header task.header
   json.completed task.completed
-  json.order task.order
 end
