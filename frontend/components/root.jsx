@@ -25,13 +25,6 @@ const Root = ({ store }) => {
     }
   };
 
-  const _ensureMember = (nextState, replace) => {
-    const userTeams = store.getState().teams;
-    if (!Object.keys(userTeams).includes(nextState.params.teamId)) {
-      replace('/app/teams');
-    }
-  };
-
   return (
    <Provider store={ store }>
       <Router history={ hashHistory }>
@@ -42,7 +35,7 @@ const Root = ({ store }) => {
             <Route path="teams" component={ TeamSelect } />
             <Route
               path="team/:teamId"
-              component={ TeamViewContainer } onEnter={_ensureMember}/>
+              component={ TeamViewContainer } />
           </Route>
 
         </Route>

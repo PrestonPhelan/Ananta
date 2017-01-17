@@ -34,7 +34,10 @@ export const fetchTeams = () => dispatch => (
 
 export const fetchTeam = id => dispatch => (
   TeamApiUtil.fetchTeam(id)
-    .then( team => dispatch(activateTeam(team)))
+    .then( team => {
+      dispatch(activateTeam(team));
+      return team;
+    })
 );
 
 export const createTeam = team => dispatch => (

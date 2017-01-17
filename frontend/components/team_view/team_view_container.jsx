@@ -4,7 +4,8 @@ import { fetchTeam } from '../../actions/team_actions';
 import TeamView from './team_view';
 
 export const mapStateToProps = state => ({
-  team: state.teamDetail
+  team: state.teamDetail,
+  currentUser: state.session.currentUser
 });
 
 export const mapDispatchToProps = (dispatch, ownProps) => ({

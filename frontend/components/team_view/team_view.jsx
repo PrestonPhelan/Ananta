@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { hashHistory } from 'react-router';
 
 import Sidebar from './sidebar/sidebar';
 import EmptyTeamContainer from './empty_team_container';
@@ -10,12 +11,17 @@ class TeamView extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchTeam();
+    this.props.fetchTeam()
+      .then( team => {
+        const memberIds = team.members.map( member => member.id );
+        if (!memberIds.includes(this.props.currentUser.id)) {
+          hashHistory.push('/app/teams');
+        }
+      });
+
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props.params.teamId);
-    console.log(nextProps.params.teamId);
     if (this.props.params.teamId !== nextProps.params.teamId) {
       nextProps.fetchTeam();
     }

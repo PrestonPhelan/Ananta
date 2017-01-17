@@ -5,11 +5,11 @@ export default props => {
   if (props.memberImage) {
     image = <img className='small-user-img' src={props.memberImage} />;
   } else {
-    image = <i className={`fa fa-user-circle`} aria-hidden="true" />;
+    image = <i className={`fa fa-user-circle small-default-img`} aria-hidden="true" />;
   }
 
   return (
-    <div>
+    <div className='member-list'>
       {image}
     </div>
   );
