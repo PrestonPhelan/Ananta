@@ -3,11 +3,11 @@ import { hashHistory } from 'react-router';
 
 import Sidebar from './sidebar/sidebar';
 import EmptyTeamContainer from './empty_team_container';
+import ProjectViewContainer from './project_view/project_view_container';
 
 class TeamView extends Component {
   constructor(props) {
     super(props);
-    this.state = { currentTeam: "" };
   }
 
   componentDidMount() {
@@ -31,7 +31,7 @@ class TeamView extends Component {
     let mainComponent;
     if (this.props.team.name) {
       if (Object.keys(this.props.team.projects).length > 0) {
-        mainComponent = <div className='col-4-5'>{"Task List Will Show Here"}</div>;
+        mainComponent = <div className='col-4-5'><ProjectViewContainer /></div>;
         } else {
           mainComponent = <div className='col-4-5'><EmptyTeamContainer /></div>;
         }
