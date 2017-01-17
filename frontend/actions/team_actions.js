@@ -1,6 +1,7 @@
 import * as TeamApiUtil from '../util/team_api_util';
 
 import { receiveErrors } from './session_actions';
+import { activateProject } from './project_actions';
 
 export const RECEIVE_TEAMS = 'RECEIVE_TEAMS';
 export const RECEIVE_TEAM = 'RECEIVE_TEAM';
@@ -36,6 +37,7 @@ export const fetchTeam = id => dispatch => (
   TeamApiUtil.fetchTeam(id)
     .then( team => {
       dispatch(activateTeam(team));
+      dispatch(activateProject({}));
       return team;
     })
 );

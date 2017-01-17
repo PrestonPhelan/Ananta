@@ -17,8 +17,10 @@ class TeamView extends Component {
         if (!memberIds.includes(this.props.currentUser.id)) {
           hashHistory.push('/app/teams');
         }
+        if (Object.values(team.projects).length > 0) {
+          this.props.fetchProject(Object.values(team.projects)[0].id);
+        }
       });
-
   }
 
   componentWillReceiveProps(nextProps) {
