@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170115085709) do
+ActiveRecord::Schema.define(version: 20170117024116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,29 @@ ActiveRecord::Schema.define(version: 20170115085709) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.index ["team_id"], name: "index_projects_on_team_id", using: :btree
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string   "name",                            null: false
+    t.boolean  "header",          default: false, null: false
+    t.integer  "header_id"
+    t.datetime "start"
+    t.datetime "due"
+    t.integer  "time"
+    t.boolean  "started",         default: true,  null: false
+    t.boolean  "completed",       default: false, null: false
+    t.datetime "completed_on"
+    t.integer  "creator_id",                      null: false
+    t.integer  "assignee_id"
+    t.integer  "completed_by_id"
+    t.integer  "parent_task_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.index ["assignee_id"], name: "index_tasks_on_assignee_id", using: :btree
+    t.index ["completed_by_id"], name: "index_tasks_on_completed_by_id", using: :btree
+    t.index ["creator_id"], name: "index_tasks_on_creator_id", using: :btree
+    t.index ["header_id"], name: "index_tasks_on_header_id", using: :btree
+    t.index ["parent_task_id"], name: "index_tasks_on_parent_task_id", using: :btree
   end
 
   create_table "teams", force: :cascade do |t|
