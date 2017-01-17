@@ -171,6 +171,11 @@
   padding: 10px;
 }
 
+#project-view-header {
+  font-size: 25px;
+  padding: 20px;
+}
+
 .list-item {
   display: flex;
   font-family: serif;
@@ -193,6 +198,10 @@
   font-size: 20px;
   flex-basis: auto;
   padding-right: 10px;
+}
+
+#grabber:hover {
+  cursor: move;
 }
 
 #checkmark {

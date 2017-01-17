@@ -10,7 +10,7 @@ class ProjectView extends Component {
   render() {
     return (
       <div className='project-view'>
-        <h3>{this.props.project.name}</h3>
+        <h3 id='project-view-header'>{this.props.project.name}</h3>
         <TaskListContainer />
       </div>
     );
