@@ -13,7 +13,6 @@ class TaskList extends Component {
   }
 
   createBlankTask() {
-    console.log("Creating Blank Task");
     this.props.createTask({ name: "", project_id: this.props.project.id, creator_id: this.props.currentUser.id });
   }
 

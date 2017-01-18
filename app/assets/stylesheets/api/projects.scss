@@ -229,6 +229,13 @@ $taskFontSize: 30px;
   text-align: left;
 }
 
+.task-user-image {
+  height: 30px;
+  width: 30px;
+  border: 1px solid $medshade;
+  border-radius: 15px;
+}
+
 #due-date {
 
 }
