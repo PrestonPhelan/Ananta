@@ -51,8 +51,8 @@ map = Project.find_by_name("Find Map")
 ship = Project.find_by_name("Obtain Ship")
 
 tasks = Task.create([
-  { project_id: hire_crew.id, name: "Hire Navigator", due: DateTime.new(2017, 1, 20), creator_id: guybrush.id},
-  { project_id: hire_crew.id, name: "Hire First Mate", due: DateTime.new(2017, 1, 20), creator_id: guybrush.id},
+  { project_id: hire_crew.id, name: "Hire Navigator", due: DateTime.new(2017, 1, 20), creator_id: guybrush.id, assignee_id: guybrush.id},
+  { project_id: hire_crew.id, name: "Hire First Mate", due: DateTime.new(2017, 1, 20), creator_id: guybrush.id, assignee_id: guest.id},
   { project_id: hire_crew.id, name: "Hire Cook", due: DateTime.new(2017, 1, 20), creator_id: guybrush.id},
   { project_id: map.id, name: "Interogate Salty Sam", due: DateTime.new(2017, 1, 19), creator_id: guybrush.id},
   { project_id: map.id, name: "Bribe Jacquotte Delahaye", creator_id: guybrush.id},
