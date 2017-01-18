@@ -115,8 +115,8 @@ class TaskListItem extends Component {
               onBlur={() => console.log("I'm the onBlur!")}
                 />
           </li>
-          <li>{userImg}</li>
           <li id='due-date' className='task-detail'>{dateString}</li>
+          <li>{userImg}</li>
         </ul>
       </li>
     );
