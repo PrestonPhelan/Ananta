@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "constants";
 
+$taskFontSize: 30px;
+
 .team-view {
   display: flex;
 }
@@ -227,4 +229,12 @@
 
 #completed-check {
   color: $medshade;
+}
+
+#no-assignee-img {
+  color: gray;
+  height: $taskFontSize;
+  width: $taskFontSize;
+  border: 1px dashed gray;
+  border-radius: 15px;
 }

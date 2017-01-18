@@ -68,7 +68,7 @@ export default props => {
           <i id='incomplete-check' className="fa fa-check-circle-o" aria-hidden="true"></i>}
         </li>
       <li id='task-name' className='task-detail'>{props.task.name}</li>
-      <li>{userImg}</li>
+      <li id='no-assignee-img'>{userImg}</li>
       <li id='due-date' className='task-detail'>{dateString}</li>
     </ul>
   );
