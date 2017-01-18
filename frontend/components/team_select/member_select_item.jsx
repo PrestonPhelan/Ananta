@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 class MemberSelectItem extends Component {
   constructor(props) {
     super(props);
-    debugger;
-    this.state = { selected: false };
+    this.state = { selected: (this.props.selected || false) };
     this.toggleSelect = this.toggleSelect.bind(this);
   }
 

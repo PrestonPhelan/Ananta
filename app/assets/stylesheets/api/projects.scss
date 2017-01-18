@@ -253,8 +253,30 @@ $taskFontSize: 30px;
   border-radius: 15px;
 }
 
+#unassigned-img {
+  font-size: 45px;
+}
 
 #no-assignee-img:hover {
   border: 2px solid $lightshade;
   cursor: pointer;
+}
+
+
+#member-assign-form {
+  padding: 20px;
+}
+
+#unassigned-select-border {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  border: 1px solid red;
+}
+
+#unassigned-selected-border {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  border: 1px solid green;
 }
