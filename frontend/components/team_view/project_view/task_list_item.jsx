@@ -43,22 +43,28 @@ class TaskListItem extends Component {
       }
     };
 
-    const dateToString = date => {
+    const dbDateToString = date => {
       const monthString = intToMonth(date.getMonth() + 1);
       const day = date.getDate() + 1;
 
       return `${monthString} ${day}`;
     };
 
+    const dateToString = date => {
+      const monthString = intToMonth(date.getMonth() + 1);
+      const day = date.getDate();
+
+      return `${monthString} ${day}`;
+    };
+
     let dateString;
+    let printString;
     if (this.props.task.due) {
-      dateString = dateToString(new Date(this.props.task.due));
+      dateString = dbDateToString(new Date(this.props.task.due));
       const today = new Date(Date.now());
       const todayString = dateToString(today);
-      const tomorrowString = (new Date(today + 24 * 60 * 60 * 1000));
-      const yesterdayString = (new Date(today - 24 * 60 * 60 * 1000));
-
-      let printString;
+      const tomorrowString = dateToString(new Date(Date.now() + 24 * 60 * 60 * 1000));
+      const yesterdayString = dateToString(new Date(Date.now() - 24 * 60 * 60 * 1000));
 
       switch (dateString) {
         case todayString:
@@ -115,7 +121,7 @@ class TaskListItem extends Component {
               onBlur={() => console.log("I'm the onBlur!")}
                 />
           </li>
-          <li id='due-date' className='task-detail'>{dateString}</li>
+          <li id='due-date' className='task-detail'>{printString}</li>
           <li>{userImg}</li>
         </ul>
       </li>
