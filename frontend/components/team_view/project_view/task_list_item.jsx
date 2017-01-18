@@ -43,10 +43,39 @@ class TaskListItem extends Component {
       }
     };
 
-    const date = new Date(this.props.task.due);
-    const dateMonth = intToMonth(date.getMonth() + 1);
+    const dateToString = date => {
+      const monthString = intToMonth(date.getMonth() + 1);
+      const day = date.getDate() + 1;
 
-    const dateString = `${dateMonth} ${date.getDate() + 1}`;
+      return `${monthString} ${day}`;
+    };
+
+    let dateString;
+    if (this.props.task.due) {
+      dateString = dateToString(new Date(this.props.task.due));
+      const today = new Date(Date.now());
+      const todayString = dateToString(today);
+      const tomorrowString = (new Date(today + 24 * 60 * 60 * 1000));
+      const yesterdayString = (new Date(today - 24 * 60 * 60 * 1000));
+
+      let printString;
+
+      switch (dateString) {
+        case todayString:
+        printString = "Today";
+        break;
+        case tomorrowString:
+        printString = "Tomorrow";
+        break;
+        case yesterdayString:
+        printString = "Yesterday";
+        break;
+        default:
+        printString = dateString;
+      }
+    } else {
+      dateString = "";
+    }
 
     let userImg;
     if (this.props.task.assignee && this.props.task.assignee.id) {
