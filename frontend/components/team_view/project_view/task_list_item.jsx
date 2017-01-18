@@ -39,7 +39,7 @@ export default props => {
   const dateString = `${dateMonth} ${date.getDate() + 1}`;
 
   let userImg;
-  if (props.task.assignee.id) {
+  if (props.task.assignee && props.task.assignee.id) {
     let icon;
 
     if (props.task.assignee.image_url) {
@@ -78,6 +78,7 @@ export default props => {
             <input
               type="text"
               defaultValue={props.task.name}
+              onBlur={() => console.log("I'm the onBlur!")}
                />
            </Field>
         </li>

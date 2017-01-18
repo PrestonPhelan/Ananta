@@ -5,7 +5,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.includes(tasks: :assignee  ).find_by_id(params[:id])
+    @project = Project.includes(tasks: :assignee).find_by_id(params[:id])
     render :show
   end
 

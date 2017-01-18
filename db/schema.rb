@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170117173452) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string   "name",                            null: false
+    t.string   "name"                            
     t.boolean  "header",          default: false, null: false
     t.integer  "header_id"
     t.datetime "start"

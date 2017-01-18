@@ -4,6 +4,7 @@ import {
   RECEIVE_PROJECTS,
   RECEIVE_PROJECT,
   ACTIVATE_PROJECT } from '../actions/project_actions';
+import { RECEIVE_TASK } from '../actions/task_actions';
 
 const ProjectDetailReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -14,6 +15,11 @@ const ProjectDetailReducer = (state = {}, action) => {
       return merge({}, state, { [action.project.id]: action.project});
     case ACTIVATE_PROJECT:
       return action.project;
+    case RECEIVE_TASK:
+      console.log(action.task);
+      const oldTasks = state.tasks;
+      const newTasks = oldTasks.concat([{[action.task.id]: action.task}]);
+      return merge({}, state, { tasks: newTasks });
     default:
       return state;
   }

@@ -178,7 +178,7 @@ $taskFontSize: 30px;
   padding: 20px;
 }
 
-.list-item {
+.list-item, #new-task-dummy {
   display: flex;
   font-family: serif;
   font-size: 20px;
@@ -186,6 +186,12 @@ $taskFontSize: 30px;
   align-items: center;
   border-top: 1px solid lightgray;
   padding: 5px;
+}
+
+#new-task-dummy {
+  font-size: 16px;
+  text-align: left;
+  padding: 10px;
 }
 
 .list-item:last-of-type {

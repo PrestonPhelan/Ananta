@@ -1,31 +1,43 @@
-import React from 'react';
-import { Field } from 'react-redux-form';
+import React, { Component } from 'react';
 
 import TaskListItem from './task_list_item';
 
-export default props => {
-  let taskList;
-  if (props.tasks) {
-    taskList = props.tasks.map( task => <TaskListItem task={task} key={task.id} />);
-  } else {
-    taskList = "";
+class TaskList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.createBlankTask = this.createBlankTask.bind(this);
   }
 
-  return (
-    <ul>
-      {taskList}
-      <ul className='list-item'>
-        <Field
-          model="task.name"
-          changeAction={() => console.log("Successful change")}
-          updateOn="blur"
-          >
+  componentDidMount() {
+  }
+
+  createBlankTask() {
+    console.log("Creating Blank Task");
+    this.props.createTask({ name: "", project_id: this.props.project.id, creator_id: this.props.currentUser.id });
+  }
+
+  render() {
+    let taskList;
+    if (this.props.tasks) {
+      taskList = this.props.tasks.map( task => <TaskListItem task={task} key={task.id} />);
+    } else {
+      taskList = "";
+    }
+
+    return (
+      <ul>
+        {taskList}
+        <ul id='new-task-dummy' className='list-item' onClick={this.createBlankTask}>
           <input
-            type="text"
-            placeholder="Enter a new task here"
-             />
-         </Field>
+              type="text"
+              placeholder="Enter a new task here"
+              onBlur={() => console.log("I'm the onBlur!")}
+               />
+        </ul>
       </ul>
-    </ul>
-  );
-};
+    );
+  }
+}
+
+export default TaskList;
