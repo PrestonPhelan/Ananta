@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class MemberSelectItem extends Component {
   constructor(props) {
     super(props);
-
+    debugger;
     this.state = { selected: false };
     this.toggleSelect = this.toggleSelect.bind(this);
   }
@@ -57,7 +57,7 @@ class MemberSelectItem extends Component {
     } else {
       displayName = this.props.user.username;
     }
-    
+
     return (
       <div className='member-select-item' onClick={this.toggleSelect(this.props.user.id)}>
         <span className='member-select-icon'>{icon}</span>

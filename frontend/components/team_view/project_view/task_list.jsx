@@ -19,7 +19,7 @@ class TaskList extends Component {
   render() {
     let taskList;
     if (this.props.tasks) {
-      taskList = Object.values(this.props.tasks).map( task => <TaskListItemContainer task={task} />);
+      taskList = Object.values(this.props.tasks).map( task => <TaskListItemContainer task={task} key={task.id}/>);
     } else {
       taskList = "";
     }

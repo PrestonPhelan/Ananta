@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Field } from 'react-redux-form';
+import Modal from 'boron/ScaleModal';
+
+import AssignMemberModalContainer from '../assign_member_modal_container';
 
 class TaskListItem extends Component {
   constructor(props) {
@@ -8,6 +11,9 @@ class TaskListItem extends Component {
     this.submitUpdate = this.submitUpdate.bind(this);
     this.updateName = this.updateName.bind(this);
     this.updateCompleted = this.updateCompleted.bind(this);
+
+    this.showModal = this.showModal.bind(this);
+    this.hide = this.hide.bind(this);
   }
 
   updateName(e) {
@@ -23,6 +29,14 @@ class TaskListItem extends Component {
   submitUpdate(e) {
     const updatedTask = { id: this.props.task.id, name: this.state.name };
     this.props.updateTask(updatedTask);
+  }
+
+  showModal() {
+      this.refs.assignMemberModal.show();
+  }
+
+  hide() {
+    this.refs.assignMemberModal.hide();
   }
 
   render() {
@@ -137,8 +151,13 @@ class TaskListItem extends Component {
                 />
           </li>
           <li id='due-date' className='task-detail'>{printString}</li>
-          <li>{userImg}</li>
+          <li onClick={this.showModal}>{userImg}</li>
         </ul>
+
+        <Modal ref="assignMemberModal">
+          <button className='close-modal' onClick={this.hide}>X</button>
+          <AssignMemberModalContainer hideModal={this.hide} task={this.props.task}/>
+        </Modal>
       </li>
     );
   }

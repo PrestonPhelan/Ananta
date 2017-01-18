@@ -236,6 +236,11 @@ $taskFontSize: 30px;
   border-radius: 15px;
 }
 
+.task-user-image:hover {
+  border: 2px solid $lightshade;
+  cursor: pointer;
+}
+
 #completed-check {
   color: $medshade;
 }
@@ -246,4 +251,10 @@ $taskFontSize: 30px;
   width: $taskFontSize;
   border: 1px dashed gray;
   border-radius: 15px;
+}
+
+
+#no-assignee-img:hover {
+  border: 2px solid $lightshade;
+  cursor: pointer;
 }
