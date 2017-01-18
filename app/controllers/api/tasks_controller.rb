@@ -11,10 +11,10 @@ class Api::TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     puts "INSTANCE VARIABLE @TASK BEFORE UPDATE"
-    puts "#{@task}"
-    if @task.update(name: params[:task][:name])
+    puts "#{@task.name} Completed: #{@task.completed}"
+    if @task.update_attributes(task_params)
       puts "@TASK AFTER UPDATE"
-      puts "#{@task}"
+      puts "#{@task.name} Completed: #{@task.completed}"
       render :create
     else
       puts "UPDATE DID NOT WORK"
@@ -25,6 +25,6 @@ class Api::TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:project_id, :name, :creator_id)
+    params.require(:task).permit(:project_id, :name, :creator_id, :completed)
   end
 end

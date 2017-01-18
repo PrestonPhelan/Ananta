@@ -7,10 +7,17 @@ class TaskListItem extends Component {
     this.state = { name: this.props.task.name };
     this.submitUpdate = this.submitUpdate.bind(this);
     this.updateName = this.updateName.bind(this);
+    this.updateCompleted = this.updateCompleted.bind(this);
   }
 
   updateName(e) {
     this.setState( { name: e.target.value } );
+  }
+
+  updateCompleted(e) {
+    const updatedCompleteStatus = !this.props.task.completed;
+    const updatedTask = { id: this.props.task.id, completed: updatedCompleteStatus };
+    this.props.updateTask(updatedTask);
   }
 
   submitUpdate(e) {
@@ -118,8 +125,8 @@ class TaskListItem extends Component {
           <li id='grabber' className='task-detail'><i className="fa fa-ellipsis-v" aria-hidden="true"></i></li>
           <li id='checkmark'>
             {this.props.task.completed ?
-              <i id='completed-check' className="fa fa-check-circle" aria-hidden="true"></i> :
-              <i id='incomplete-check' className="fa fa-check-circle-o" aria-hidden="true"></i>}
+              <i id='completed-check' className="fa fa-check-circle" aria-hidden="true" onClick={this.updateCompleted}></i> :
+              <i id='incomplete-check' className="fa fa-check-circle-o" aria-hidden="true" onClick={this.updateCompleted}></i>}
           </li>
           <li id='task-name' className='task-detail'>
             <input
