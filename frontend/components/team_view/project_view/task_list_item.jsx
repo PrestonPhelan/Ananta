@@ -5,10 +5,12 @@ class TaskListItem extends Component {
   constructor(props) {
     super(props);
 
-    this.updateTask = this.updateTask.bind(this);
+    this.submitUpdate = this.submitUpdate.bind(this);
   }
 
-  updateTask() {
+  submitUpdate(e) {
+    const updatedTask = { id: this.props.task.id, name: e.target.value };
+    this.props.updateTask(updatedTask);
   }
 
   render() {
@@ -118,7 +120,7 @@ class TaskListItem extends Component {
             <input
               type="text"
               defaultValue={this.props.task.name}
-              onBlur={() => console.log("I'm the onBlur!")}
+              onBlur={this.submitUpdate}
                 />
           </li>
           <li id='due-date' className='task-detail'>{printString}</li>

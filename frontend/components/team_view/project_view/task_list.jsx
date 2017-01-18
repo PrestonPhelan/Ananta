@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import TaskListItem from './task_list_item';
+import TaskListItemContainer from './task_list_item_container';
 
 class TaskList extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class TaskList extends Component {
   render() {
     let taskList;
     if (this.props.tasks) {
-      taskList = this.props.tasks.map( task => <TaskListItem task={task} key={task.id} />);
+      taskList = this.props.tasks.map( task => <TaskListItemContainer task={task} key={task.id} />);
     } else {
       taskList = "";
     }

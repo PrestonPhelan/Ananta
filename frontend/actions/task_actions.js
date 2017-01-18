@@ -25,3 +25,10 @@ export const createTask = task => dispatch => (
     }, err => console.log(err.responseJSON)
   )
 );
+
+export const updateTask = task => dispatch => (
+  TaskApiUtil.updateTask(task)
+    .then(savedTask => {
+      dispatch(receiveTask(savedTask));
+    }, err => console.log(err.responseJSON))
+);
