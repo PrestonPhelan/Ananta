@@ -8,19 +8,27 @@ class AssignMemberModal extends Component {
     console.log(this.props.task);
     this.state = { assignee_id: this.props.task.assignee ? this.props.task.assignee.id : null };
     this.toggleSelect = this.toggleSelect.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   toggleSelect(user) {
     if (user) {
-      this.setState = { assignee_id: user.id };
+      this.state.assignee_id === user.id ?
+        this.setState({ assignee_id: null}) :
+        this.setState({ assignee_id: user.id });
     } else {
-      this.setState = { assignee_id: null };
+      this.setState({ assignee_id: null });
     }
+  }
+
+  handleSubmit() {
+    this.props.updateTask({ id: this.props.task.id, assignee_id: this.state.assignee_id });
+    this.props.hideModal();
   }
 
   render() {
     console.log(this.state.assignee_id);
-    const userIcons =
+    let userIcons =
      Object.values(this.props.members).map( user => {
       return (
         <MemberSelectItem
@@ -28,6 +36,7 @@ class AssignMemberModal extends Component {
           user={user}
           onClick={this.toggleSelect}
           selected={this.state.assignee_id === user.id}
+          type="assign"
         />);
     });
 
@@ -36,11 +45,11 @@ class AssignMemberModal extends Component {
     console.log(unassignedClass);
     return (
       <div>
-        <form id='member-assign-form'>
+        <form id='member-assign-form' onSubmit={this.handleSubmit}>
           <div id='member-assign-header'> {`Assign Member to Task "${this.props.task.name}"`}</div>
           <span className='member-select-grid'>
             <div id='unassigned-select' className='default-select-item'>
-              <div id={unassignedClass} onClick={this.toggleSelect(null)}>
+              <div id={unassignedClass} onClick={() => this.toggleSelect(null)}>
                 <i id='unassigned-img' className="fa fa-user-o" aria-hidden="true"></i>
                 <div className='member-select-username'>
                   {"Unassigned"}
