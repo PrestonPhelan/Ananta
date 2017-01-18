@@ -1,4 +1,5 @@
 import React from 'react';
+import { Field } from 'react-redux-form';
 
 export default props => {
   const intToMonth = int => {
@@ -67,7 +68,18 @@ export default props => {
           <i id='completed-check' className="fa fa-check-circle" aria-hidden="true"></i> :
           <i id='incomplete-check' className="fa fa-check-circle-o" aria-hidden="true"></i>}
         </li>
-      <li id='task-name' className='task-detail'>{props.task.name}</li>
+      <li id='task-name' className='task-detail'>
+        <Field
+          model="task.name"
+          changeAction={() => console.log("Successful change")}
+          updateOn="blur"
+          placeholder="Enter a new task here">
+          <input
+            type="text"
+            defaultValue={props.task.name}
+             />
+         </Field>
+      </li>
       <li id='no-assignee-img'>{userImg}</li>
       <li id='due-date' className='task-detail'>{dateString}</li>
     </ul>
