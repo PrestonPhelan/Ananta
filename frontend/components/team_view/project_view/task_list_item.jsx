@@ -4,12 +4,17 @@ import { Field } from 'react-redux-form';
 class TaskListItem extends Component {
   constructor(props) {
     super(props);
-
+    this.state = { name: this.props.task.name };
     this.submitUpdate = this.submitUpdate.bind(this);
+    this.updateName = this.updateName.bind(this);
+  }
+
+  updateName(e) {
+    this.setState( { name: e.target.value } );
   }
 
   submitUpdate(e) {
-    const updatedTask = { id: this.props.task.id, name: e.target.value };
+    const updatedTask = { id: this.props.task.id, name: this.state.name };
     this.props.updateTask(updatedTask);
   }
 
@@ -120,6 +125,7 @@ class TaskListItem extends Component {
             <input
               type="text"
               defaultValue={this.props.task.name}
+              onChange={this.updateName}
               onBlur={this.submitUpdate}
                 />
           </li>

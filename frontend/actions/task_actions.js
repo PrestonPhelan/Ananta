@@ -26,9 +26,9 @@ export const createTask = task => dispatch => (
   )
 );
 
-export const updateTask = task => dispatch => (
-  TaskApiUtil.updateTask(task)
+export const updateTask = task => dispatch => {
+  return TaskApiUtil.updateTask(task)
     .then(savedTask => {
       dispatch(receiveTask(savedTask));
-    }, err => console.log(err.responseJSON))
-);
+    }, err => console.log(err.responseJSON));
+  };

@@ -16,9 +16,8 @@ const ProjectDetailReducer = (state = {}, action) => {
     case ACTIVATE_PROJECT:
       return action.project;
     case RECEIVE_TASK:
-      console.log(action.task);
       const oldTasks = state.tasks;
-      const newTasks = oldTasks.concat([{[action.task.id]: action.task}]);
+      const newTasks = merge({}, oldTasks, { [action.task.id]: action.task });
       return merge({}, state, { tasks: newTasks });
     default:
       return state;

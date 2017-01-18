@@ -19,7 +19,7 @@ class TaskList extends Component {
   render() {
     let taskList;
     if (this.props.tasks) {
-      taskList = this.props.tasks.map( task => <TaskListItemContainer task={task} key={task.id} />);
+      taskList = Object.values(this.props.tasks).map( task => <TaskListItemContainer task={task} />);
     } else {
       taskList = "";
     }
@@ -27,12 +27,10 @@ class TaskList extends Component {
     return (
       <ul>
         {taskList}
-        <ul id='new-task-dummy' className='list-item' onClick={this.createBlankTask}>
-          <input
-              type="text"
-              placeholder="Enter a new task here"
-              onBlur={() => console.log("I'm the onBlur!")}
-               />
+        <ul id='new-task-dummy' className='list-item'>
+          <div onClick={this.createBlankTask}>
+            {"Enter a new task here"}
+           </div>
         </ul>
       </ul>
     );
