@@ -9,6 +9,7 @@ class TeamSummaryMemberListItem extends Component {
 
     this.showModal = this.showModal.bind(this);
     this.hide = this.hide.bind(this);
+    this.clickAction = this.clickAction.bind(this);
   }
 
   showModal() {
@@ -17,6 +18,14 @@ class TeamSummaryMemberListItem extends Component {
 
   hide() {
     this.refs.memberDetail.hide();
+  }
+
+  clickAction() {
+    if(this.props.type === "in-modal") {
+      this.props.fetchUser(this.props.member.id);
+    } else {
+      this.showModal();
+    }
   }
 
   render() {
@@ -28,7 +37,7 @@ class TeamSummaryMemberListItem extends Component {
     }
 
     return (
-      <div className='ts-member-list-item' onClick={this.showModal}>
+      <div className='ts-member-list-item' onClick={this.clickAction}>
         {image}
 
         <Modal ref="memberDetail">

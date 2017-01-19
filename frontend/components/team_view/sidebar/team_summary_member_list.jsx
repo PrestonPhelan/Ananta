@@ -22,7 +22,7 @@ class TeamSummaryMemberList extends Component {
 
   render() {
     const memberListItems = Object.values(this.props.members).map(
-      member => <TeamSummaryMemberListItem member={member} key={member.id} />
+      member => <TeamSummaryMemberListItem member={member} key={member.id} type={this.props.type} fetchUser={this.props.fetchUser}/>
     );
     return (
       <div>

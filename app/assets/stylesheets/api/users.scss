@@ -1,3 +1,30 @@
 // Place all the styles related to the Api::Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "constants";
+
+#member-detail-modal {
+  padding: 20px;
+  color: $medshade;
+}
+
+#member-detail-select {
+  border-bottom: 1px solid $medshade;
+}
+
+#member-detail-main {
+  padding: 10px 0 10px 0;
+  font-size: 24px;
+  border-bottom: 1px dashed $medshade;
+}
+
+.member-detail-item {
+  font-size: 16px;
+  margin: 10px 0 10px 0;
+  display: flex;
+}
+
+.member-detail-label {
+  width: 125px;
+}

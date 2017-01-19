@@ -72,6 +72,7 @@ $taskFontSize: 30px;
 
 #team-summary-members {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   font-size: 35px;
 }

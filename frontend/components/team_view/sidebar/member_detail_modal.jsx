@@ -11,20 +11,25 @@ class MemberDetailModal extends Component {
     this.props.fetchUser(this.props.initialMember.id);
   }
 
-  componentWillReceiveProps(newProps) {
-    if(this.props !== newProps) {
-      this.props.fetchUser(newProps.member.id);
-    }
-  }
-
   render() {
     return (
-      <div>
-        <TeamSummaryMemberList members={this.props.members} />
-        <div>{"User Img"} {this.props.member.username}</div>
-        <div>{this.props.member.role}</div>
-        <div>{this.props.member.department}</div>
-        <div>{this.props.member.about}</div>
+      <div id='member-detail-modal'>
+        <div id='member-detail-select'>
+          <TeamSummaryMemberList members={this.props.members} type={"in-modal"} fetchUser={this.props.fetchUser} />
+        </div>
+        <div id='member-detail-main'>{"User Img"} {this.props.member.username}</div>
+        <div className='member-detail-item'>
+          <div className='member-detail-label'>Role:</div>
+          <div className='member-detail-content'>{this.props.member.role}</div>
+        </div>
+        <div className='member-detail-item'>
+          <div className='member-detail-label'>Department:</div>
+          <div className='member-detail-content'>{this.props.member.department}</div>
+        </div>
+        <div className='member-detail-item'>
+          <div className='member-detail-label'>About:</div>
+          <div className='member-detail-content'>{this.props.member.about}</div>
+        </div>
       </div>
     );
   }
