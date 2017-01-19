@@ -12,7 +12,7 @@ class TaskView extends Component {
     return (
       <div id='task-view'>
         <TaskDetailHeader task={this.props.task} />
-        <TaskDetailMain task={this.props.task}/>
+        <TaskDetailMain task={this.props.task} updateTask={this.props.updateTask}/>
         <textarea id='description-text' placeholder='Description'/>
       </div>
     );

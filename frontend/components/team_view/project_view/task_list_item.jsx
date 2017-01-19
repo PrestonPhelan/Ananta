@@ -19,6 +19,14 @@ class TaskListItem extends Component {
     this.hide = this.hide.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    console.log("RECEIVING PROPS");
+    console.log(newProps);
+    if (this.props !== newProps) {
+      this.setState( { name: newProps.task.name } );
+    }
+  }
+
   activateTask() {
     this.props.fetchTask();
   }
@@ -83,7 +91,7 @@ class TaskListItem extends Component {
           <li id='task-name' className='task-detail'>
             <input
               type="text"
-              defaultValue={this.props.task.name}
+              value={this.state.name}
               onChange={this.updateName}
               onBlur={this.submitUpdate}
               onClick={this.activateTask}

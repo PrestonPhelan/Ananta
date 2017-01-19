@@ -4,17 +4,28 @@
 
 @import "constants";
 
+#calendar-container {
+  font-size: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #task-view {
   background-color: white;
   margin: 10px 0 0 10px;
   border: 1px solid $medshade;
   border-radius: 4px;
-  padding: 10px;
+  padding: 30px;
+  color: $medshade;
+  font-size: 20px;
 }
 
 #description-text {
   width: 100%;
   border-radius: 2px;
+  padding: 10px;
+  font-size: 12px;
+  color: black;
 }
 
 #description-text:hover {
@@ -23,4 +34,49 @@
 
 #description-text:active {
   border: 1px solid $medshade;
+}
+
+#task-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $lightshade;
+}
+
+#task-detail-main {
+  padding: 10px 0 10px 0;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#task-detail-checkmark {
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+#task-detail-checkmark:hover {
+  color: $lightshade;
+}
+
+#task-detail-user {
+  height: 40px;
+  width: 40px;
+  border: 1px solid $medshade;
+  border-radius: 20px;
+}
+
+#task-detail-assignee-name {
+  padding-top: 10px;
+  margin-left: 10px;
+}
+
+#task-detail-assignee {
+  display: flex;
+  align-content: center;
+}
+
+#task-detail-user:hover {
+  border: 2px solid $lightshade;
 }
