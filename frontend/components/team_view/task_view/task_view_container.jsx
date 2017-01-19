@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { updateTask } from '../../../actions/task_actions';
+import { updateTask, activateTask } from '../../../actions/task_actions';
 import TaskView from './task_view';
 
 export const mapStateToProps = state => ({
@@ -8,7 +8,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  updateTask: task => dispatch(updateTask(task))
+  updateTask: task => dispatch(updateTask(task)),
+  clearTask: () => dispatch(activateTask({}))
 });
 
 export default connect(

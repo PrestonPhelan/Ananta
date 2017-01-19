@@ -18,6 +18,7 @@
   padding: 30px;
   color: $medshade;
   font-size: 20px;
+  position: relative;
 }
 
 #description-text {
@@ -79,4 +80,10 @@
 
 #task-detail-user:hover {
   border: 2px solid $lightshade;
+}
+
+#task-view-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
 }
