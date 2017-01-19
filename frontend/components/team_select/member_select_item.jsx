@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { getDisplayName } from '../../util/name_util';
+
 class MemberSelectItem extends Component {
   constructor(props) {
     super(props);
@@ -52,16 +54,7 @@ class MemberSelectItem extends Component {
       );
     }
 
-    let displayName;
-    let reg = /^.[a-z]*/;
-    if (this.props.user.username.length > 10) {
-      displayName = this.props.user.username.match(reg);
-      if (displayName.length > 10) {
-        displayName = displayName.slice(0, 7) + "...";
-      }
-    } else {
-      displayName = this.props.user.username;
-    }
+    const displayName = getDisplayName(this.props.user.username);
 
     return (
       <div className='member-select-item' onClick={this.toggleSelect(this.props.user.id)}>
