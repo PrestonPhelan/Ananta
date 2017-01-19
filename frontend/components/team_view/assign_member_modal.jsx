@@ -5,8 +5,6 @@ import MemberSelectItem from '../team_select/member_select_item';
 class AssignMemberModal extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props.task);
-
     this.state = { assignee_id: this.props.task.assignee ? this.props.task.assignee.id : null };
     this.toggleSelect = this.toggleSelect.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,8 +40,6 @@ class AssignMemberModal extends Component {
     });
 
     const unassignedClass = this.state.assignee_id ? "unassigned-select-border" : "unassigned-selected-border";
-    console.log(this.state.assignee_id);
-    console.log(unassignedClass);
     return (
       <div>
         <form id='member-assign-form' onSubmit={this.handleSubmit}>

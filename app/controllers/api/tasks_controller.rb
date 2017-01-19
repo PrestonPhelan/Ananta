@@ -1,6 +1,6 @@
 class Api::TasksController < ApplicationController
   def show
-    @task = Task.includes(:asignee).find(params[:id])
+    @task = Task.includes(:assignee).find(params[:id])
     render :show
   end
 

@@ -8,12 +8,18 @@ class TaskListItem extends Component {
   constructor(props) {
     super(props);
     this.state = { name: this.props.task.name };
+    
+    this.activateTask = this.activateTask.bind(this);
     this.submitUpdate = this.submitUpdate.bind(this);
     this.updateName = this.updateName.bind(this);
     this.updateCompleted = this.updateCompleted.bind(this);
 
     this.showModal = this.showModal.bind(this);
     this.hide = this.hide.bind(this);
+  }
+
+  activateTask() {
+    this.props.fetchTask();
   }
 
   updateName(e) {
@@ -148,6 +154,7 @@ class TaskListItem extends Component {
               defaultValue={this.props.task.name}
               onChange={this.updateName}
               onBlur={this.submitUpdate}
+              onClick={this.activateTask}
                 />
           </li>
           <li id='due-date' className='task-detail'>{printString}</li>
