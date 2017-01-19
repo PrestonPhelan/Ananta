@@ -6,6 +6,7 @@ class AssignMemberModal extends Component {
   constructor(props) {
     super(props);
     console.log(this.props.task);
+
     this.state = { assignee_id: this.props.task.assignee ? this.props.task.assignee.id : null };
     this.toggleSelect = this.toggleSelect.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

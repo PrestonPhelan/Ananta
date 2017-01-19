@@ -6,7 +6,8 @@ import TeamView from './team_view';
 
 export const mapStateToProps = state => ({
   team: state.teamDetail,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  activeTask: state.taskDetail
 });
 
 export const mapDispatchToProps = (dispatch, ownProps) => ({

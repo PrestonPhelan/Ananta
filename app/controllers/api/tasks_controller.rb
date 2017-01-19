@@ -1,4 +1,9 @@
 class Api::TasksController < ApplicationController
+  def show
+    @task = Task.includes(:asignee).find(params[:id])
+    render :show
+  end
+
   def create
     @task = Task.new(task_params)
     if @task.save

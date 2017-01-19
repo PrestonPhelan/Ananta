@@ -5,6 +5,13 @@ export const fetchTasks = projectId => (
   })
 );
 
+export const fetchTask = id => (
+  $.ajax({
+    method: 'GET',
+    url: `api/tasks/${id}`
+  })
+);
+
 export const createTask = task => {
   return $.ajax({
     method: 'POST',

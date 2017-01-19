@@ -33,6 +33,14 @@ class TeamView extends Component {
     let mainComponent;
     if (this.props.team.name) {
       if (Object.keys(this.props.team.projects).length > 0) {
+        if (this.props.taskDetail) {
+          mainComponent = (
+            <div>
+              <div className='col-2-5'><ProjectViewContainer /></div>
+              <div className='col-2-5'><TaskViewContainer /></div>
+            </div>
+          );
+        }
         mainComponent = <div className='col-4-5'><ProjectViewContainer /></div>;
         } else {
           mainComponent = <div className='col-4-5'><EmptyTeamContainer /></div>;

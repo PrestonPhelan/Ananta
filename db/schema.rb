@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117173452) do
+ActiveRecord::Schema.define(version: 20170118234449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170117173452) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string   "name"                            
+    t.string   "name"
     t.boolean  "header",          default: false, null: false
     t.integer  "header_id"
     t.datetime "start"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20170117173452) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.integer  "project_id"
+    t.text     "description"
     t.index ["assignee_id"], name: "index_tasks_on_assignee_id", using: :btree
     t.index ["completed_by_id"], name: "index_tasks_on_completed_by_id", using: :btree
     t.index ["creator_id"], name: "index_tasks_on_creator_id", using: :btree

@@ -7,6 +7,12 @@ class MemberSelectItem extends Component {
     this.toggleSelect = this.toggleSelect.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props !== newProps) {
+      this.setState( { selected: (newProps.selected || false) });
+    }
+  }
+
   toggleSelect(id) {
     return e => {
       const isSelected = this.state.selected;
