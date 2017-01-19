@@ -19,7 +19,6 @@ class UserOptions extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <ul className='user-options'>

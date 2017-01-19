@@ -11,11 +11,6 @@ class EditProfile extends Component {
       about: this.props.user.about || ""
     };
 
-    console.log(this.state);
-    console.log(this.state.role);
-    console.log(this.state.department);
-    console.log(this.state.about);
-
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -33,7 +28,6 @@ class EditProfile extends Component {
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value});
-      console.log(this.state);
     };
   }
 

@@ -26,7 +26,6 @@ class AssignMemberModal extends Component {
   }
 
   render() {
-    console.log(this.state.assignee_id);
     let userIcons =
      Object.values(this.props.members).map( user => {
       return (
