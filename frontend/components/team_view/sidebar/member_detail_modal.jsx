@@ -5,6 +5,7 @@ import TeamSummaryMemberList from './team_summary_member_list';
 class MemberDetailModal extends Component {
   constructor(props) {
     super(props);
+
   }
 
   componentDidMount() {
@@ -12,12 +13,19 @@ class MemberDetailModal extends Component {
   }
 
   render() {
+    let image;
+    if (this.props.member.image_url) {
+      image = <img className='large-user-img' src={this.props.member.image_url} />;
+    } else {
+      image = <i className={`fa fa-user-circle`} aria-hidden="true" />;
+    }
+
     return (
       <div id='member-detail-modal'>
         <div id='member-detail-select'>
           <TeamSummaryMemberList members={this.props.members} type={"in-modal"} fetchUser={this.props.fetchUser} />
         </div>
-        <div id='member-detail-main'>{"User Img"} {this.props.member.username}</div>
+        <div id='member-detail-main'>{image} {this.props.member.username}</div>
         <div className='member-detail-item'>
           <div className='member-detail-label'>Role:</div>
           <div className='member-detail-content'>{this.props.member.role}</div>

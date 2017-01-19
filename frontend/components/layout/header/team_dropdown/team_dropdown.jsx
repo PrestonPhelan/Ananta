@@ -15,7 +15,7 @@ class TeamDropdown extends Component {
     } else {
       return (
         <div id='team-dropdown' className='dropdown'>
-          <TeamListContainer modal={this.props.modal}/>
+          <TeamListContainer modal={this.props.modal} clearDropdown={this.props.clearDropdown}/>
         </div>
       );
     }

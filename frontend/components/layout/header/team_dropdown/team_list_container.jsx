@@ -10,9 +10,10 @@ const mapStateToProps = (state, ownProps) => ({
   modal: ownProps.modal
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchTeams: () => dispatch(fetchTeams()),
-  resetErrors: () => dispatch(receiveErrors([]))
+  resetErrors: () => dispatch(receiveErrors([])),
+  clearDropdown: () => ownProps.clearDropdown()
 });
 
 export default connect(

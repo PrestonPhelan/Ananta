@@ -11,9 +11,10 @@ const mapStateToProps = (state, ownProps) => ({
   hideModal: ownProps.hideModal
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchUsers: () => dispatch(fetchUsers()),
-  createTeam: team => dispatch(createTeam(team))
+  createTeam: team => dispatch(createTeam(team)),
+  clearDropdown: () => ownProps.clearDropdown()
 });
 
 export default connect(

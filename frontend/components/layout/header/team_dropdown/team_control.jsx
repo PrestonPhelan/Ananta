@@ -44,10 +44,14 @@ class TeamControl extends Component {
     return (
     <div id='team-control' tabIndex={0} onBlur={this.clearDropdown}>
       {icon}
-      <TeamDropdownContainer hidden={this.state.hidden} modal={this.refs.createTeamModal} />
+      <TeamDropdownContainer
+        hidden={this.state.hidden}
+        modal={this.refs.createTeamModal}
+        clearDropdown={this.clearDropdown}
+      />
       <Modal className='create-team-modal-box' ref="createTeamModal">
         <button className='close-modal' onClick={this.hide}>X</button>
-        <NewTeamFormContainer className='create-team-modal' hideModal={this.hide}/>
+        <NewTeamFormContainer className='create-team-modal' hideModal={this.hide} clearDropdown={this.clearDropdown}/>
       </Modal>
     </div>
 

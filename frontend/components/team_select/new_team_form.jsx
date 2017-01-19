@@ -48,7 +48,10 @@ class NewTeamForm extends Component {
       { [this.props.currentUser.id]: this.props.currentUser});
     returnState.membersToAdd = returnMembers;
     this.props.createTeam(returnState)
-      .then(id => hashHistory.push(`app/team/${id}`));
+      .then(id => {
+        hashHistory.push(`app/team/${id}`);
+        this.props.hideModal();
+      });
   }
 
   update(e) {
