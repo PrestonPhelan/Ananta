@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import Modal from 'boron/ScaleModal';
 
+import EditProfileContainer from './edit_profile_container';
 import UserDropdownContainer from './user_dropdown_container';
 
 class UserControl extends Component {
@@ -9,6 +11,9 @@ class UserControl extends Component {
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.clearDropdown = this.clearDropdown.bind(this);
+
+
+    console.log(this.showModal);
   }
 
   toggleDropdown() {
@@ -19,6 +24,8 @@ class UserControl extends Component {
   clearDropdown() {
     this.setState( { hidden: true } );
   }
+
+
 
   render() {
     let icon;
@@ -40,7 +47,12 @@ class UserControl extends Component {
     return (
      <div id='user-control' tabIndex={0} onBlur={this.clearDropdown}>
        {icon}
-       <UserDropdownContainer hidden={this.state.hidden} />
+       <UserDropdownContainer hidden={this.state.hidden} modal={this.refs.editProfile}/>
+
+       <Modal className='create-team-modal-box' ref="editProfile">
+         <button className='close-modal' onClick={this.hide}>X</button>
+         <EditProfileContainer showModal={this.showModal} hideModal={this.hide} />
+       </Modal>
      </div>
    );
   }

@@ -5,18 +5,12 @@ import { logout } from '../../../../actions/session_actions';
 
 
 
-const mapStateToProps = state => {
-  let username;
-  if (state.session.currentUser.username) {
-    username = state.session.currentUser.username;
-  }
+const mapStateToProps = (state, ownProps) => ({
+  user: state.session.currentUser,
+  modal: ownProps.modal
+});
 
-  return {
-    user: state.session.currentUser.username
-  };
-};
-
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   logout: () => dispatch(logout())
 });
 

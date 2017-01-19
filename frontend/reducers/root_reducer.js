@@ -6,6 +6,7 @@ import TeamDetailReducer from './team_detail_reducer';
 import UsersReducer from './users_reducer';
 import ProjectDetailReducer from './projects_reducer';
 import TaskDetailReducer from './task_detail_reducer';
+import UserDetailReducer from './user_detail_reducer';
 
 export default combineReducers({
   session: SessionReducer,
@@ -13,5 +14,6 @@ export default combineReducers({
   teamDetail: TeamDetailReducer,
   users: UsersReducer,
   projectDetail: ProjectDetailReducer,
-  taskDetail: TaskDetailReducer
+  taskDetail: TaskDetailReducer,
+  userDetail: UserDetailReducer
 });
