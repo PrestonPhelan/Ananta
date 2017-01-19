@@ -34,9 +34,9 @@ class TeamView extends Component {
     let mainComponent;
     if (this.props.team.name) {
       if (Object.keys(this.props.team.projects).length > 0) {
-        if (this.props.activeTask) {
+        if (this.props.activeTask.id) {
           mainComponent = (
-            <div className='col-4-5'>
+            <div id='project-task-split' className='col-4-5'>
               <div className='col-2-5'><ProjectViewContainer /></div>
               <div className='col-2-5'><TaskViewContainer /></div>
             </div>

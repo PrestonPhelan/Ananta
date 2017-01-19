@@ -1,6 +1,7 @@
 import * as ProjectApiUtil from '../util/project_api_util';
 
 import { receiveErrors } from './session_actions';
+import { activateTask } from './task_actions';
 
 export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
@@ -28,6 +29,10 @@ export const fetchProjects = teamId => dispatch => (
 
 export const fetchProject = id => dispatch => (
   ProjectApiUtil.fetchProject(id)
+  .then ( projectToPass => {
+    dispatch(activateTask( {} ));
+    return projectToPass;
+    })
     .then ( project => dispatch(activateProject(project)))
 );
 

@@ -1,3 +1,26 @@
 // Place all the styles related to the Api::Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "constants";
+
+#task-view {
+  background-color: pink;
+  margin: 10px 0 0 10px;
+  border: 1px solid $medshade;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+#description-text {
+  width: 100%;
+  border-radius: 2px;
+}
+
+#description-text:hover {
+  border: 1px solid $lightshade;
+}
+
+#description-text:active {
+  border: 1px solid $medshade;
+}
