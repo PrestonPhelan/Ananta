@@ -40,12 +40,10 @@ export const createTask = task => dispatch => (
 export const updateTask = task => dispatch => {
   return TaskApiUtil.updateTask(task)
     .then(savedTask => {
-      console.log(savedTask);
       dispatch(receiveTask(savedTask));
       return savedTask;
     }, err => console.log(err.responseJSON))
     .then(updatedTask => {
-      console.log(updatedTask);
       dispatch(fetchTask(updatedTask.id));
     });
   };

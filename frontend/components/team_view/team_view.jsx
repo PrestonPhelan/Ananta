@@ -4,6 +4,7 @@ import { hashHistory } from 'react-router';
 import Sidebar from './sidebar/sidebar';
 import EmptyTeamContainer from './empty_team_container';
 import ProjectViewContainer from './project_view/project_view_container';
+import TaskViewContainer from './task_view/task_view_container';
 
 class TeamView extends Component {
   constructor(props) {
@@ -33,15 +34,16 @@ class TeamView extends Component {
     let mainComponent;
     if (this.props.team.name) {
       if (Object.keys(this.props.team.projects).length > 0) {
-        if (this.props.taskDetail) {
+        if (this.props.activeTask) {
           mainComponent = (
-            <div>
+            <div className='col-4-5'>
               <div className='col-2-5'><ProjectViewContainer /></div>
               <div className='col-2-5'><TaskViewContainer /></div>
             </div>
           );
-        }
-        mainComponent = <div className='col-4-5'><ProjectViewContainer /></div>;
+          } else {
+            mainComponent = <div className='col-4-5'><ProjectViewContainer /></div>;
+          }
         } else {
           mainComponent = <div className='col-4-5'><EmptyTeamContainer /></div>;
         }
