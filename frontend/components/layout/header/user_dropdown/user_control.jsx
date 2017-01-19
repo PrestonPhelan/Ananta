@@ -11,9 +11,6 @@ class UserControl extends Component {
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.clearDropdown = this.clearDropdown.bind(this);
-
-
-    console.log(this.showModal);
   }
 
   toggleDropdown() {

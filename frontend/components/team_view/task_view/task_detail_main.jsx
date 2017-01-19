@@ -11,6 +11,12 @@ class TaskDetailMain extends Component {
     this.updateName = this.updateName.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    if(this.props !== newProps) {
+      this.setState({ name: newProps.task.name});
+    }
+  }
+
   update(e) {
     this.setState( { name: e.target.value } );
   }
