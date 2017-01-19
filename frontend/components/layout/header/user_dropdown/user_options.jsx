@@ -24,7 +24,6 @@ class UserOptions extends Component {
       <div>
         <ul className='user-options'>
           <li className='list-label'>{this.props.user.username.toUpperCase()}</li>
-          <li className='option'>Task Summary</li>
           <li className='option' onClick={this.showModal}>Edit Profile</li>
           <li
             id='user-options-logout'
