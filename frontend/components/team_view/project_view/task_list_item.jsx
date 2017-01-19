@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Field } from 'react-redux-form';
 import Modal from 'boron/ScaleModal';
 
 import AssignMemberModalContainer from '../assign_member_modal_container';
@@ -20,8 +19,6 @@ class TaskListItem extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log("RECEIVING PROPS");
-    console.log(newProps);
     if (this.props !== newProps) {
       this.setState( { name: newProps.task.name } );
     }
