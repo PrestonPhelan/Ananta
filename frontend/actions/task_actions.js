@@ -46,4 +46,4 @@ export const updateTask = task => dispatch => {
     .then(updatedTask => {
       dispatch(fetchTask(updatedTask.id));
     });
-  };
+};

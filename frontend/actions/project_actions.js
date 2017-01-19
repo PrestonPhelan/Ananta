@@ -1,4 +1,5 @@
 import * as ProjectApiUtil from '../util/project_api_util';
+import * as TaskApiUtil from '../util/task_api_util';
 
 import { receiveErrors } from './session_actions';
 import { activateTask } from './task_actions';
@@ -44,4 +45,18 @@ export const createProject = project => dispatch => (
     },
       err => dispatch(receiveErrors(err.responseJSON))
     )
+);
+
+export const fetchUserTasks = teamId => dispatch => (
+  TaskApiUtil.fetchUserTasks(teamId)
+    .then( project => {
+      dispatch(activateProject(project));
+    })
+);
+
+export const fetchUnassignedTasks = teamId => dispatch => (
+  TaskApiUtil.fetchUnassignedTasks(teamId)
+    .then( project => {
+      dispatch(activateProject(project));
+    })
 );

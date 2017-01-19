@@ -1,4 +1,16 @@
 class Api::TasksController < ApplicationController
+  def index
+    if params[:type] == "USER"
+      @tasks = Team.includes(:tasks).find(params[:team_id]).tasks.where(assignee_id: current_user.id)
+      render :user_index
+    elsif params[:type] == "UNASSIGNED"
+      @tasks = Team.includes(:tasks).find(params[:team_id]).tasks.where(assignee_id: nil)
+      render :unassigned_index
+    else
+      render json: ["Error in index routing"]
+    end
+  end
+
   def show
     @task = Task.includes(:assignee).find(params[:id])
     render :show

@@ -14,6 +14,8 @@ class Team < ApplicationRecord
 
   has_many :projects
 
+  has_many :tasks, through: :projects
+
   def ensure_organization
     self.organization_id = Organization.first.id
   end

@@ -27,3 +27,19 @@ export const updateTask = task => {
     data: { task }
   });
 };
+
+export const fetchUserTasks = teamId => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/teams/${teamId}/tasks`,
+    data: { type: "USER" }
+  });
+};
+
+export const fetchUnassignedTasks = teamId => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/teams/${teamId}/tasks`,
+    data: { type: "UNASSIGNED" }
+  });
+};

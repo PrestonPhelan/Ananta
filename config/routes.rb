@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :employees, only: [:create]
     resources :teams, only: [:index, :show, :create] do
       resources :projects, only: [:index]
+      resources :tasks, only: [:index]
     end
     resources :memberships, only: [:create]
     resources :projects, only: [:show, :create] do
