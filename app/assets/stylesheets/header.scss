@@ -64,12 +64,8 @@ $headerPadding: 25px;
 }
 
 .option:hover {
-  color: red;
+  color: $lightshade;
   cursor: pointer;
-}
-
-#user-options-logout:hover {
-  color: $darkshade
 }
 
 .list-label {
@@ -95,6 +91,10 @@ $headerPadding: 25px;
 
 .user-image:active {
   border: 4px solid $lightshade;
+}
+
+.user-option {
+  text-align: right;
 }
 
 #team-dropdown-new-team {

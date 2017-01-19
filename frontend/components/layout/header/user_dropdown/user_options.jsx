@@ -23,10 +23,10 @@ class UserOptions extends Component {
       <div>
         <ul className='user-options'>
           <li className='list-label'>{this.props.user.username.toUpperCase()}</li>
-          <li className='option' onClick={this.showModal}>Edit Profile</li>
+          <li className='option user-option' onClick={this.showModal}>Edit Profile</li>
           <li
             id='user-options-logout'
-            className='option'
+            className='option user-option'
             onClick={this.props.logout}>
           Logout
           </li>
