@@ -4,12 +4,6 @@
 
 @import "constants";
 
-#calendar-container {
-  font-size: 10px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
 #task-view {
   background-color: white;
   margin: 10px 0 0 10px;
@@ -86,4 +80,8 @@
   position: absolute;
   top: 5px;
   right: 10px;
+}
+
+#edit-profile-form {
+  font-size: 20px;
 }

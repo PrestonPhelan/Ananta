@@ -11,6 +11,7 @@ class UserControl extends Component {
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.clearDropdown = this.clearDropdown.bind(this);
+    this.hide = this.hide.bind(this);
   }
 
   toggleDropdown() {
@@ -22,7 +23,9 @@ class UserControl extends Component {
     this.setState( { hidden: true } );
   }
 
-
+  hide() {
+    this.refs.editProfile.hide();
+  }
 
   render() {
     let icon;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'boron/ScaleModal';
+import DatePicker from 'react-datepicker';
 
 import AssignMemberModalContainer from '../assign_member_modal_container';
 import { getDateString } from '../../../util/date_util';
@@ -53,6 +54,7 @@ class TaskDetailHeader extends Component {
           <div id='task-detail-assignee-name'>{userText}</div>
         </div>
         <div><i className="fa fa-calendar" aria-hidden="true"></i> {getDateString(this.props.task.due)}</div>
+        <DatePicker />
 
         <Modal ref="assignMemberModal">
           <button className='close-modal' onClick={this.hide}>X</button>

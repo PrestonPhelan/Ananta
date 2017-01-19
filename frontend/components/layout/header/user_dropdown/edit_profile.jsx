@@ -33,24 +33,32 @@ class EditProfile extends Component {
 
   render() {
     return (
-      <div>
+      <div className='session-modal'>
         <h3>{"Edit Profile"}</h3>
         <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="Role"
-            value={this.state.role}
-            onChange={this.update('role')} />
+          <div id='edit-profile-form' className='session-form'>
+            <label>{"Role"}
             <input
+              className='form-input'
               type="text"
-              placeholder="Department"
-              value={this.state.department}
-              onChange={this.update('department')} />
-            <textarea
-              placeholder="About Me"
-              value={this.state.about}
-              onChange={this.update('about')} />
-            <input type="submit" value={"Update"} />
+              value={this.state.role}
+              onChange={this.update('role')} />
+            </label>
+            <label>{"Department"}
+              <input
+                type="text"
+                className='form-input'
+                value={this.state.department}
+                onChange={this.update('department')} />
+            </label>
+            <label>{"About"}
+              <textarea
+                className='form-input'
+                value={this.state.about}
+                onChange={this.update('about')} />
+            </label>
+          </div>
+          <input type="submit" value={"Update"} className='submit-button'/>
         </form>
       </div>
     );
