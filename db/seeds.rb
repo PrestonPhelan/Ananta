@@ -111,8 +111,8 @@ org = Organization.find_by_name('Westeros')
 # Starks? 'Broken Things'?
 
 teams = Team.create([
-  { name: 'Lannisters', owner_id: tywin.id, organization_id: org.id },
   { name: 'Small Council', owner_id: cersei.id, organization_id: org.id },
+  { name: 'Lannisters', owner_id: tywin.id, organization_id: org.id },
   { name: 'Meereen', owner_id: dany.id, organization_id: org.id }
   ])
 

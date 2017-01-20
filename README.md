@@ -1,77 +1,74 @@
-# Ananta Project Proposal
+# Ananta
 
-## Links
+ANANTA LOGO HERE
 
-[Heroku](http://ananta-app.herokuapp.com/)
+[Ananta] is a project management and task tracking web application, built
+on a Postgres/Rails/React stack. It allows users to organize into teams, create projects, and manage tasks.  
 
-[Trello](https://trello.com/b/Jnbix7YB/full-stack)
+Ananta is a personal project of Preston Phelan, inspired by Asana.
 
-## Minimum Viable Product
+## Features
 
-Ananta is a project management and task tracking web application
-inspired by Asana, designed to help teams work together.  By 02:00 GMT on January 21, this application will have the following functionality, bug-free.  All features will have smooth user experience and professional stylings.
+### MVP Features
+- Secure front-end authentication and user creation
+- User profiles
+- Teams of users, easy creation and adding of new members
+- Team projects with task lists
+- Tasks with easy editing that can be assigned to team members
+- User's view of tasks assigned to them
+- Search for tasks that haven't been assigned
+- Complete tasks, filter completed tasks out of view.
 
-- [ ] Hosting on Heroku
-- [ ] Authentication
-      - New account creation & login, including a demo login.
-- [ ] Projects
-- [ ] Tasks
-- [ ] Teams/Workspaces
-- [ ] User Profiles
-- [ ] A professional production README.
+### Screens
 
-## Design Docs
+View and select from your existing teams.
+![team-select]
+[team-select]: ./docs/team_select.png
 
-* Wireframes
-    * [Web](https://app.quickfocus.com/snapup/preview/7219)
-    * Local  (TO BE ADDED)
-    * **NB:** Web will always be up to date, so prefer that link
 
-* [React Components](component-hierarchy.md)
+Create a new team in one easy step.
 
-* [Sample State](sample-state.md)
+![member-add]
+[member-add]: ./docs/member_add.png
 
-* [DB Schema](schema.md)
 
-* [API Endpoints](api-endpoints.md)
+View the team's projects, and their tasks.
 
-## Implementation Timeline
+![project-view]
+[project-view]: ./docs/project_view.png
 
-### Phase 1: Authentication (2 days)
 
-**Objective:** Functioning Front End User Authentication with Backend Setup
+Get to know all of your teammates.
 
-### Phase 2: Projects (2 days)
+![teammate-view]
+[teammate-view]: ./docs/teammate_view.png
 
-**Objective:** Project detail view, without task element. Project sidebar
-for navigation between and adding projects.
 
-### Phase 3: Tasks (2 days)
+Assign team members to particular tasks.
 
-**Objective:** Task list with easy movability, task detail view,
-task properties, task filtering & sorting.
+![member-assign]
+[member-assign]: ./docs/member_assign.png
 
-## Phase 4: Teams/Workspaces (2 days)
 
-**Objective:** Create workspaces, add/remove members, navigation between
-workspaces.
+Get a detailed view of a task.
 
-## Phase 5: User Profiles (1 day)
+![task-detail]
+[task-detail]: ./docs/task_detail.png
 
-**Objective:** User modal, containing image & details.
 
-### Bonus Features (TBD)
-- [ ] Calendar
-- [ ] Task Comments
-- [ ] Loading Animation
-- [ ] Search
-- [ ] Sub-tasks
-- [ ] Task Dependencies/Waiting On
-- [ ] Repeating Tasks
-- [ ] Conversations
-- [ ] User Dashboard
-- [ ] Task Taggings
-- [ ] Favorites
-- [ ] Task Attachments
-- [ ] Convert Projects to Tasks
-- [ ] Create Follow-Up Tasks
+
+## Development History
+
+### MVP Development
+Ananta's first build was completed in two weeks.  Production design began on January 7, 2017, and MVP Features were completed on January 20.
+
+## Implementation
+{ BACKEND }
+Postgres database was designed to handle all of the many-to-many relationships needed to map users to teams.
+
+{ FRONTEND }
+
+
+## Future Development
+
+Full list of implementation backlog can be found [here].
