@@ -46,6 +46,7 @@ export const createProject = project => dispatch => (
   ProjectApiUtil.createProject(project)
     .then(savedProject => {
       dispatch(receiveProject(savedProject));
+      dispatch(activateProject(savedProject));
       dispatch(receiveErrors([]));
     },
       err => dispatch(receiveErrors(err.responseJSON))
