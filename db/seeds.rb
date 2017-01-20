@@ -14,11 +14,26 @@ Project.delete_all
 Task.delete_all
 
 users = User.create([
-  { username: 'GuybrushThreepwood', email: 'guybrush@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200' },
-  { username: 'Guest', email: 'guest@ananta.com', password: 'password', image_url: 'http://rs405.pbsrc.com/albums/pp131/karkela/guybrush.jpg~c200' }])
+  { username: 'TyrionLannister', email: 'tyrian@lannister.com', password: 'afhry867y', image_url: 'http://i.imgur.com/X9mB9KT.jpg' },
+  { username: 'Jon_Snow', email: 'jon@snow-stark.com', password: 'aeghaet23t34g', image_url: 'http://i.imgur.com/Dfl5oLz.jpg' },
+  { username: 'CerseiLannister', email: 'cersei@lannister.com', password: 'tjtrhs325', image_url: 'http://i.imgur.com/ZXgRzmd.jpg' },
+  { username: 'DaenerysTargaryen', email: 'mother-of-dragons@real_targaryen.com', password: 'aethwtrt343t', image_url: 'http://i.imgur.com/pXoR7Vr.jpg' },
+  { username: 'JaimeLannister', email: 'jaime@lannister.com', password: 'a34t2adfd', image_url: 'http://i.imgur.com/6m73kUM.jpg' },
+  { username: 'Arya_Stark', email: 'arya@stark.com', password: 'awrghae7ty', image_url: 'http://i.imgur.com/PNRexqT.jpg' },
+  { username: 'Sansa_Stark', email: 'sansa@stark.com', password: 'aeghft7q394yty8', image_url: 'http://i.imgur.com/aToTLEv.jpg' },
+  { username: 'Samwell_Tarly', email: 'sam@the-wall.com', password: 'awg34t2', image_url: 'http://i.imgur.com/MqtcSBP.jpg' },
+  { username: 'TheonGreyjoy', email: 'theon@iron-islands.com', password: 'aw4y57yag', image_url: 'http://i.imgur.com/a0St9jt.jpg' },
+  { username: 'PetyrBaelish', email: 'littlefinger@littlefinger.com', password: '6rkuhdhg', image_url: 'http://i.imgur.com/WOqR5Aq.jpg' },
+  { username: 'JorahMormont', email: 'jorah@targaryen-serve.com', password: 'rhfabbag', image_url: 'http://i.imgur.com/1Gsd23M.jpg' },
+  { username: 'DavosSeaworth', email: 'davos@seaworth.com', password: 'aerhgiu7y8', image_url: 'http://i.imgur.com/pejXPp7.jpg' },
+  { username: 'EddardStark', email: 'ned@stark.com', password: '2849tuhg9ui', image_url: 'http://i.imgur.com/8m9pdHM.jpg' },
+  { username: 'Tywin_Lannister', email: 'tywin@lannister.com', password: 'erhigy8', image_url: 'http://i.imgur.com/lueIrVF.jpg' },
+  { username: 'Varys', email: 'varys@kingslanding.com', password: 'ajerguhi7y', image_url: 'http://i.imgur.com/LmJP3z0.jpg' },
+  { username: 'Bronn', email: 'bronn@bronn.com', password: 'ajwiry78', image_url: 'http://i.imgur.com/WhmIdUT.jpg' }
+])
 
-guybrush = User.find_by_username('GuybrushThreepwood')
-guest = User.find_by_username('Guest')
+guybrush = User.find_by_username('Jon_Snow')
+guest = User.find_by_username('TyrionLannister')
 
 organizations = Organization.create([
   { name: 'Monkey Island', owner_id: guybrush.id }
