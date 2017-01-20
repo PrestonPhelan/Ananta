@@ -1,20 +1,9 @@
 import React from 'react';
 
-const App = ({ children, currentUser }) => {
-  let displayName;
-
-  if (currentUser.username !== "") {
-    displayName = currentUser.username;
-  } else {
-    displayName = "No one";
-  }
-
+const App = ({ children }) => {
   return (
     <div>
       { children }
-      <p className='user-render'>
-        { displayName }{" is logged in."}
-      </p>
     </div>
   );
 };
