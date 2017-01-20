@@ -47,7 +47,7 @@ class UserControl extends Component {
     return (
      <div id='user-control' tabIndex={0} onBlur={this.clearDropdown}>
        {icon}
-       <UserDropdownContainer hidden={this.state.hidden} modal={this.refs.editProfile}/>
+       <UserDropdownContainer hidden={this.state.hidden} modal={this.refs.editProfile} clearDropdown={this.clearDropdown}/>
 
        <Modal className='create-team-modal-box' ref="editProfile">
          <button className='close-modal' onClick={this.hide}>X</button>

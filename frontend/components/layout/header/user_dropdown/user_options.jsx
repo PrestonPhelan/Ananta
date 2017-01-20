@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { hashHistory } from 'react-router';
 
 
 class UserOptions extends Component {
@@ -8,6 +8,8 @@ class UserOptions extends Component {
 
     this.showModal = this.showModal.bind(this);
     this.hide = this.hide.bind(this);
+
+    this.toTeamPage = this.toTeamPage.bind(this);
   }
 
   showModal() {
@@ -18,11 +20,17 @@ class UserOptions extends Component {
     this.props.modal.hide();
   }
 
+  toTeamPage() {
+    hashHistory.push('/app/teams');
+    this.props.clearDropdown();
+  }
+
   render() {
     return (
       <div>
         <ul className='user-options'>
           <li className='list-label'>{this.props.user.username.toUpperCase()}</li>
+          <li className='option user-option' onClick={this.toTeamPage}>{"My Teams"}</li>
           <li className='option user-option' onClick={this.showModal}>Edit Profile</li>
           <li
             id='user-options-logout'

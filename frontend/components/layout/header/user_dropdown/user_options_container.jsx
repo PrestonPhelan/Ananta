@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+  clearDropdown: () => ownProps.clearDropdown(),
   logout: () => dispatch(logout())
 });
 

@@ -15,11 +15,11 @@ Task.delete_all
 
 users = User.create([
   { username: 'TyrionLannister', email: 'tyrian@lannister.com', password: 'afhry867y', image_url: 'http://i.imgur.com/X9mB9KT.jpg' },
-  { username: 'Jon_Snow', email: 'jon@snow-stark.com', password: 'aeghaet23t34g', image_url: 'http://i.imgur.com/Dfl5oLz.jpg' },
+  { username: 'JonSnow', email: 'jon@snow-stark.com', password: 'aeghaet23t34g', image_url: 'http://i.imgur.com/Dfl5oLz.jpg' },
   { username: 'CerseiLannister', email: 'cersei@lannister.com', password: 'tjtrhs325', image_url: 'http://i.imgur.com/ZXgRzmd.jpg' },
   { username: 'DaenerysTargaryen', email: 'mother-of-dragons@real_targaryen.com', password: 'aethwtrt343t', image_url: 'http://i.imgur.com/pXoR7Vr.jpg' },
   { username: 'JaimeLannister', email: 'jaime@lannister.com', password: 'a34t2adfd', image_url: 'http://i.imgur.com/6m73kUM.jpg' },
-  { username: 'Arya_Stark', email: 'arya@stark.com', password: 'awrghae7ty', image_url: 'http://i.imgur.com/PNRexqT.jpg' },
+  { username: 'AryaStark', email: 'arya@stark.com', password: 'awrghae7ty', image_url: 'http://i.imgur.com/PNRexqT.jpg' },
   { username: 'Sansa_Stark', email: 'sansa@stark.com', password: 'aeghft7q394yty8', image_url: 'http://i.imgur.com/aToTLEv.jpg' },
   { username: 'Samwell_Tarly', email: 'sam@the-wall.com', password: 'awg34t2', image_url: 'http://i.imgur.com/MqtcSBP.jpg' },
   { username: 'TheonGreyjoy', email: 'theon@iron-islands.com', password: 'aw4y57yag', image_url: 'http://i.imgur.com/a0St9jt.jpg' },
@@ -32,17 +32,17 @@ users = User.create([
   { username: 'Bronn', email: 'bronn@bronn.com', password: 'ajwiry78', image_url: 'http://i.imgur.com/WhmIdUT.jpg' }
 ])
 
-guybrush = User.find_by_username('Jon_Snow')
+jon = User.find_by_username('Jon_Snow')
 guest = User.find_by_username('TyrionLannister')
 
 organizations = Organization.create([
-  { name: 'Monkey Island', owner_id: guybrush.id }
+  { name: 'Westeros', owner_id: jon.id }
   ])
 
-org = Organization.find_by_name('Monkey Island')
+org = Organization.find_by_name('Westeros')
 
 teams = Team.create([
-  { name: 'Crew To Monkey Island', owner_id: guybrush.id, organization_id: org.id },
+  { name: 'Crew To Monkey Island', owner_id: jon.id, organization_id: org.id },
   { name: 'Team Awesome', owner_id: guest.id, organization_id: org.id }
   ])
 
@@ -50,7 +50,7 @@ crew = Team.find_by_name('Crew To Monkey Island')
 awesome = Team.find_by_name('Team Awesome')
 
 memberships = Membership.create([
-  { team_id: crew.id, user_id: guybrush.id },
+  { team_id: crew.id, user_id: jon.id },
   { team_id: crew.id, user_id: guest.id },
   { team_id: awesome.id, user_id: guest.id }
 ])
@@ -66,10 +66,10 @@ map = Project.find_by_name("Find Map")
 ship = Project.find_by_name("Obtain Ship")
 
 tasks = Task.create([
-  { project_id: hire_crew.id, name: "Hire Navigator", due: DateTime.new(2017, 1, 20), creator_id: guybrush.id, assignee_id: guybrush.id},
-  { project_id: hire_crew.id, name: "Hire First Mate", due: DateTime.now.tomorrow.to_date, creator_id: guybrush.id, assignee_id: guest.id},
-  { project_id: hire_crew.id, name: "Hire Cook", due: DateTime.now.yesterday.to_date, creator_id: guybrush.id},
-  { project_id: map.id, name: "Interogate Salty Sam", due: DateTime.now, creator_id: guybrush.id},
-  { project_id: map.id, name: "Bribe Jacquotte Delahaye", creator_id: guybrush.id},
-  { project_id: ship.id, name: "Blackmail Stan the Salesman", creator_id: guybrush.id}
+  { project_id: hire_crew.id, name: "Hire Navigator", due: DateTime.new(2017, 1, 20), creator_id: jon.id, assignee_id: jon.id},
+  { project_id: hire_crew.id, name: "Hire First Mate", due: DateTime.now.tomorrow.to_date, creator_id: jon.id, assignee_id: guest.id},
+  { project_id: hire_crew.id, name: "Hire Cook", due: DateTime.now.yesterday.to_date, creator_id: jon.id},
+  { project_id: map.id, name: "Interogate Salty Sam", due: DateTime.now, creator_id: jon.id},
+  { project_id: map.id, name: "Bribe Jacquotte Delahaye", creator_id: jon.id},
+  { project_id: ship.id, name: "Blackmail Stan the Salesman", creator_id: jon.id}
 ])

@@ -7,8 +7,8 @@ const mapStateToProps = (state, ownProps) => ({
   modal: ownProps.modal
 });
 
-const mapDispatchToProps = dispatch => ({
-
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  clearDropdown: () => ownProps.clearDropdown()
 });
 
 export default connect(

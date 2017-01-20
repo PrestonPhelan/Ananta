@@ -15,7 +15,9 @@ class UserDropdown extends Component {
     } else {
       return (
         <div id='user-dropdown' className='dropdown'>
-          <UserOptionsContainer modal={this.props.modal}/>
+          <UserOptionsContainer
+            modal={this.props.modal}
+            clearDropdown={this.props.clearDropdown} />
         </div>
       );
     }
