@@ -79,11 +79,11 @@ users = User.create([
     about: "Bronn is a sellsword with a sardonic sense of humor."}
 ])
 # USERS TO ADD?
-# Kevan Lannister
+# Kevan Lannisterx
 # Shae
 # Benjen / Jeor
 
-guest = User.find_by_username('TyrionLannister')
+guest = User.find_by_username('Guest')
 jon = User.find_by_username('JonSnow')
 tywin = User.find_by_username('Tywin_Lannister')
 cersei = User.find_by_username('CerseiLannister')

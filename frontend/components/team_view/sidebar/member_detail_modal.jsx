@@ -36,7 +36,7 @@ class MemberDetailModal extends Component {
         </div>
         <div className='member-detail-item'>
           <div className='member-detail-label'>About:</div>
-          <div className='member-detail-content'>{this.props.member.about}</div>
+          <div className='member-detail-content member-detail-about'>{this.props.member.about}</div>
         </div>
       </div>
     );
