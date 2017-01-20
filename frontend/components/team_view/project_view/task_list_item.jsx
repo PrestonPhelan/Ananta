@@ -111,7 +111,7 @@ class TaskListItem extends Component {
               <AutosizeInput
                 className='task-name-input'
                 type="text"
-                minWidth={50}
+                minWidth={100}
                 value={this.state.name}
                 onChange={this.updateName}
                 onBlur={this.submitUpdate}

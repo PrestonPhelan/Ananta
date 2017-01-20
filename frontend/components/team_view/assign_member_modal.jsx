@@ -16,7 +16,6 @@ class AssignMemberModal extends Component {
     if (user && prevAssignee !== user.id) {
       this.setState({ assignee_id: user.id });
     }
-    console.log(this.state.assignee_id);
   }
 
   handleSubmit() {

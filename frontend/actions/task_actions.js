@@ -57,7 +57,6 @@ export const updateTask = task => dispatch => {
 export const deleteTask = id => dispatch => {
   return TaskApiUtil.deleteTask(id)
     .then( () => {
-      console.log(id);
       dispatch(activateTask({}));
       dispatch(removeTask(id));
     });
