@@ -167,12 +167,14 @@
 
  .splash-footer {
    width: 100%;
-   border-top: 2px solid black;
-   border-bottom: 2px solid black;
+   border-top: 2px solid $medshade;
+   border-bottom: 2px solid $medshade;
    background-color: white;
    color: black;
    display: flex;
    padding: 30px 20px 30px 20px;
+   position: fixed;
+   bottom: 0;
  }
 
  .splash-footer-box {
