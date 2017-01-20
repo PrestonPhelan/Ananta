@@ -38,7 +38,7 @@ class TaskView extends Component {
         <button id='task-view-close' className='close-modal' onClick={this.clearActiveTask}>X</button>
         <TaskDetailHeader task={this.props.task} />
         <TaskDetailMain task={this.props.task} updateTask={this.props.updateTask}/>
-        <textarea id='description-text' placeholder='Description' value={this.state.description} onChange={this.update} onBlur={this.updateDescription}/>
+        <textarea id='description-text' placeholder='Description' value={this.state.description || ""} onChange={this.update} onBlur={this.updateDescription}/>
       </div>
     );
   }

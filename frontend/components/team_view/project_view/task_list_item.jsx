@@ -100,7 +100,6 @@ class TaskListItem extends Component {
     return (
       <li>
         <ul className='list-item'>
-          <li id='grabber' className='task-detail'><i className="fa fa-ellipsis-v" aria-hidden="true"></i></li>
           <li id='checkmark'>
             {this.props.task.completed ?
               <i id='completed-check' className="fa fa-check-circle" aria-hidden="true" onClick={this.updateCompleted}></i> :
@@ -121,7 +120,6 @@ class TaskListItem extends Component {
                 <div hidden><input type='submit' /></div>
               </form>
           </li>
-          <li id='due-date' className='task-detail'>{printString}</li>
           <li onClick={this.showModal}>{userImg}</li>
         </ul>
 
