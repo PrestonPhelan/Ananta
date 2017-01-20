@@ -1,8 +1,10 @@
-json.id 'unassigned'
-json.name 'Unassigned Tasks'
+json.id 'user'
+json.name current_user.username
 
 json.tasks do
   @tasks.each do |task|
+    next if task.completed
+
     json.set! task.id do
       json.id task.id
       json.name task.name

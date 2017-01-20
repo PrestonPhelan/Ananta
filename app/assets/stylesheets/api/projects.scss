@@ -259,6 +259,8 @@ $taskFontSize: 30px;
   width: $taskFontSize;
   border: 1px dashed gray;
   border-radius: 15px;
+  padding-top: 4px;
+  padding-right: 0.5px;
 }
 
 #unassigned-img {
@@ -279,14 +281,24 @@ $taskFontSize: 30px;
   height: 50px;
   width: 50px;
   border-radius: 25px;
-  border: 1px solid red;
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 #unassigned-selected-border {
   height: 50px;
   width: 50px;
   border-radius: 25px;
-  border: 1px solid green;
+  border: 2px solid $medshade;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#unassigned-selected-border:hover {
+  border: 2px solid $lightshade
 }
 
 #completed-filter {
@@ -304,4 +316,8 @@ $taskFontSize: 30px;
 #completed-filter-check {
   margin-right: 5px;
   font-size: 20px;
+}
+
+#member-select-unassigned {
+  padding-top: 15px;
 }

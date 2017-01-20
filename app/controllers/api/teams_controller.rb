@@ -11,7 +11,6 @@ class Api::TeamsController < ApplicationController
 
   def create
     team = Team.new(team_params)
-    # owner = current_user
     if team.save
       @members = params[:team][:membersToAdd]
       @members.each do |member|

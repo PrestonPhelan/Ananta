@@ -63,6 +63,20 @@
   border-radius: 20px;
 }
 
+#detail-no-assignee-img {
+  border: 1px dashed gray;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  align-items: center;
+  text-align: center;
+  padding: 7.5px;
+}
+
+#detail-no-assignee-img:hover {
+  border: 2px solid $lightshade;
+}
+
 #task-detail-assignee-name {
   padding-top: 10px;
   margin-left: 10px;
@@ -89,4 +103,8 @@
 
 #task-date-field {
   display: block;
+}
+
+#unassigned-select {
+  font-size: 25px;
 }

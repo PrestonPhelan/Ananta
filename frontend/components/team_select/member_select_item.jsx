@@ -13,6 +13,8 @@ class MemberSelectItem extends Component {
     if (this.props !== newProps) {
       if (newProps.selected) {
         this.setState( { selected: true });
+      } else if (newProps.selected === false) {
+        this.setState( { selected: false });
       }
     }
   }

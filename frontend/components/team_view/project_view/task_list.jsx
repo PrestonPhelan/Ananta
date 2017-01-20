@@ -18,9 +18,24 @@ class TaskList extends Component {
 
   toggleFilter() {
     if (!this.state.filtered) {
-      this.props.fetchFilteredProject(this.props.project.id);
+      if (this.props.project.id === 'user') {
+        this.props.fetchFilteredUserTasks(this.props.team.id);
+      } else if (this.props.project.id === 'unassigned') {
+        this.props.fetchFilteredUnassignedTasks(this.props.team.id);
+      } else {
+        this.props.fetchFilteredProject(this.props.project.id);
+      }
     } else {
-      this.props.fetchProject(this.props.project.id);
+      switch (this.props.project.id) {
+        case 'user':
+          this.props.fetchUserTasks(this.props.team.id);
+          break;
+        case 'unassigned':
+          this.props.fetchUnassignedTasks(this.props.team.id);
+          break;
+        default:
+          this.props.fetchProject(this.props.project.id);
+      }
     }
     this.setState({ filtered: !this.state.filtered });
   }

@@ -1,4 +1,4 @@
-json.id 'dummy'
+json.id 'user'
 json.name current_user.username
 
 json.tasks do

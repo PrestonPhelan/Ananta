@@ -40,7 +40,7 @@ class TaskDetailHeader extends Component {
       }
       userImg = icon;
     } else {
-      userImg = <i id='no-assignee-img' className="fa fa-user-o" aria-hidden="true" onClick={this.showModal} ></i>;
+      userImg = <i id='detail-no-assignee-img' className="fa fa-user-o" aria-hidden="true" onClick={this.showModal} ></i>;
       userText = "Unassigned";
     }
 

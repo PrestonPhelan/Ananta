@@ -66,3 +66,17 @@ export const fetchUnassignedTasks = teamId => dispatch => (
       dispatch(activateProject(project));
     })
 );
+
+export const fetchFilteredUserTasks = teamId => dispatch => (
+  TaskApiUtil.fetchFilteredUserTasks(teamId)
+    .then( project => {
+      dispatch(activateProject(project));
+    })
+);
+
+export const fetchFilteredUnassignedTasks = teamId => dispatch => (
+  TaskApiUtil.fetchFilteredUnassignedTasks(teamId)
+    .then( project => {
+      dispatch(activateProject(project));
+    })
+);

@@ -11,13 +11,12 @@ class AssignMemberModal extends Component {
   }
 
   toggleSelect(user) {
-    if (user) {
-      this.state.assignee_id === user.id ?
-        this.setState({ assignee_id: null}) :
-        this.setState({ assignee_id: user.id });
-    } else {
-      this.setState({ assignee_id: null });
+    const prevAssignee = this.state.assignee_id;
+    this.setState({ assignee_id: null});
+    if (user && prevAssignee !== user.id) {
+      this.setState({ assignee_id: user.id });
     }
+    console.log(this.state.assignee_id);
   }
 
   handleSubmit() {
@@ -43,17 +42,17 @@ class AssignMemberModal extends Component {
       <div>
         <form id='member-assign-form' onSubmit={this.handleSubmit}>
           <div id='member-assign-header'> {`Assign Member to Task "${this.props.task.name}"`}</div>
-          <span className='member-select-grid'>
+          <div className='member-select-grid'>
             <div id='unassigned-select' className='default-select-item'>
               <div id={unassignedClass} onClick={() => this.toggleSelect(null)}>
-                <i id='unassigned-img' className="fa fa-user-o" aria-hidden="true"></i>
-                <div className='member-select-username'>
-                  {"Unassigned"}
-                </div>
+                <i id='mem-assign-no-assignee' className="fa fa-user-o" aria-hidden="true"></i>
+              </div>
+              <div id='member-select-unassigned' className='member-select-username'>
+                {"Unassigned"}
               </div>
             </div>
             {userIcons}
-          </span>
+          </div>
           <input type="submit" className='submit-button' value={"Assign"} />
         </form>
       </div>
