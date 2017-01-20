@@ -17,6 +17,8 @@
   padding: 10px 0 10px 0;
   font-size: 24px;
   border-bottom: 1px dashed $medshade;
+  display: flex;
+  align-items: center;
 }
 
 .member-detail-item {
@@ -36,7 +38,15 @@
   border: 2px solid $medshade;
 }
 
+.large-default {
+  font-size: 100px;
+}
+
 .member-detail-about {
   font-size: 12px;
   width: 335px;
+}
+
+#member-detail-username {
+  padding-left: 10px;
 }

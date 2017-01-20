@@ -147,14 +147,18 @@ memberships = Membership.create([
   # Coronation
 
 projects = Project.create([
-  { team_id: lannisters.id, name: "Hire Crew" },
-  { team_id: lannisters.id, name: "Find Map" },
-  { team_id: lannisters.id, name: "Obtain Ship" }
+  { team_id: lannisters.id, name: "War in the North" },
+  { team_id: lannisters.id, name: "Secure King's Landing" },
+  { team_id: council.id, name: "Coronation Tournament" },
+  { team_id: council.id, name: "Wedding Ceremony" },
+  { team_id: council.id, name: "Siege Preparations" }
 ])
 
-hire_crew = Project.find_by_name("Hire Crew")
-map = Project.find_by_name("Find Map")
-ship = Project.find_by_name("Obtain Ship")
+war = Project.find_by_name("War in the North")
+secure = Project.find_by_name("Secure King's Landing")
+tourney = Project.find_by_name("Coronation Tournament")
+wedding = Project.find_by_name("Wedding Ceremony")
+siege = Project.find_by_name("Siege Preparations")
 
 tasks = Task.create([
   { project_id: hire_crew.id, name: "Hire Navigator", due: DateTime.new(2017, 1, 20), creator_id: jon.id, assignee_id: jon.id},
