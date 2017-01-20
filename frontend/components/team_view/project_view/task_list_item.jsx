@@ -54,7 +54,10 @@ class TaskListItem extends Component {
     this.props.createTask({
       name: "",
       project_id: this.props.project.id,
-      creator_id: this.props.currentUser.id });
+      creator_id: this.props.currentUser.id })
+      .then(
+        task => document.getElementById(task.id).focus()
+      );
   }
 
   deleteIfEmpty(e) {
@@ -110,6 +113,7 @@ class TaskListItem extends Component {
               <AutosizeInput
                 className='task-name-input'
                 type="text"
+                id={this.props.task.id}
                 minWidth={100}
                 value={this.state.name}
                 onChange={this.updateName}

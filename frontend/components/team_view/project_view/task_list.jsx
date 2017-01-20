@@ -45,7 +45,10 @@ class TaskList extends Component {
     this.props.createTask({
       name: "",
       project_id: this.props.project.id,
-      creator_id: this.props.currentUser.id });
+      creator_id: this.props.currentUser.id })
+      .then(
+        task => document.getElementById(task.id).focus()
+      );
   }
 
   render() {
