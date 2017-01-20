@@ -288,3 +288,20 @@ $taskFontSize: 30px;
   border-radius: 25px;
   border: 1px solid green;
 }
+
+#completed-filter {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.project-view {
+  position: relative;
+}
+
+#completed-filter-check {
+  margin-right: 5px;
+  font-size: 20px;
+}

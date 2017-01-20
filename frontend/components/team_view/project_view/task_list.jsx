@@ -39,9 +39,12 @@ class TaskList extends Component {
 
     return (
       <div>
-        <div>{this.state.filtered ?
-          <i id='incomplete-check' className="fa fa-check-circle-o" aria-hidden="true" onClick={this.toggleFilter}></i> :
-          <i id='completed-check' className="fa fa-check-circle" aria-hidden="true" onClick={this.toggleFilter}></i>}{"Show Completed"}</div>
+        <div id='completed-filter'>
+          <div id='completed-filter-check'>{this.state.filtered ?
+              <i id='incomplete-check' className="fa fa-check-circle-o" aria-hidden="true" onClick={this.toggleFilter}></i> :
+              <i id='completed-check' className="fa fa-check-circle" aria-hidden="true" onClick={this.toggleFilter}></i>}</div>
+          {"Show Completed"}
+        </div>
         <ul>
           {taskList}
           <ul id='new-task-dummy' className='list-item'>
