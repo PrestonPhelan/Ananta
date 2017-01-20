@@ -5,7 +5,7 @@
 @import "constants";
 
 $indexItemHeight: 125px;
-$indexItemWidth: 200px;
+$indexItemWidth: 205px;
 
 .large-container {
   width: 95%;
@@ -92,9 +92,10 @@ $indexItemWidth: 200px;
 .small-user-img {
   height: 40px;
   width: 40px;
-  border: 1px solid $medshade;
+  border: 1px solid $lightshade;
   border-radius: 20px;
   margin-top: 10px;
+  margin-right: 5px;
 }
 
 .member-list {
