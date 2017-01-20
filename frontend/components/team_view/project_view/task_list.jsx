@@ -41,13 +41,20 @@ class TaskList extends Component {
   }
 
   createBlankTask() {
-    this.props.createTask({ name: "", project_id: this.props.project.id, creator_id: this.props.currentUser.id });
+    this.props.createTask({
+      name: "",
+      project_id: this.props.project.id,
+      creator_id: this.props.currentUser.id });
   }
 
   render() {
     let taskList;
     if (this.props.tasks) {
-      taskList = Object.values(this.props.tasks).map( task => <TaskListItemContainer task={task} key={task.id}/>);
+      taskList = Object.values(this.props.tasks).map( task =>
+        <TaskListItemContainer
+          task={task}
+          key={task.id} />
+      );
     } else {
       taskList = "";
     }
