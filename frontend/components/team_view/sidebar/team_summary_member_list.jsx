@@ -26,14 +26,14 @@ class TeamSummaryMemberList extends Component {
     );
     return (
       <div>
-        <span id='team-summary-members'>
+        <div id='team-summary-members'>
           {memberListItems}
           <i
             id='ts-add-member'
             className="fa fa-user-plus"
             aria-hidden="true"
             onClick={this.showModal}></i>
-        </span>
+        </div>
 
         <Modal ref="addMemberModal">
           <button className='close-modal' onClick={this.hide}>X</button>

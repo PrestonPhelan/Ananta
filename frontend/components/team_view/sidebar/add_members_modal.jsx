@@ -63,9 +63,9 @@ class AddMembersModal extends Component {
       <div>
         <form id='member-add-form' onSubmit={this.handleSubmit}>
           <div id='member-add-header'> {"Add Members"}</div>
-          <span className='member-select-grid'>
+          <div className='member-select-grid'>
             {gridSpace}
-          </span>
+          </div>
           <input type="submit" className='submit-button' value={"Add"} />
         </form>
       </div>

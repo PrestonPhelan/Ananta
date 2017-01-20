@@ -62,10 +62,10 @@ class MemberSelectItem extends Component {
 
     return (
       <div className='member-select-item' onClick={this.toggleSelect(this.props.user.id)}>
-        <span className='member-select-icon'>{icon}</span>
-        <span className='member-select-username'>
+        <div className='member-select-icon'>{icon}</div>
+        <div className='member-select-username'>
           {displayName}
-        </span>
+        </div>
       </div>
     );
   }

@@ -7,22 +7,27 @@ $taskFontSize: 30px;
 
 .team-view {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .col-4-5 {
   width: 78%;
+  min-width: 350px;
 }
 
 #project-task-split {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .col-2-5 {
   width: 50%;
+  min-width: 350px;
 }
 
 .col-1-5 {
   width: 19.5%;
+  min-width: 150px;
 }
 
 #sidebar {
@@ -146,6 +151,8 @@ $taskFontSize: 30px;
 .member-select-item {
   text-align: center;
   color: $medshade;
+  height: 75px;
+  margin-bottom: 15px;
 }
 
 #member-add-form {
