@@ -107,7 +107,7 @@ Tasks are dynamic and easily edited and created in view.  Each task item is actu
           />
     </li>
   }
-
+```
 
 ## Future Development
 
