@@ -14,7 +14,7 @@ Project.delete_all
 Task.delete_all
 
 users = User.create([
-  { username: 'Guest', email: 'tyrian@lannister.com', password: 'password',
+  { username: 'TyrionLannister', email: 'tyrion@lannister.com', password: 'password',
     image_url: 'http://i.imgur.com/X9mB9KT.jpg', role: 'The Imp', department: 'House Lannister',
     about: 'Nicknamed "The Imp" or "Halfman", Tyrion Lannister is the younger brother of Cersei and Jaime Lannister. He is a dwarf; and his mother died during his birth, for which his father, Tywin Lannister, blames him. While not physically powerful, Tyrion has a cunning mind and often uses to his advantage the fact that others constantly underestimate him.'},
 
@@ -83,7 +83,7 @@ users = User.create([
 # Shae
 # Benjen / Jeor
 
-guest = User.find_by_username('Guest')
+guest = User.find_by_username('TyrionLannister')
 jon = User.find_by_username('JonSnow')
 tywin = User.find_by_username('Tywin_Lannister')
 cersei = User.find_by_username('CerseiLannister')
