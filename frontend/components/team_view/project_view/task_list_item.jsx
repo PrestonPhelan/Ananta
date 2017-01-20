@@ -114,7 +114,7 @@ class TaskListItem extends Component {
                 className='task-name-input'
                 type="text"
                 id={this.props.task.id}
-                minWidth={100}
+                minWidth={400}
                 value={this.state.name}
                 onChange={this.updateName}
                 onBlur={this.submitUpdate}
