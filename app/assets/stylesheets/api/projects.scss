@@ -196,15 +196,19 @@ $taskFontSize: 30px;
 .list-item, #new-task-dummy {
   display: flex;
   font-family: serif;
-  font-size: 20px;
+  font-size: 12px;
   color: black;
   align-items: center;
   border-top: 1px solid lightgray;
   padding: 5px;
 }
 
+#task-name-input {
+  width: 250px;
+}
+
 #new-task-dummy {
-  font-size: 16px;
+  font-size: 12px;
   text-align: left;
   padding: 10px;
 }
@@ -214,7 +218,7 @@ $taskFontSize: 30px;
 }
 
 .task-detail {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 #grabber {
@@ -266,7 +270,7 @@ $taskFontSize: 30px;
   width: $taskFontSize;
   border: 1px dashed gray;
   border-radius: 15px;
-  padding-top: 4px;
+  padding-top: 8px;
   padding-right: 0.5px;
 }
 

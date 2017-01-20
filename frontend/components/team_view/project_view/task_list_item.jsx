@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'boron/ScaleModal';
+import AutosizeInput from 'react-input-autosize';
 
 import AssignMemberModalContainer from '../assign_member_modal_container';
 import { getDateString } from '../../../util/date_util';
@@ -86,7 +87,8 @@ class TaskListItem extends Component {
               <i id='incomplete-check' className="fa fa-check-circle-o" aria-hidden="true" onClick={this.updateCompleted}></i>}
           </li>
           <li id='task-name' className='task-detail'>
-            <input
+            <AutosizeInput
+              className='task-name-input'
               type="text"
               value={this.state.name}
               onChange={this.updateName}

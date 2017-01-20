@@ -161,10 +161,29 @@ wedding = Project.find_by_name("Wedding Ceremony")
 siege = Project.find_by_name("Siege Preparations")
 
 tasks = Task.create([
-  { project_id: hire_crew.id, name: "Hire Navigator", due: DateTime.new(2017, 1, 20), creator_id: jon.id, assignee_id: jon.id},
-  { project_id: hire_crew.id, name: "Hire First Mate", due: DateTime.now.tomorrow.to_date, creator_id: jon.id, assignee_id: guest.id},
-  { project_id: hire_crew.id, name: "Hire Cook", due: DateTime.now.yesterday.to_date, creator_id: jon.id},
-  { project_id: map.id, name: "Interogate Salty Sam", due: DateTime.now, creator_id: jon.id},
-  { project_id: map.id, name: "Bribe Jacquotte Delahaye", creator_id: jon.id},
-  { project_id: ship.id, name: "Blackmail Stan the Salesman", creator_id: jon.id}
+  { project_id: war.id, name: "Capture Edmure Tully", due: DateTime.new(2017, 1, 21), creator_id: tywin.id, assignee_id: jaime.id},
+  { project_id: war.id, name: "Hold the River Crossing", due: DateTime.new(2017, 1, 22), creator_id: tywin.id, assignee_id: jaime.id},
+  { project_id: war.id, name: "Skin a Deer", creator_id: tywin.id, assignee_id: tywin.id},
+  { project_id: war.id, name: "Monitor Baratheon Forces", creator_id: tywin.id},
+  { project_id: secure.id, name: "Find Joffrey a Suitable Queen", due: DateTime.new(2017, 1, 29), creator_id: tywin.id, assignee_id: cersei.id},
+  { project_id: secure.id, name: "Mentor Joffrey", creator_id: tywin.id, assignee_id: tywin.id},
+  { project_id: secure.id, name: "Marry Loras Tyrell", due: DateTime.new(2017, 2, 28), creator_id: tywin.id, assignee_id: cersei.id},
+  { project_id: secure.id, name: "Write Letters", creator_id: tywin.id, assignee_id: tywin.id},
+  { project_id: secure.id, name: "Sit at Desk", creator_id: tywin.id, assignee_id: tywin.id},
+  { project_id: secure.id, name: "Pander to Common People", creator_id: tywin.id},
+  { project_id: tourney.id, name: "Secure Funding", creator_id: guest.id, assignee_id: littlefinger.id},
+  { project_id: tourney.id, name: "Cost-Benefit Analysis", creator_id: guest.id},
+  { project_id: tourney.id, name: "Win the Melee", due: DateTime.new(2017, 2, 14), creator_id: jaime.id, assignee_id: jaime.id},
+  { project_id: tourney.id, name: "Oversee Construction", creator_id: guest.id, assignee_id: cersei.id},
+  { project_id: tourney.id, name: "Do Varys Things", creator_id: guest.id, assignee_id: varys.id},
+  { project_id: wedding.id, name: "Set Budget", creator_id: guest.id},
+  { project_id: wedding.id, name: "Oversee Design", creator_id: guest.id, assignee_id: cersei.id},
+  { project_id: wedding.id, name: "Negotiate Terms", due: DateTime.new(2017, 1, 25), creator_id: guest.id, assignee_id: tywin.id},
+  { project_id: wedding.id, name: "Drink Wine", creator_id: guest.id, assignee_id: guest.id},
+  { project_id: wedding.id, name: "Do Varys Things", creator_id: guest.id, assignee_id: varys.id},
+  { project_id: siege.id, name: "Design Battle Plan", creator_id: guest.id, assignee_id: guest.id},
+  { project_id: siege.id, name: "Rally Troops", due: DateTime.new(2017, 2, 2), creator_id: guest.id, assignee_id: guest.id},
+  { project_id: siege.id, name: "Intimidate Sansa", due: DateTime.new(2017, 2, 2), creator_id: guest.id, assignee_id: cersei.id},
+  { project_id: siege.id, name: "Show Up Last Minute", due: DateTime.new(2017, 2, 2), creator_id: guest.id, assignee_id: tywin.id},
+  { project_id: siege.id, name: "Do Varys Things", creator_id: guest.id, assignee_id: varys.id}
 ])

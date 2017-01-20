@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AutosizeInput from 'react-input-autosize';
 
 class TaskDetailMain extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class TaskDetailMain extends Component {
           <i id='completed-check' className="fa fa-check-circle" aria-hidden="true" onClick={this.checkClick}></i> :
           <i id='incomplete-check' className="fa fa-check-circle-o" aria-hidden="true" onClick={this.checkClick}></i>}
         </div>
-        <input id='task-detail-name' value={this.state.name} onChange={this.update} onBlur={this.updateName}/>
+        <AutosizeInput id='task-detail-name' value={this.state.name} onChange={this.update} onBlur={this.updateName}/>
       </div>
     );
   }
