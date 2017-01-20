@@ -15,8 +15,8 @@ export const receiveErrors = errors => ({
 });
 
 export const demoLogin = () => dispatch => dispatch(login({
-        username: "TyrionLannister",
-        password: "afhry867y"
+        username: "Guest",
+        password: "password"
     }));
 
 export const login = user => dispatch => (

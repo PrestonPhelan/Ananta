@@ -37,14 +37,15 @@ $indexItemWidth: 200px;
 }
 
 .team-index-item {
-  height: $indexItemHeight;
+  height: auto;
+  min-height: $indexItemHeight;
   width: $indexItemWidth;
   background-color: $medshade;
   border: 1px solid $lightshade;
   border-radius: 4px;
   margin: 20px;
   padding: 10px;
-  color: $negative;
+  color: white;
 }
 
 #new-team-item {
@@ -98,6 +99,7 @@ $indexItemWidth: 200px;
 
 .member-list {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .member-select-grid {
