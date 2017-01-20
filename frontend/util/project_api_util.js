@@ -12,6 +12,14 @@ export const fetchProject = projectId => (
   })
 );
 
+export const fetchFilteredProject = projectId => (
+  $.ajax({
+    method: 'GET',
+    url: `api/projects/${projectId}`,
+    data: { filtered: true }
+  })
+);
+
 export const createProject = project => {
   return $.ajax({
     method: 'POST',

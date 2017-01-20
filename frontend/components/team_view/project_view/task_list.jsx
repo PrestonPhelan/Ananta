@@ -6,10 +6,23 @@ class TaskList extends Component {
   constructor(props) {
     super(props);
 
+    this.state = { filtered: false };
+
     this.createBlankTask = this.createBlankTask.bind(this);
+    this.toggleFilter = this.toggleFilter.bind(this);
   }
 
   componentDidMount() {
+
+  }
+
+  toggleFilter() {
+    if (!this.state.filtered) {
+      this.props.fetchFilteredProject(this.props.project.id);
+    } else {
+      this.props.fetchProject(this.props.project.id);
+    }
+    this.setState({ filtered: !this.state.filtered });
   }
 
   createBlankTask() {
@@ -25,14 +38,19 @@ class TaskList extends Component {
     }
 
     return (
-      <ul>
-        {taskList}
-        <ul id='new-task-dummy' className='list-item'>
-          <div onClick={this.createBlankTask}>
-            {"Enter a new task here"}
-           </div>
+      <div>
+        <div>{this.state.filtered ?
+          <i id='incomplete-check' className="fa fa-check-circle-o" aria-hidden="true" onClick={this.toggleFilter}></i> :
+          <i id='completed-check' className="fa fa-check-circle" aria-hidden="true" onClick={this.toggleFilter}></i>}{"Show Completed"}</div>
+        <ul>
+          {taskList}
+          <ul id='new-task-dummy' className='list-item'>
+            <div onClick={this.createBlankTask}>
+              {"Enter a new task here"}
+             </div>
+          </ul>
         </ul>
-      </ul>
+      </div>
     );
   }
 }

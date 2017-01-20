@@ -37,6 +37,11 @@ export const fetchProject = id => dispatch => (
     .then ( project => dispatch(activateProject(project)))
 );
 
+export const fetchFilteredProject = id => dispatch => (
+  ProjectApiUtil.fetchFilteredProject(id)
+  .then( project => dispatch(activateProject(project)))
+);
+
 export const createProject = project => dispatch => (
   ProjectApiUtil.createProject(project)
     .then(savedProject => {

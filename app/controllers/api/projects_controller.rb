@@ -6,7 +6,11 @@ class Api::ProjectsController < ApplicationController
 
   def show
     @project = Project.includes(tasks: :assignee).find_by_id(params[:id])
-    render :show
+    if params[:filtered]
+      render :filtered_show
+    else
+      render :show
+    end
   end
 
   def create
