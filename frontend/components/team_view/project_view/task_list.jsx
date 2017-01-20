@@ -37,6 +37,17 @@ class TaskList extends Component {
       taskList = "";
     }
 
+    let lastField;
+    if (typeof this.props.project.id === "string") {
+      lastField = (<div></div>);
+    } else {
+      lastField = (<ul id='new-task-dummy' className='list-item'>
+        <div onClick={this.createBlankTask}>
+          {"Enter a new task here"}
+         </div>
+      </ul>);
+    }
+
     return (
       <div>
         <div id='completed-filter'>
@@ -47,11 +58,7 @@ class TaskList extends Component {
         </div>
         <ul>
           {taskList}
-          <ul id='new-task-dummy' className='list-item'>
-            <div onClick={this.createBlankTask}>
-              {"Enter a new task here"}
-             </div>
-          </ul>
+          {lastField}
         </ul>
       </div>
     );
