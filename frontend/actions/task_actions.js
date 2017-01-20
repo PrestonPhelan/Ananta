@@ -3,6 +3,7 @@ import * as TaskApiUtil from '../util/task_api_util';
 export const RECEIVE_TASKS = 'RECEIVE_TASKS';
 export const RECEIVE_TASK = 'RECEIVE_TASK';
 export const ACTIVATE_TASK = 'ACTIVATE_TASK';
+export const REMOVE_TASK = 'REMOVE_TASK';
 
 export const receiveTasks = tasks => ({
   type: RECEIVE_TASKS,
@@ -17,6 +18,11 @@ export const receiveTask = task => ({
 export const activateTask = task => ({
   type: ACTIVATE_TASK,
   task
+});
+
+export const removeTask = id => ({
+  type: REMOVE_TASK,
+  id
 });
 
 export const fetchTasks = projectId => dispatch => (
@@ -45,5 +51,14 @@ export const updateTask = task => dispatch => {
     }, err => console.log(err.responseJSON))
     .then(updatedTask => {
       dispatch(fetchTask(updatedTask.id));
+    });
+};
+
+export const deleteTask = id => dispatch => {
+  return TaskApiUtil.deleteTask(id)
+    .then( () => {
+      console.log(id);
+      dispatch(activateTask({}));
+      dispatch(removeTask(id));
     });
 };

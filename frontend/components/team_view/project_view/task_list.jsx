@@ -40,7 +40,8 @@ class TaskList extends Component {
     this.setState({ filtered: !this.state.filtered });
   }
 
-  createBlankTask() {
+  createBlankTask(e) {
+    e.preventDefault();
     this.props.createTask({
       name: "",
       project_id: this.props.project.id,
@@ -53,7 +54,8 @@ class TaskList extends Component {
       taskList = Object.values(this.props.tasks).map( task =>
         <TaskListItemContainer
           task={task}
-          key={task.id} />
+          key={task.id}
+          createBlankTask={this.createBlankTask} />
       );
     } else {
       taskList = "";

@@ -59,3 +59,10 @@ export const fetchUnassignedTasks = teamId => {
     data: { type: "UNASSIGNED" }
   });
 };
+
+export const deleteTask = id => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/tasks/${id}`
+  });
+};
