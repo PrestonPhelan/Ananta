@@ -11,7 +11,9 @@ class MemberSelectItem extends Component {
 
   componentWillReceiveProps(newProps) {
     if (this.props !== newProps) {
-      this.setState( { selected: (newProps.selected || false) });
+      if (newProps.selected) {
+        this.setState( { selected: true });
+      }
     }
   }
 

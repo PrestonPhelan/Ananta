@@ -26,7 +26,12 @@ class TeamView extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.params.teamId !== nextProps.params.teamId) {
-      nextProps.fetchTeam();
+      nextProps.fetchTeam()
+        .then(team => {
+          if (Object.values(team.projects).length > 0) {
+            this.props.fetchProject(Object.values(team.projects)[0].id);
+          }
+        });
     }
   }
 
