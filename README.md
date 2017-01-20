@@ -1,7 +1,7 @@
 ![ananta-logo]
 [ananta-logo]: http://i.imgur.com/TVHhphE.png
 
-[Ananta](www.ananta-app.com) is a project management and task tracking web application, built
+[Ananta](https://www.ananta-app.com) is a project management and task tracking web application, built
 on a Postgres/Rails/React stack. It allows users to organize into teams, create projects, and manage tasks.  
 
 Ananta is a personal project of Preston Phelan, inspired by Asana.
