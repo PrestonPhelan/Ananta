@@ -30,7 +30,8 @@ class TaskListItem extends Component {
   }
 
   activateTask() {
-    this.props.fetchTask();
+    this.props.fetchTask()
+      .then( () => document.getElementById(this.props.task.id).focus() );
   }
 
   updateName(e) {
