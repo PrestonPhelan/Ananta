@@ -110,7 +110,7 @@
  }
 
  .splash-content {
-   padding: 150px 40px 0 40px;
+   padding: 200px 40px 0 40px;
    font-size: 30px;
    text-align: center;
    color: white;
@@ -173,8 +173,8 @@
    color: black;
    display: flex;
    padding: 30px 20px 30px 20px;
-   position: fixed;
-   bottom: 0;
+   position: absolute;
+   top: 450px;
  }
 
  .splash-footer-box {
