@@ -184,8 +184,8 @@
    border-style: ridge;
  }
 
- .splash-footer-box:first-of-type {
-   border-left: 1px ridge $lightshade;
+ .splash-footer-box:last-of-type {
+   border-right: none;
  }
 
  .splash-footer-box-head {
