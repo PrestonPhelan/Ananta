@@ -29,7 +29,6 @@ class UserOptions extends Component {
     return (
       <div>
         <ul className='user-options'>
-          <li className='list-label'>{this.props.user.username.toUpperCase()}</li>
           <li className='option user-option' onClick={this.toTeamPage}>{"My Teams"}</li>
           <li className='option user-option' onClick={this.showModal}>Edit Profile</li>
           <li

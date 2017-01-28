@@ -60,7 +60,11 @@ $headerPadding: 25px;
 
 
 .option {
-  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.option:last-of-type {
+  margin-bottom: 0px;
 }
 
 .option:hover {

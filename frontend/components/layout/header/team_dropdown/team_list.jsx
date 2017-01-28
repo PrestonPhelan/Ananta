@@ -36,7 +36,6 @@ class TeamList extends Component {
 
     return (
       <ul className='dropdown-list'>
-        <li className='list-label'>SELECT TEAM</li>
         {teams}
         <li
           id='team-dropdown-new-team'
