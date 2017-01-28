@@ -32,7 +32,10 @@ export const fetchTasks = projectId => dispatch => (
 
 export const fetchTask = id => dispatch => (
   TaskApiUtil.fetchTask(id)
-    .then( task => dispatch(activateTask(task)))
+    .then( task => {
+      console.log("Activating a task from fetchTask");
+      dispatch(activateTask(task));
+    })
 );
 
 export const createTask = task => dispatch => (
@@ -49,10 +52,7 @@ export const updateTask = task => dispatch => {
     .then(savedTask => {
       dispatch(receiveTask(savedTask));
       return savedTask;
-    }, err => console.log(err.responseJSON))
-    .then(updatedTask => {
-      dispatch(fetchTask(updatedTask.id));
-    });
+    }, err => console.log(err.responseJSON));
 };
 
 export const deleteTask = id => dispatch => {

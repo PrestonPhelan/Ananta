@@ -40,7 +40,10 @@ class TaskListItem extends Component {
 
   updateCompleted(e) {
     const updatedCompleteStatus = !this.props.task.completed;
-    const updatedTask = { id: this.props.task.id, completed: updatedCompleteStatus };
+    const updatedTask = {
+      id: this.props.task.id,
+      completed: updatedCompleteStatus
+    };
     this.props.updateTask(updatedTask);
   }
 
@@ -86,7 +89,10 @@ class TaskListItem extends Component {
       if (this.props.task.assignee.image_url) {
         icon = (
           <div>
-            <img className='task-user-image' src={this.props.task.assignee.image_url}/>
+            <img
+              className='task-user-image'
+              src={this.props.task.assignee.image_url}
+            />
           </div>);
         } else {
           icon = (
@@ -98,7 +104,12 @@ class TaskListItem extends Component {
         }
         userImg = icon;
       } else {
-        userImg = <i id='no-assignee-img' className="fa fa-user-o" aria-hidden="true"></i>;
+        userImg =
+          <i
+            id='no-assignee-img'
+            className="fa fa-user-o"
+            aria-hidden="true"
+          ></i>;
         }
 
     return (
@@ -106,8 +117,17 @@ class TaskListItem extends Component {
         <ul className='list-item'>
           <li id='checkmark'>
             {this.props.task.completed ?
-              <i id='completed-check' className="fa fa-check-circle" aria-hidden="true" onClick={this.updateCompleted}></i> :
-              <i id='incomplete-check' className="fa fa-check-circle-o" aria-hidden="true" onClick={this.updateCompleted}></i>}
+              <i
+                id='completed-check'
+                className="fa fa-check-circle"
+                aria-hidden="true"
+                onClick={this.updateCompleted}
+              ></i> :
+              <i
+                id='incomplete-check'
+                className="fa fa-check-circle-o"
+                aria-hidden="true"
+                onClick={this.updateCompleted}></i>}
           </li>
           <li id='task-name' className='task-detail'>
             <form onSubmit={this.submitAndCreateBlankTask}>
@@ -130,7 +150,10 @@ class TaskListItem extends Component {
 
         <Modal ref="assignMemberModal">
           <button className='close-modal' onClick={this.hide}>X</button>
-          <AssignMemberModalContainer hideModal={this.hide} task={this.props.task}/>
+          <AssignMemberModalContainer
+            hideModal={this.hide}
+            task={this.props.task}
+          />
         </Modal>
       </li>
     );
