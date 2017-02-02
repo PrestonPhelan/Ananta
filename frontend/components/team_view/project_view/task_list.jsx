@@ -19,7 +19,7 @@ class TaskList extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.tasks && this.props !== newProps) {
+    if (newProps.tasks && this.state.tasks.length === 0) {
       this.setState({
         tasks: Object.values(newProps.tasks)
           .sort( (a, b) => a.order - b.order )
@@ -39,8 +39,11 @@ class TaskList extends Component {
           ],
         },
       }));
-      
     }
+    this.state.tasks.forEach( (task, idx) => {
+      task.order = idx;
+      this.props.updateTask(task);
+    });
   }
 
   toggleFilter() {

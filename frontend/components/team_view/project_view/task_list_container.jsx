@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import TaskList from './task_list';
-import { createTask } from '../../../actions/task_actions';
+import { createTask, updateTask } from '../../../actions/task_actions';
 import {
   fetchFilteredProject,
   fetchProject,
@@ -19,6 +19,7 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   createTask: task => dispatch(createTask(task)),
+  updateTask: task => dispatch(updateTask(task)),
   fetchFilteredProject: id => dispatch(fetchFilteredProject(id)),
   fetchProject: id => dispatch(fetchProject(id)),
   fetchFilteredUserTasks: teamId => dispatch(fetchFilteredUserTasks(teamId)),
