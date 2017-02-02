@@ -34,6 +34,7 @@ export const fetchTask = id => dispatch => (
   TaskApiUtil.fetchTask(id)
     .then( task => {
       dispatch(activateTask(task));
+      return task;
     })
 );
 

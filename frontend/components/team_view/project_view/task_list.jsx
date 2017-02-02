@@ -18,6 +18,15 @@ class TaskList extends Component {
     this.moveTask = this.moveTask.bind(this);
   }
 
+  componentDidMount() {
+    if (this.props.tasks) {
+      this.setState({
+        tasks: Object.values(this.props.tasks)
+        .sort( (a, b) => a.order - b.order )
+      });
+    }
+  }
+
   componentWillReceiveProps(newProps) {
     if (newProps.tasks && this.state.tasks.length === 0) {
       this.setState({
@@ -109,8 +118,16 @@ class TaskList extends Component {
       <div>
         <div id='completed-filter'>
           <div id='completed-filter-check'>{this.state.filtered ?
-              <i id='incomplete-check' className="fa fa-check-circle-o" aria-hidden="true" onClick={this.toggleFilter}></i> :
-              <i id='completed-check' className="fa fa-check-circle" aria-hidden="true" onClick={this.toggleFilter}></i>}</div>
+              <i
+                id='incomplete-check'
+                className="fa fa-check-circle-o"
+                aria-hidden="true"
+                onClick={this.toggleFilter}></i> :
+              <i
+                id='completed-check'
+                className="fa fa-check-circle"
+                aria-hidden="true"
+                onClick={this.toggleFilter}></i>}</div>
           {"Show Completed"}
         </div>
         <ul>

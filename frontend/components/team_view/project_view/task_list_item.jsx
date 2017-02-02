@@ -49,7 +49,7 @@ const taskTarget = {
 class TaskListItem extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: this.props.task ? this.props.task.name : "" };
+    this.state = { name: this.props.task.name };
 
     this.activateTask = this.activateTask.bind(this);
     this.submitUpdate = this.submitUpdate.bind(this);
@@ -64,7 +64,7 @@ class TaskListItem extends Component {
 
   componentWillReceiveProps(newProps) {
     if (this.props !== newProps) {
-      this.setState( { name: newProps.task ? newProps.task.name : "" } );
+      this.setState( { name: newProps.task.name } );
     }
   }
 
@@ -122,7 +122,7 @@ class TaskListItem extends Component {
     // const printString = getDateString(this.props.task.due);
 
     let userImg;
-    if (this.props.task && this.props.task.assignee && this.props.task.assignee.id) {
+    if (this.props.task.assignee && this.props.task.assignee.id) {
       let icon;
 
       if (this.props.task.assignee.image_url) {
@@ -157,7 +157,7 @@ class TaskListItem extends Component {
       <li>
         <ul className='list-item'>
           <li id='checkmark'>
-            {this.props.task && this.props.task.completed ?
+            {this.props.task.completed ?
               <i
                 id='completed-check'
                 className="fa fa-check-circle"
@@ -175,7 +175,7 @@ class TaskListItem extends Component {
               <AutosizeInput
                 className='task-name-input'
                 type="text"
-                id={this.props.task ? this.props.task.id : ""}
+                id={this.props.task.id}
                 minWidth={400}
                 value={this.state.name}
                 onChange={this.updateName}
