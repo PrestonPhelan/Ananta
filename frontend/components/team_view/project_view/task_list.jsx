@@ -1,19 +1,46 @@
 import React, { Component } from 'react';
+import { DragDropContext } from 'react-dnd';
+import update from 'react/lib/update';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 import TaskListItemContainer from './task_list_item_container';
 
 class TaskList extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { filtered: false };
+    this.state = {
+      filtered: false,
+      tasks: []
+    };
 
     this.createBlankTask = this.createBlankTask.bind(this);
     this.toggleFilter = this.toggleFilter.bind(this);
+    this.moveTask = this.moveTask.bind(this);
   }
 
-  componentDidMount() {
+  componentWillReceiveProps(newProps) {
+    if (newProps.tasks && this.props !== newProps) {
+      this.setState({
+        tasks: Object.values(newProps.tasks)
+          .sort( (a, b) => a.order - b.order )
+      });
+    }
+  }
 
+  moveTask(dragIndex, hoverIndex) {
+    const { tasks } = this.state;
+    const dragTask = tasks[dragIndex];
+    if (dragIndex) {
+      this.setState(update(this.state, {
+        tasks: {
+          $splice: [
+            [dragIndex, 1],
+            [hoverIndex, 0, dragTask],
+          ],
+        },
+      }));
+      
+    }
   }
 
   toggleFilter() {
@@ -52,16 +79,17 @@ class TaskList extends Component {
   }
 
   render() {
-    let taskList;
-    if (this.props.tasks) {
-      taskList = Object.values(this.props.tasks).map( task =>
-        <TaskListItemContainer
+    let taskList = [];
+    if (this.state.tasks.length > 0) {
+      console.log(this.state.tasks);
+      taskList = this.state.tasks
+        .map( (task, i) =>
+          <TaskListItemContainer
           task={task}
-          key={task.id}
-          createBlankTask={this.createBlankTask} />
-      );
-    } else {
-      taskList = "";
+          key={task ? task.id : `moving-${i}`}
+          index={i}
+          createBlankTask={this.createBlankTask}
+          moveTask={this.moveTask} /> );
     }
 
     let lastField;
@@ -92,4 +120,4 @@ class TaskList extends Component {
   }
 }
 
-export default TaskList;
+export default DragDropContext(HTML5Backend)(TaskList);

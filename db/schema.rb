@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20170118234449) do
     t.datetime "updated_at",                      null: false
     t.integer  "project_id"
     t.text     "description"
+    t.integer  "order"
     t.index ["assignee_id"], name: "index_tasks_on_assignee_id", using: :btree
     t.index ["completed_by_id"], name: "index_tasks_on_completed_by_id", using: :btree
     t.index ["creator_id"], name: "index_tasks_on_creator_id", using: :btree

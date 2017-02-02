@@ -1,16 +1,55 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Modal from 'boron/ScaleModal';
 import AutosizeInput from 'react-input-autosize';
 import KeyBinding from 'react-keybinding-component';
+import { findDOMNode } from 'react-dom';
+import { DragSource, DropTarget } from 'react-dnd';
+import flow from 'lodash/flow';
 
 import AssignMemberModalContainer from '../assign_member_modal_container';
 import { getDateString } from '../../../util/date_util';
+import ItemTypes from './item_types';
 
+
+const taskSource = {
+  beginDrag(props) {
+    return {
+      id: props.task.id,
+      index: props.task.index
+    };
+  }
+};
+
+const taskTarget = {
+  hover(props, monitor, component) {
+    const dragIndex = monitor.getItem().index;
+    const hoverIndex = props.index;
+    if (dragIndex === hoverIndex) {
+      return;
+    }
+
+    const hoverBoundingRect = findDOMNode(component).getBoundingClientRect();
+    const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
+    const clientOffset = monitor.getClientOffset();
+    const hoverClientY = clientOffset.y - hoverBoundingRect.top;
+    if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
+      return;
+    }
+
+    if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+      return;
+    }
+
+    props.moveTask(dragIndex, hoverIndex);
+
+    monitor.getItem().index = hoverIndex;
+  }
+};
 
 class TaskListItem extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: this.props.task.name };
+    this.state = { name: this.props.task ? this.props.task.name : "" };
 
     this.activateTask = this.activateTask.bind(this);
     this.submitUpdate = this.submitUpdate.bind(this);
@@ -25,7 +64,7 @@ class TaskListItem extends Component {
 
   componentWillReceiveProps(newProps) {
     if (this.props !== newProps) {
-      this.setState( { name: newProps.task.name } );
+      this.setState( { name: newProps.task ? newProps.task.name : "" } );
     }
   }
 
@@ -80,10 +119,10 @@ class TaskListItem extends Component {
   }
 
   render() {
-    const printString = getDateString(this.props.task.due);
+    // const printString = getDateString(this.props.task.due);
 
     let userImg;
-    if (this.props.task.assignee && this.props.task.assignee.id) {
+    if (this.props.task && this.props.task.assignee && this.props.task.assignee.id) {
       let icon;
 
       if (this.props.task.assignee.image_url) {
@@ -112,11 +151,13 @@ class TaskListItem extends Component {
           ></i>;
         }
 
-    return (
+    const { isDragging, connectDragSource, connectDropTarget } = this.props;
+
+    return connectDragSource(connectDropTarget(
       <li>
         <ul className='list-item'>
           <li id='checkmark'>
-            {this.props.task.completed ?
+            {this.props.task && this.props.task.completed ?
               <i
                 id='completed-check'
                 className="fa fa-check-circle"
@@ -134,7 +175,7 @@ class TaskListItem extends Component {
               <AutosizeInput
                 className='task-name-input'
                 type="text"
-                id={this.props.task.id}
+                id={this.props.task ? this.props.task.id : ""}
                 minWidth={400}
                 value={this.state.name}
                 onChange={this.updateName}
@@ -156,8 +197,16 @@ class TaskListItem extends Component {
           />
         </Modal>
       </li>
-    );
+    ));
   }
 }
 
-export default TaskListItem;
+export default flow(
+  DragSource(ItemTypes.TASK, taskSource, (connect, monitor) => ({
+    connectDragSource: connect.dragSource(),
+    isDragging: monitor.isDragging()
+  })),
+  DropTarget(ItemTypes.TASK, taskTarget, connect => ({
+    connectDropTarget: connect.dropTarget()
+  }))
+)(TaskListItem);

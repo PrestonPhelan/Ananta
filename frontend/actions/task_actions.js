@@ -33,7 +33,6 @@ export const fetchTasks = projectId => dispatch => (
 export const fetchTask = id => dispatch => (
   TaskApiUtil.fetchTask(id)
     .then( task => {
-      console.log("Activating a task from fetchTask");
       dispatch(activateTask(task));
     })
 );

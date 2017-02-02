@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import { fetchTask, updateTask } from '../../../actions/task_actions';
 import { createTask, deleteTask } from '../../../actions/task_actions';
-import TaskListItem from './task_list_item';
+import DraggableTaskListItem from './task_list_item';
 
 export const mapStateToProps = (state, ownProps) => ({
   task: ownProps.task,
@@ -21,4 +21,4 @@ export const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TaskListItem);
+)(DraggableTaskListItem);

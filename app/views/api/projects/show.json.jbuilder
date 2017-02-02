@@ -9,6 +9,7 @@ json.tasks do
       json.due task.due
       json.header task.header
       json.completed task.completed
+      json.order task.order
       json.assignee do
         if task.assignee
           json.id task.assignee.id
