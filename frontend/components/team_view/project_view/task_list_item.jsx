@@ -156,6 +156,7 @@ class TaskListItem extends Component {
     return connectDragSource(connectDropTarget(
       <li>
         <ul className='list-item'>
+          <li id='grabber'><i className="fa fa-ellipsis-v" aria-hidden="true"></i></li>
           <li id='checkmark'>
             {this.props.task.completed ?
               <i
