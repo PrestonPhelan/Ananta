@@ -33,14 +33,9 @@ class Api::TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    puts "INSTANCE VARIABLE @TASK BEFORE UPDATE"
-    puts "#{@task.name} Completed: #{@task.completed}"
     if @task.update_attributes(task_params)
-      puts "@TASK AFTER UPDATE"
-      puts "#{@task.name} Completed: #{@task.completed}"
       render :create
     else
-      puts "UPDATE DID NOT WORK"
       render json: @task.errors.full_messages, status: 422
     end
   end

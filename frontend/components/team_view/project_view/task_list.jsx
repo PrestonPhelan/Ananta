@@ -84,7 +84,6 @@ class TaskList extends Component {
   render() {
     let taskList = [];
     if (this.state.tasks.length > 0) {
-      console.log(this.state.tasks);
       taskList = this.state.tasks
         .map( (task, i) =>
           <TaskListItemContainer
