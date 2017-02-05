@@ -28,7 +28,7 @@ class TaskList extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.tasks && this.state.tasks.length === 0) {
+    if (newProps.tasks) {
       this.setState({
         tasks: Object.values(newProps.tasks)
           .sort( (a, b) => a.order - b.order )
@@ -81,14 +81,23 @@ class TaskList extends Component {
 
   createBlankTask(e) {
     e.preventDefault();
+    console.log("Creating Blank Task");
     this.props.createTask({
       name: "",
       project_id: this.props.project.id,
-      creator_id: this.props.currentUser.id })
+      creator_id: this.props.currentUser.id,
+      order: this.state.tasks.length})
       .then(
-        task => document.getElementById(task.id).focus()
+        task => {
+          console.log(this.state);
+          document.getElementById(task.id).focus();
+        }
       );
   }
+
+  // updateTasks() {
+  //   this.setState(tasks)
+  // }
 
   render() {
     let taskList = [];
